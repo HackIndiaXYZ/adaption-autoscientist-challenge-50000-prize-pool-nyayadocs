@@ -1,0 +1,5 @@
+torch
+transformers
+sentencepiece
+protobuf
+indictranstoolkit @ git+https://github.com/VarunGumma/IndicTransToolkit.git ; python_version >= "3.10"

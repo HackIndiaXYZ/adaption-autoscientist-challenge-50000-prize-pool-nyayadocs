@@ -1,0 +1,14 @@
+__pycache__/
+*.pyc
+.env
+.next/
+node_modules/
+data/*.json
+data/*.jsonl
+dataset/*.jsonl
+outputs/
+static/
+tsconfig.tsbuildinfo
+.DS_Store
+npm-debug.log*
+.vercel

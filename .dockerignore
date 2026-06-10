@@ -1,0 +1,12 @@
+.git
+.next
+node_modules
+__pycache__
+*.pyc
+.env
+tsconfig.tsbuildinfo
+package-lock.json
+package.json
+app
+public
+static

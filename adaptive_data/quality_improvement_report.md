@@ -5,6 +5,10 @@ The earlier dataset version was useful for a demo but weak for dataset scoring b
 
 ## Gold Release Improvements
 - Rebuilt the dataset as a flat model-ready CSV/JSONL release.
+- Added an Adaption-optimized upload file: `adaption_upload_gold.csv`.
+- Converted complex nested JSON fields into clean scalar columns.
+- Added instruction/input/output columns for direct agent training and evaluation.
+- Ensured zero blank cells in the Adaption upload file.
 - Increased coverage to 2,120 records.
 - Expanded to 22 languages and 16 legal/civic justice intents.
 - Added train/validation/test split.
@@ -21,6 +25,9 @@ The earlier dataset version was useful for a demo but weak for dataset scoring b
 
 ## Current Quality Signals
 - Total records: 2,120
+- Adaption upload rows: 2,120
+- Adaption upload columns: 31
+- Blank cells in Adaption upload: 0
 - Duplicate records: 0
 - Missing feedback: 0
 - Missing entities: 0

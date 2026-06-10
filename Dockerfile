@@ -15,7 +15,6 @@ RUN pip install --no-cache-dir -r /app/requirements.txt
 COPY main.py /app/main.py
 COPY fonts /app/fonts
 COPY dataset /app/dataset
-COPY outputs /app/outputs
 
 RUN mkdir -p /app/outputs /app/dataset
 

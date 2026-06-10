@@ -1,3 +1,3 @@
 version,records,average_accuracy,description
-1,1119,0.699,before feedback correction
-2,1119,0.941,after feedback correction
+1,1204,0.7,before feedback correction
+2,1204,0.942,after feedback correction

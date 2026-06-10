@@ -197,7 +197,46 @@ REPLY_TEMPLATES = {
     "surety_bond": "To generate the surety bond, please send a clear photo of a property document (Aadhaar card, land record, or electricity bill of the surety person).",
     "case_status": "Please send the FIR number and police station name to check case status.",
     "legal_rights": "Under Indian law, every accused person has the right to: 1) Know the charges against them, 2) Consult a lawyer before questioning, 3) A bail hearing within 24 hours of arrest, 4) Free legal aid if they cannot afford a lawyer (Legal Services Authority).",
+    "labour_dispute": "This looks like a labour or salary dispute. Keep salary slips, appointment letter, bank statements, attendance records, and WhatsApp/email promises. You can file a complaint with the Labour Commissioner or District Legal Services Authority for free legal help.",
+    "tenant_housing": "This looks like a tenant or housing issue. Do not leave only on verbal pressure. Save rent receipts, agreement, notices, and messages. Ask for written notice and contact local legal aid or the rent authority/civil court process in your district.",
+    "cyber_fraud": "This looks like a cyber fraud complaint. Immediately call 1930, file a report at cybercrime.gov.in, save transaction IDs, screenshots, bank messages, UPI IDs, phone numbers, and request your bank to freeze or dispute the transaction.",
+    "consumer_complaint": "This looks like a consumer complaint. Keep invoice, warranty card, photos/videos of the defect, service-center replies, and payment proof. You can first send a written complaint to the seller/company, then file on the consumer helpline or consumer commission.",
+    "domestic_violence": "This looks like a domestic violence safety issue. If there is immediate danger, contact emergency services or local police. Save medical records, photos, messages, and witness details. You can seek protection, residence, maintenance, and free legal aid through DLSA or a protection officer.",
+    "rti_request": "This looks like an RTI or public-records request. Identify the public authority, ask for specific records, dates, and file numbers, and keep the request narrow. If there is no reply within the legal timeline, you can file a first appeal.",
+    "fir_copy": "This looks like a request for an FIR copy. Ask the police station for the FIR number and copy. If refused, note the officer name/date, approach senior police officers, use the state police portal where available, or seek help from legal aid.",
+    "zero_fir": "This looks like a police refusal or Zero FIR issue. If the incident happened outside the police station area, police can still register a Zero FIR and transfer it. Keep proof of refusal and escalate to senior police officers or a Magistrate/legal aid.",
+    "accident_compensation": "This looks like an accident compensation matter. Preserve FIR, MLC/medical papers, insurance details, vehicle number, photos, witness names, and hospital bills. A Motor Accident Claims Tribunal claim may be possible.",
+    "legal_notice": "This looks like a legal notice issue. Do not ignore it. Save the notice envelope, date of receipt, loan or contract papers, payment proof, and any earlier communication. A short written reply through an advocate or legal aid may be needed.",
+    "nri_property": "This looks like an NRI or property-document issue. Collect property papers, identity proof, relationship proof, and draft a specific Power of Attorney. Get local lawyer verification before signing or notarising/consular attestation.",
+    "document_translation": "This looks like a court-document translation need. Upload or share the notice text clearly. Keep the original, translated copy, case number, court name, and deadline. For filing, use a certified translation if the court requires it.",
+    "child_rights": "This looks like a child-rights or minor-related police issue. A child should be handled through child-friendly procedures. Note the police station, officer name, time, and guardian details, and contact child welfare/legal aid immediately.",
+    "elder_property": "This looks like an elderly person property or financial abuse issue. Preserve property papers, bank records, messages, witness details, and medical/age proof. Legal aid can help with police complaint, maintenance, or civil protection remedies.",
+    "disability_benefits": "This looks like a disability benefit or pension issue. Keep disability certificate, pension ID, bank passbook, rejection/stoppage notice, and prior applications. You can file an RTI, grievance, or appeal with legal aid support.",
+    "caste_discrimination": "This looks like a caste discrimination complaint. Preserve witness names, messages, videos, location/date details, and any threats. Contact police/legal aid urgently; specific protections may apply depending on facts.",
+    "migrant_worker": "This looks like a migrant-worker legal issue. Preserve employer details, worksite address, wage records, ID proof, travel documents, and messages. Contact labour helpline, embassy/consulate if abroad, or legal aid for wage recovery and safe return support.",
+    "refugee_detention": "This looks like a detention or refugee-family issue. Record the detention notice details, authority name, date, place, identity documents, and family contacts. Seek urgent help from legal aid or a qualified rights organisation.",
     "default": "I received your message. Please send details: accused name, FIR number, police station, and section charged.",
+}
+
+CIVIC_TOPIC_KEYWORDS = {
+    "domestic_violence": ["domestic violence", "protection order", "violence", "maar", "pitai", "wife beating", "घरेलू", "हिंसा"],
+    "cyber_fraud": ["cyber", "upi", "fraud", "scam", "online fraud", "1930", "cybercrime", "otp", "bank fraud"],
+    "labour_dispute": ["salary", "wage", "employer", "terminated", "labour", "labor", "worker", "payment not", "कामगार", "वेतन"],
+    "tenant_housing": ["landlord", "tenant", "rent", "deposit", "evict", "vacate", "house owner", "मकान मालिक"],
+    "consumer_complaint": ["consumer", "warranty", "defective", "refund", "product", "seller", "bill", "invoice"],
+    "rti_request": ["rti", "public records", "information request", "सूचना का अधिकार"],
+    "zero_fir": ["zero fir", "refused to register", "police refused", "complaint refused", "FIR nahi likh"],
+    "fir_copy": ["fir copy", "copy of fir", "certified copy", "FIR की copy", "FIR copy"],
+    "accident_compensation": ["accident", "compensation", "insurance claim", "vehicle theft", "motor accident", "injured"],
+    "legal_notice": ["legal notice", "loan default", "notice mila", "demand notice"],
+    "nri_property": ["nri", "power of attorney", "passport withheld", "visa agent", "property case in india", "abroad"],
+    "document_translation": ["translation", "translate", "court notice from", "hindi to english"],
+    "child_rights": ["minor child", "child", "juvenile", "called to police station"],
+    "elder_property": ["elderly", "senior citizen", "parent property", "property fraud"],
+    "disability_benefits": ["disability", "pension stopped", "disability pension", "benefit stopped"],
+    "caste_discrimination": ["caste", "discrimination", "sc st", "atrocity"],
+    "migrant_worker": ["migrant worker", "passport withheld", "employer abroad", "construction site", "worksite"],
+    "refugee_detention": ["refugee", "detention notice", "detained family", "asylum"],
 }
 
 
@@ -559,6 +598,19 @@ def template_bail_grounds(eligibility_data: dict, case_facts: str) -> list[str]:
     ]
 
 
+def classify_civic_topic(message: str, base_intent: str) -> str:
+    text = (message or "").lower()
+    protected_intents = {"bail_enquiry", "surety_bond", "case_status"}
+    if base_intent in protected_intents:
+        return base_intent
+
+    for topic, keywords in CIVIC_TOPIC_KEYWORDS.items():
+        if any(keyword.lower() in text for keyword in keywords):
+            return topic
+
+    return base_intent
+
+
 def classify_with_groq(message: str, language: str) -> dict:
     service = LLMService(get_config())
     return service.classify_message(message, language)
@@ -702,6 +754,28 @@ def output_doc_type_for_intent(intent: str) -> str:
         return "case_status"
     if intent == "legal_rights":
         return "legal_rights"
+    civic_doc_types = {
+        "labour_dispute": "labour_complaint_checklist",
+        "tenant_housing": "tenant_rights_checklist",
+        "cyber_fraud": "cyber_fraud_complaint_checklist",
+        "consumer_complaint": "consumer_complaint_checklist",
+        "domestic_violence": "domestic_violence_safety_checklist",
+        "rti_request": "rti_request_checklist",
+        "fir_copy": "fir_copy_request",
+        "zero_fir": "zero_fir_guidance",
+        "accident_compensation": "accident_compensation_checklist",
+        "legal_notice": "legal_notice_response_checklist",
+        "nri_property": "nri_property_document_checklist",
+        "document_translation": "court_document_translation_request",
+        "child_rights": "child_rights_guidance",
+        "elder_property": "elder_property_protection_checklist",
+        "disability_benefits": "disability_benefits_appeal_checklist",
+        "caste_discrimination": "caste_discrimination_complaint_checklist",
+        "migrant_worker": "migrant_worker_legal_aid_checklist",
+        "refugee_detention": "detention_notice_legal_aid_checklist",
+    }
+    if intent in civic_doc_types:
+        return civic_doc_types[intent]
     return "message_reply"
 
 
@@ -968,7 +1042,9 @@ async def webhook(
 
     language = detect_message_language(body)
     classification = llm_service.classify_message(body, language)
-    intent = classification["intent"]
+    base_intent = classification["intent"]
+    intent = classify_civic_topic(body, base_intent)
+    classification["intent"] = intent
     english_reply = build_english_reply(intent, classification)
     reply = translate_with_indictrans2(english_reply, language)
     pdf_media_url = None

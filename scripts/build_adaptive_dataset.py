@@ -51,6 +51,145 @@ DOC_TYPES = {
     "document_upload": "evidence_checklist",
     "surety_bond": "surety_bond",
     "free_legal_aid": "legal_aid_application",
+    "labour_dispute": "labour_complaint_checklist",
+    "tenant_housing": "tenant_rights_checklist",
+    "cyber_fraud": "cyber_fraud_complaint_checklist",
+    "consumer_complaint": "consumer_complaint_checklist",
+    "domestic_violence": "domestic_violence_safety_checklist",
+    "rti_request": "rti_request_checklist",
+    "zero_fir": "zero_fir_guidance",
+    "accident_compensation": "accident_compensation_checklist",
+    "legal_notice": "legal_notice_response_checklist",
+    "nri_property": "nri_property_document_checklist",
+    "document_translation": "court_document_translation_request",
+    "child_rights": "child_rights_guidance",
+    "elder_property": "elder_property_protection_checklist",
+    "disability_benefits": "disability_benefits_appeal_checklist",
+    "caste_discrimination": "caste_discrimination_complaint_checklist",
+    "migrant_worker": "migrant_worker_legal_aid_checklist",
+    "refugee_detention": "detention_notice_legal_aid_checklist",
+}
+
+GLOBAL_CIVIC_EXAMPLES = {
+    "labour_dispute": [
+        ("en", "I am a migrant worker and my salary has not been paid for 4 months, what legal help can I get"),
+        ("hi", "meri salary 3 mahine se nahi mili labour complaint kaise file karun"),
+        ("mr", "maza pagar 3 mahine pasun milala nahi labour complaint kasa karu"),
+        ("ta", "ennoda salary 2 months varala labour complaint eppadi podanum"),
+        ("te", "naa salary 3 months raledu labour office complaint ela cheyali"),
+    ],
+    "tenant_housing": [
+        ("en", "my landlord is forcing me to vacate without written notice what are my rights"),
+        ("hi", "makaan malik bina notice ghar khali karne ko bol raha hai kya karun"),
+        ("bn", "landlord notice chara bari chharte bolche amar rights ki"),
+        ("gu", "landlord notice vagar ghar khali karva kahe che rights shu che"),
+        ("pa", "landlord bina notice ghar khali karan nu keh reha hai ki rights ne"),
+    ],
+    "cyber_fraud": [
+        ("en", "online fraud happened and money went through UPI how can I complain"),
+        ("hi", "cyber fraud hua hai UPI se paisa gaya complaint kaise file karun"),
+        ("ta", "online fraud la money pochu police complaint eppadi"),
+        ("te", "cyber fraud lo UPI money poyindi FIR ela file cheyali"),
+        ("bn", "online fraud e taka chole geche police complaint kibhabe korbo"),
+    ],
+    "consumer_complaint": [
+        ("en", "defective product warranty was rejected need consumer complaint draft"),
+        ("hi", "consumer court complaint banana hai product warranty reject kar diya"),
+        ("mr", "consumer complaint sathi bill ani warranty card upload kele"),
+        ("ta", "consumer court ku complaint draft venum defective product"),
+        ("gu", "warranty reject thai consumer court complaint joiye"),
+    ],
+    "domestic_violence": [
+        ("en", "domestic violence protection order help needed urgently"),
+        ("hi", "meri behen ko domestic violence ho raha hai protection order kaise milega"),
+        ("bn", "domestic violence er jonno protection order chai"),
+        ("ta", "domestic violence protection order help venum"),
+        ("te", "domestic violence protection order kosam free legal aid kavali"),
+    ],
+    "rti_request": [
+        ("en", "need help filing RTI for police station records related to FIR"),
+        ("hi", "police records ke liye RTI application kaise file karun"),
+        ("mr", "police record sathi RTI application format pahije"),
+        ("ta", "police record ku RTI application eppadi podanum"),
+        ("te", "police records kosam RTI application ela file cheyali"),
+    ],
+    "zero_fir": [
+        ("en", "police refused to register complaint can I file zero FIR"),
+        ("hi", "police complaint nahi likh rahi zero FIR kaise karun"),
+        ("bn", "police complaint nite chay na zero FIR kibhabe korbo"),
+        ("gu", "police complaint leti nathi zero FIR kem karvi"),
+        ("pa", "police complaint register nahi kar rahi zero FIR kiven hovegi"),
+    ],
+    "accident_compensation": [
+        ("en", "worker injured at construction site how to claim compensation"),
+        ("hi", "accident compensation claim kaise file karte hain"),
+        ("mr", "construction site accident compensation kasa milel"),
+        ("ta", "worksite accident compensation eppadi claim panna"),
+        ("te", "construction accident compensation ela claim cheyali"),
+    ],
+    "legal_notice": [
+        ("en", "legal notice received for loan default what should I do"),
+        ("hi", "legal notice mila hai loan default ke liye kya karna chahiye"),
+        ("bn", "loan default er legal notice peyechi ki korbo"),
+        ("gu", "loan default mate legal notice aavi che shu karu"),
+        ("pa", "loan default da legal notice aya hai ki karna chahida"),
+    ],
+    "nri_property": [
+        ("en", "I am an NRI and need power of attorney format for property case in India"),
+        ("hi", "NRI property case ke liye power of attorney format chahiye"),
+        ("mr", "NRI property case sathi power of attorney format pahije"),
+        ("gu", "NRI property case mate power of attorney joiye"),
+        ("pa", "NRI property case layi power of attorney format chahida"),
+    ],
+    "document_translation": [
+        ("en", "need translation of court notice from Hindi to English for my family"),
+        ("hi", "court notice ka English translation chahiye family ke liye"),
+        ("bn", "court notice English translation chai"),
+        ("ta", "court notice English translation venum"),
+        ("te", "court notice English translation kavali"),
+    ],
+    "child_rights": [
+        ("en", "minor child was called to police station what rights apply"),
+        ("hi", "minor child ko police station bulaya hai kya rights hain"),
+        ("mr", "minor child la police station la bolavle rights kay aahet"),
+        ("ta", "minor child police station ku kooptaanga rights enna"),
+        ("te", "minor child ni police station ki pilicharu rights enti"),
+    ],
+    "elder_property": [
+        ("en", "elderly parent property fraud case need legal aid and document checklist"),
+        ("hi", "elderly parent ke property fraud case mein legal aid chahiye"),
+        ("bn", "elderly parent property fraud case e legal aid chai"),
+        ("gu", "elderly parent property fraud case mate legal aid joiye"),
+        ("pa", "elderly parent property fraud case layi legal aid chahida"),
+    ],
+    "disability_benefits": [
+        ("en", "disability pension stopped how to file RTI and appeal"),
+        ("hi", "disability pension band ho gaya RTI aur appeal kaise file karun"),
+        ("mr", "disability pension band zala appeal kasa karu"),
+        ("ta", "disability pension stop aachu appeal eppadi podanum"),
+        ("te", "disability pension stop ayyindi appeal ela cheyali"),
+    ],
+    "caste_discrimination": [
+        ("en", "need to file caste discrimination complaint what evidence is required"),
+        ("hi", "caste discrimination complaint file karna hai evidence kya chahiye"),
+        ("mr", "caste discrimination complaint sathi evidence kay pahije"),
+        ("ta", "caste discrimination complaint ku evidence enna venum"),
+        ("te", "caste discrimination complaint ki evidence enti"),
+    ],
+    "migrant_worker": [
+        ("en", "my passport is withheld by employer abroad what legal options do I have"),
+        ("hi", "employer abroad passport rakh liya legal help kaise milegi"),
+        ("bn", "employer abroad passport rekhe diyeche legal help chai"),
+        ("gu", "abroad employer passport rakhe che legal option shu che"),
+        ("pa", "abroad employer ne passport rakh lita legal help chahidi"),
+    ],
+    "refugee_detention": [
+        ("en", "refugee family needs help understanding detention notice"),
+        ("hi", "refugee family ko detention notice samajhna hai legal aid chahiye"),
+        ("bn", "refugee family detention notice bujhte legal aid chai"),
+        ("ta", "refugee family detention notice understand panna legal aid venum"),
+        ("te", "refugee family detention notice ardham chesukodaniki legal aid kavali"),
+    ],
 }
 
 PHRASES = {
@@ -404,6 +543,35 @@ def synthesize_records():
     return records
 
 
+def synthesize_global_civic_records():
+    records = []
+    base_time = datetime(2026, 6, 11, 8, 0)
+    sample_index = 1
+    for intent, examples in GLOBAL_CIVIC_EXAMPLES.items():
+        for language, text in examples:
+            records.append(
+                {
+                    "input_text": text,
+                    "input_language": language,
+                    "intent": intent,
+                    "entities": {
+                        "accused_name": None,
+                        "fir_number": "[REDACTED]" if "fir" in text.lower() else None,
+                        "police_station": None,
+                        "section_charged": None,
+                        "time_in_custody_months": None,
+                        "global_topic": True,
+                    },
+                    "output_doc_type": DOC_TYPES[intent],
+                    "session_id": str(uuid.uuid4()),
+                    "timestamp": (base_time + timedelta(minutes=sample_index)).isoformat(),
+                    "source": "global_civic_legal_expansion",
+                }
+            )
+            sample_index += 1
+    return records
+
+
 def add_adaptation_fields(records):
     enriched = []
     correction_counter = Counter()
@@ -615,7 +783,8 @@ def main():
 
     cleaned = clean_real_records(source_records)
     synthetic = synthesize_records()
-    dataset, feedback_counter, correction_counter = add_adaptation_fields(cleaned + synthetic)
+    civic = synthesize_global_civic_records()
+    dataset, feedback_counter, correction_counter = add_adaptation_fields(cleaned + synthetic + civic)
 
     language_counts = Counter(row["input_language"] for row in dataset)
     intent_counts = Counter(row["intent"] for row in dataset)

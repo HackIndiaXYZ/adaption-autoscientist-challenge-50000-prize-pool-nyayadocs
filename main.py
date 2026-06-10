@@ -621,8 +621,22 @@ def template_bail_grounds(eligibility_data: dict, case_facts: str) -> list[str]:
 
 def classify_civic_topic(message: str, base_intent: str) -> str:
     text = (message or "").lower()
-    protected_intents = {"bail_enquiry", "surety_bond", "case_status"}
+    protected_intents = {"bail_enquiry", "surety_bond"}
     if base_intent in protected_intents:
+        return base_intent
+
+    if base_intent == "case_status" and any(
+        phrase in text
+        for phrase in [
+            "case status",
+            "case date",
+            "hearing date",
+            "next hearing",
+            "court date",
+            "mukadma",
+            "मुकदमा",
+        ]
+    ):
         return base_intent
 
     for topic in CIVIC_TOPIC_PRIORITY:

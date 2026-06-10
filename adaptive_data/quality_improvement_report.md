@@ -7,6 +7,7 @@ The earlier dataset version was useful for a demo but weak for dataset scoring b
 - Rebuilt the dataset as a flat model-ready CSV/JSONL release.
 - Added an Adaption-optimized upload file: `adaption_upload_gold.csv`.
 - Added a premium prompt/completion upload file: `adaption_legal_qa_premium.csv`.
+- Added a smaller expert legal QA file: `adaption_expert_legal_qa.csv`.
 - Converted complex nested JSON fields into clean scalar columns.
 - Added instruction/input/output columns for direct agent training and evaluation.
 - Ensured zero blank cells in the Adaption upload file.
@@ -36,6 +37,11 @@ The earlier dataset version was useful for a demo but weak for dataset scoring b
 - Premium QA blank cells: 0
 - Premium QA average prompt length: 72.0 words
 - Premium QA average completion length: 182.1 words
+- Expert QA upload rows: 256
+- Expert QA blank cells: 0
+- Expert QA average prompt length: 84.4 words
+- Expert QA average completion length: 207.0 words
+- Expert QA focus: denser legal reasoning, citations/routes, follow-up questions, and reduced template noise
 - Duplicate records: 0
 - Missing feedback: 0
 - Missing entities: 0

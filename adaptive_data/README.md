@@ -18,10 +18,10 @@ Each row contains sample_id, input_text, input_language, intent, entities, outpu
 The dataset covers 11 Indian languages: Hindi, Marathi, Bengali, Tamil, Telugu, Kannada, Gujarati, Punjabi, Odia, Assamese, Konkani. Low-resource coverage is explicitly tracked for Odia, Assamese, and Konkani.
 
 ## Feedback Pipeline
-Feedback types include wrong_language, wrong_intent, partial_answer, missing_information, helpful_response, and excellent_response. This release contains 569 feedback events.
+Feedback types include wrong_language, wrong_intent, partial_answer, missing_information, helpful_response, and excellent_response. This release contains 1119 feedback events.
 
 ## Correction Pipeline
-Corrections are represented as structured field updates such as language, intent, and section_charged. This release contains 88 correction events.
+Corrections are represented as structured field updates such as language, intent, and section_charged. This release contains 176 correction events.
 
 ## Adaptation Examples
 Example: a Hinglish bail query may be misclassified as Indonesian by automatic language detection. User feedback corrects language from id to hi, stores the correction, and raises confidence from 0.38 to 0.92 in the adaptation history.

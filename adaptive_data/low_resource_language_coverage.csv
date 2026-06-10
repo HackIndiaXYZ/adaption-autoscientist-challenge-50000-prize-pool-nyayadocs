@@ -1,4 +1,4 @@
 language_code,language_name,records,intent_coverage,coverage_status
-or,Odia,50,10,complete
-as,Assamese,50,10,complete
-kok,Konkani,50,10,complete
+or,Odia,100,10,complete
+as,Assamese,100,10,complete
+kok,Konkani,100,10,complete

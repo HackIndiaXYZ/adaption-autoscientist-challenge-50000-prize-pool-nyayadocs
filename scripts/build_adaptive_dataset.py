@@ -366,17 +366,21 @@ def synthesize_records():
     sample_index = 1
     for lang_code in LANGUAGES:
         for intent in INTENTS:
-            for variant in range(5):
+            for variant in range(10):
                 section = sections[(sample_index + variant) % len(sections)]
                 fir = f"{1000 + sample_index}"
                 months = [1, 2, 3, 6, 8, 12, 18][(sample_index + variant) % 7]
                 station = stations[(sample_index + variant) % len(stations)]
                 amount = ["10000", "25000", "50000"][(sample_index + variant) % 3]
                 if lang_code in PHRASES:
-                    template = PHRASES[lang_code][intent][variant]
+                    template = PHRASES[lang_code][intent][variant % len(PHRASES[lang_code][intent])]
                     text = template.format(section=section, fir=fir, months=months, station=station, amount=amount)
+                    if variant >= len(PHRASES[lang_code][intent]):
+                        text = f"{text} please guide next court step"
                 else:
                     text = fallback_text(lang_code, intent, section, fir, months, station, amount)
+                    if variant >= 5:
+                        text = f"{text} urgently family needs help"
                 records.append(
                     {
                         "input_text": text,

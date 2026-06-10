@@ -50,7 +50,7 @@ nyayasetu-legal-dialogues-multilingual
 
 Adaption upload file:
 ```text
-adaptive_data/adaption_upload_gold.csv
+adaptive_data/adaption_legal_qa_premium.csv
 ```
 
 The dataset is designed for the Adaption Adaptive Data Track and demonstrates dynamic multilingual legal data ingestion, adaptation, evaluation-ready metadata, and export for AI agents and fine-tuning pipelines.
@@ -93,6 +93,7 @@ Current adaptive release:
 - 16 legal and civic justice intents
 - Low-resource coverage for Odia, Assamese, Konkani, Urdu, Nepali, Sindhi, Maithili, Santali, Bodo, Dogri, Kashmiri, and Manipuri
 - Flat model-ready schema with expected responses, evidence checklist, missing-information labels, correction fields, confidence_before/confidence_after, and PII redaction flags
-- Adaption-optimized upload file with clean instruction/input/output columns and zero blank cells: `adaptive_data/adaption_upload_gold.csv`
+- Best Adaption scoring file with long prompt/completion pairs and zero blank cells: `adaptive_data/adaption_legal_qa_premium.csv`
+- Backup Adaption structured file: `adaptive_data/adaption_upload_gold.csv`
 
 Credit: Built for the Adaption Labs Adaptive Data Track.

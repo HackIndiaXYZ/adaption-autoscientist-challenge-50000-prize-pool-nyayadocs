@@ -15,7 +15,7 @@ NyayaSetu is a multilingual legal-access assistant for underserved Indian citize
 Each row contains sample_id, train/validation/test split, source_type, input_text, input_language, language_name, region_hint, legal_domain, intent, output_doc_type, urgency, entity fields, evidence checklist, missing-information labels, expected response, safety disclaimer, feedback, correction fields, adaptation history, confidence_before, confidence_after, quality_score, PII redaction flag, session_id, and timestamp.
 
 ## Adaption Platform Usage
-This dataset is prepared for upload into Adaption Adaptive Data under the dataset name `nyayasetu-legal-dialogues-multilingual`. The recommended Adaption upload file is `adaption_upload_gold.csv` because it uses a clean instruction/input/output schema with no nested JSON and no blank cells. The full model-ready export files are `adaptive_dataset.csv` and `adaptive_dataset.jsonl`.
+This dataset is prepared for upload into Adaption Adaptive Data under the dataset name `nyayasetu-legal-dialogues-multilingual`. The recommended high-score Adaption upload file is `adaption_legal_qa_premium.csv` because it uses long legal-aid prompt/completion pairs, no nested JSON, and no blank cells. The backup structured upload file is `adaption_upload_gold.csv`. The full model-ready export files are `adaptive_dataset.csv` and `adaptive_dataset.jsonl`.
 
 The project demonstrates meaningful Adaptive Data usage through:
 - Real WhatsApp legal-aid interactions as seed data

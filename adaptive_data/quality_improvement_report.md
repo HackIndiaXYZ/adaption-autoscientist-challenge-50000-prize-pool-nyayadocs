@@ -6,9 +6,12 @@ The earlier dataset version was useful for a demo but weak for dataset scoring b
 ## Gold Release Improvements
 - Rebuilt the dataset as a flat model-ready CSV/JSONL release.
 - Added an Adaption-optimized upload file: `adaption_upload_gold.csv`.
+- Added a premium prompt/completion upload file: `adaption_legal_qa_premium.csv`.
 - Converted complex nested JSON fields into clean scalar columns.
 - Added instruction/input/output columns for direct agent training and evaluation.
 - Ensured zero blank cells in the Adaption upload file.
+- Increased the average prompt length from the platform-observed 14.5 words to about 72 words in the premium file.
+- Increased the average completion length from the platform-observed 81.3 words to about 182 words in the premium file.
 - Increased coverage to 2,120 records.
 - Expanded to 22 languages and 16 legal/civic justice intents.
 - Added train/validation/test split.
@@ -28,6 +31,11 @@ The earlier dataset version was useful for a demo but weak for dataset scoring b
 - Adaption upload rows: 2,120
 - Adaption upload columns: 31
 - Blank cells in Adaption upload: 0
+- Premium QA upload rows: 2,120
+- Premium QA upload columns: 14
+- Premium QA blank cells: 0
+- Premium QA average prompt length: 72.0 words
+- Premium QA average completion length: 182.1 words
 - Duplicate records: 0
 - Missing feedback: 0
 - Missing entities: 0

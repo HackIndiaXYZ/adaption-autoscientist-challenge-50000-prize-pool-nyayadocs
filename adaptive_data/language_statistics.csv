@@ -1,0 +1,13 @@
+language_code,language_name,records,percentage,low_resource
+as,Assamese,50,8.79,True
+bn,Bengali,50,8.79,False
+en,en,12,2.11,False
+gu,Gujarati,50,8.79,False
+hi,Hindi,57,10.02,False
+kn,Kannada,50,8.79,False
+kok,Konkani,50,8.79,True
+mr,Marathi,50,8.79,False
+or,Odia,50,8.79,True
+pa,Punjabi,50,8.79,False
+ta,Tamil,50,8.79,False
+te,Telugu,50,8.79,False

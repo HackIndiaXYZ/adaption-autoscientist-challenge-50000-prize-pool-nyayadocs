@@ -1,0 +1,570 @@
+sample_id,input_text,input_language,language_name,intent,output_doc_type,feedback_rating,feedback_type,correction_field,confidence_before,confidence_after,source,timestamp
+NS-AI-000001,Need bail for FIR [FIR] section [NUMBER] for 3 months accused [NAME],en,en,bail_enquiry,bail_application,4,helpful_response,,0.78,0.96,real_twilio_webhook,2026-06-10T04:47:13.913460
+NS-AI-000002,Need surety bond,en,en,surety_bond,surety_bond,4,helpful_response,,0.78,0.96,real_twilio_webhook,2026-06-10T04:48:43.710081
+NS-AI-000003,Need bail for FIR [FIR] section [NUMBER] for 3 months accused [NAME],en,en,bail_enquiry,bail_application,4,helpful_response,,0.78,0.96,real_twilio_webhook,2026-06-10T04:53:27.139285
+NS-AI-000004,Need bail for FIR [FIR] section [NUMBER] for 3 months accused [NAME],en,en,bail_enquiry,bail_application,5,excellent_response,,0.78,0.96,real_twilio_webhook,2026-06-10T04:59:13.616346
+NS-AI-000005,Need bail for FIR [FIR] section [NUMBER] for 3 months accused [NAME],en,en,bail_enquiry,bail_application,3,partial_answer,,0.68,0.9,real_twilio_webhook,2026-06-10T05:21:33.463301
+NS-AI-000006,Need bail for FIR [FIR] section [NUMBER] for 3 months accused [NAME],en,en,bail_enquiry,bail_application,4,helpful_response,,0.78,0.96,real_twilio_webhook,2026-06-10T05:21:33.463536
+NS-AI-000007,Need bail for FIR [FIR] section [NUMBER] for 3 months accused [NAME],en,en,bail_enquiry,bail_application,4,helpful_response,,0.78,0.96,real_twilio_webhook,2026-06-10T05:47:29.855413
+NS-AI-000008,Need bail for FIR [FIR] section [NUMBER] for 3 months accused [NAME],en,en,bail_enquiry,bail_application,5,excellent_response,,0.78,0.96,real_twilio_webhook,2026-06-10T06:34:26.191878
+NS-AI-000009,मेरे भाई को जमानत चाहिए FIR [FIR] section [NUMBER],hi,Hindi,bail_enquiry,bail_application,2,wrong_language,language,0.46,0.95,real_twilio_webhook,2026-06-10T06:48:57.014842
+NS-AI-000010,मेरे भाई को जमानत चाहिए FIR [FIR] section [NUMBER],hi,Hindi,bail_enquiry,bail_application,3,partial_answer,,0.68,0.9,real_twilio_webhook,2026-06-10T06:48:57.015164
+NS-AI-000011,"मेरे भाई को FIR [FIR] में धारा [NUMBER] में 3 महीने से जेल में रखा है, जमानत चाहिए",hi,Hindi,bail_enquiry,bail_application,4,helpful_response,,0.78,0.96,real_twilio_webhook,2026-06-10T06:52:24.868460
+NS-AI-000012,"मेरे भाई को FIR [FIR] में धारा [NUMBER] में 3 महीने से जेल में रखा है, जमानत चाहिए",hi,Hindi,bail_enquiry,bail_application,5,excellent_response,,0.78,0.96,real_twilio_webhook,2026-06-10T06:52:24.868737
+NS-AI-000013,live demo section [NUMBER] FIR [FIR] bail needed,en,en,bail_enquiry,bail_application,4,helpful_response,,0.78,0.96,real_twilio_webhook,2026-06-10T07:12:50.781770
+NS-AI-000014,live demo section [NUMBER] FIR [FIR] bail needed,en,en,bail_enquiry,bail_application,4,helpful_response,,0.78,0.96,real_twilio_webhook,2026-06-10T07:12:50.782297
+NS-AI-000015,case date kab hai FIR [FIR],hi,Hindi,case_status,case_status_request,3,partial_answer,,0.68,0.9,real_twilio_webhook,2026-06-10T07:18:19.915855
+NS-AI-000016,case date kab hai FIR [FIR],hi,Hindi,case_status,case_status_request,5,excellent_response,,0.78,0.96,real_twilio_webhook,2026-06-10T07:18:19.916412
+NS-AI-000017,amar bhai FIR [FIR] section [NUMBER] bail chai,en,en,bail_enquiry,bail_application,4,helpful_response,,0.78,0.96,real_twilio_webhook,2026-06-10T07:23:15.095080
+NS-AI-000018,amar bhai FIR [FIR] section [NUMBER] bail chai,en,en,bail_enquiry,bail_application,2,wrong_language,language,0.46,0.95,real_twilio_webhook,2026-06-10T07:23:15.095289
+NS-AI-000019,mera bhai jail mein hai section [NUMBER],hi,Hindi,case_status,case_status_request,4,helpful_response,,0.78,0.96,real_twilio_webhook,2026-06-10T08:04:30.410154
+NS-AI-000020,mera bhai section 307 me jail mein hai FIR 1001 2 mahine ho gaye zamaanat milegi kya,hi,Hindi,bail_enquiry,bail_application,3,partial_answer,,0.68,0.9,adaptive_multilingual_expansion,2026-06-10T07:31:00
+NS-AI-000021,papa ko thana T Nagar ne section 379 me arrest kiya hai bail kaise milegi,hi,Hindi,bail_enquiry,bail_application,2,wrong_language,language,0.46,0.95,adaptive_multilingual_expansion,2026-06-10T07:32:00
+NS-AI-000022,FIR 1003 section 498A mein 12 mahine custody ho gayi kya BNSS mein bail possible hai,hi,Hindi,bail_enquiry,bail_application,4,helpful_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T07:33:00
+NS-AI-000023,mere pati ko jamanat chahiye section 406 court mein kya bolna hoga,hi,Hindi,bail_enquiry,bail_application,4,helpful_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T07:34:00
+NS-AI-000024,bhai ko jail se bahar lane ke liye zamaanat application banani hai FIR 1005,hi,Hindi,bail_enquiry,bail_application,5,excellent_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T07:35:00
+NS-AI-000025,FIR 1006 ka case status batao thana Cuttack Town mein file hai,hi,Hindi,case_status,case_status_request,3,partial_answer,,0.68,0.9,adaptive_multilingual_expansion,2026-06-10T07:36:00
+NS-AI-000026,mukadma ki next update kya hai section 302 ka case chal raha hai,hi,Hindi,case_status,case_status_request,4,helpful_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T07:37:00
+NS-AI-000027,police station T Nagar FIR 1008 mein charge sheet hui ya nahi,hi,Hindi,case_status,case_status_request,2,wrong_language,language,0.46,0.95,adaptive_multilingual_expansion,2026-06-10T07:38:00
+NS-AI-000028,mere bhai ke case ka status kaise check karun FIR 1009,hi,Hindi,case_status,case_status_request,2,wrong_intent,intent,0.46,0.95,adaptive_multilingual_expansion,2026-06-10T07:39:00
+NS-AI-000029,case number nahi pata sirf FIR 1010 hai status chahiye,hi,Hindi,case_status,case_status_request,4,helpful_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T07:40:00
+NS-AI-000030,arrest ke baad mere adhikar kya hain lawyer mil sakta hai kya,hi,Hindi,legal_rights,rights_explainer,3,partial_answer,,0.68,0.9,adaptive_multilingual_expansion,2026-06-10T07:41:00
+NS-AI-000031,police ne ghar se utha liya accused ke rights batao,hi,Hindi,legal_rights,rights_explainer,4,helpful_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T07:42:00
+NS-AI-000032,section 406 me arrest hua hai kya free lawyer ka adhikar hai,hi,Hindi,legal_rights,rights_explainer,5,excellent_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T07:43:00
+NS-AI-000033,custody mein family se milne ka right hota hai kya,hi,Hindi,legal_rights,rights_explainer,4,helpful_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T07:44:00
+NS-AI-000034,mahila accused ke kya legal rights hote hain arrest ke baad,hi,Hindi,legal_rights,rights_explainer,4,helpful_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T07:45:00
+NS-AI-000035,FIR 1016 ki agli hearing date kaise pata chalegi,hi,Hindi,court_date,court_date_request,2,missing_information,section_charged,0.46,0.95,adaptive_multilingual_expansion,2026-06-10T07:46:00
+NS-AI-000036,court date miss ho gayi ab kya karna chahiye,hi,Hindi,court_date,court_date_request,2,wrong_language,language,0.46,0.95,adaptive_multilingual_expansion,2026-06-10T07:47:00
+NS-AI-000037,section 420 case ki next tareekh chahiye,hi,Hindi,court_date,court_date_request,4,helpful_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T07:48:00
+NS-AI-000038,judge sahab ke court mein hearing kab hai,hi,Hindi,court_date,court_date_request,4,helpful_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T07:49:00
+NS-AI-000039,mere pati ki peshi ki date bata do,hi,Hindi,court_date,court_date_request,4,helpful_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T07:50:00
+NS-AI-000040,gareeb parivar hai free advocate kaise milega,hi,Hindi,lawyer_request,legal_aid_referral,3,partial_answer,,0.68,0.9,adaptive_multilingual_expansion,2026-06-10T07:51:00
+NS-AI-000041,legal aid lawyer chahiye district court ke liye,hi,Hindi,lawyer_request,legal_aid_referral,4,helpful_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T07:52:00
+NS-AI-000042,section 307 ke case ke liye vakil nahi afford kar sakte,hi,Hindi,lawyer_request,legal_aid_referral,2,wrong_language,language,0.46,0.95,adaptive_multilingual_expansion,2026-06-10T07:53:00
+NS-AI-000043,DLSA se advocate mil sakta hai kya,hi,Hindi,lawyer_request,legal_aid_referral,4,helpful_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T07:54:00
+NS-AI-000044,mahila ke case mein free lawyer ke liye form chahiye,hi,Hindi,lawyer_request,legal_aid_referral,5,excellent_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T07:55:00
+NS-AI-000045,FIR 1026 ki copy kaise milegi,hi,Hindi,fir_copy,fir_copy_application,2,wrong_language,language,0.46,0.95,adaptive_multilingual_expansion,2026-06-10T07:56:00
+NS-AI-000046,police FIR copy nahi de rahi kya karen,hi,Hindi,fir_copy,fir_copy_application,4,helpful_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T07:57:00
+NS-AI-000047,online FIR copy download karni hai thana Park Street,hi,Hindi,fir_copy,fir_copy_application,4,helpful_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T07:58:00
+NS-AI-000048,accused family ko FIR copy mil sakti hai kya,hi,Hindi,fir_copy,fir_copy_application,5,excellent_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T07:59:00
+NS-AI-000049,FIR number 1030 hai certified copy chahiye,hi,Hindi,fir_copy,fir_copy_application,2,wrong_intent,intent,0.46,0.95,adaptive_multilingual_expansion,2026-06-10T08:00:00
+NS-AI-000050,bail reject ho gayi appeal kaise karen,hi,Hindi,appeal_process,appeal_guidance,3,partial_answer,,0.68,0.9,adaptive_multilingual_expansion,2026-06-10T08:01:00
+NS-AI-000051,sessions court se order reject hai high court jana hai,hi,Hindi,appeal_process,appeal_guidance,4,helpful_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T08:02:00
+NS-AI-000052,conviction ke baad appeal time limit kya hai,hi,Hindi,appeal_process,appeal_guidance,5,excellent_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T08:03:00
+NS-AI-000053,lower court order ke khilaf revision kaise file hota hai,hi,Hindi,appeal_process,appeal_guidance,4,helpful_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T08:04:00
+NS-AI-000054,section 406 mein bail rejection ke baad kya remedy hai,hi,Hindi,appeal_process,appeal_guidance,2,wrong_language,language,0.46,0.95,adaptive_multilingual_expansion,2026-06-10T08:05:00
+NS-AI-000055,main FIR aur medical report bhej raha hoon documents check karo,hi,Hindi,document_upload,evidence_checklist,3,partial_answer,,0.68,0.9,adaptive_multilingual_expansion,2026-06-10T08:06:00
+NS-AI-000056,photo evidence upload karna hai kya clear hai,hi,Hindi,document_upload,evidence_checklist,2,missing_information,section_charged,0.46,0.95,adaptive_multilingual_expansion,2026-06-10T08:07:00
+NS-AI-000057,salary slip aur whatsapp screenshot complaint mein lagana hai,hi,Hindi,document_upload,evidence_checklist,4,helpful_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T08:08:00
+NS-AI-000058,court ke liye kaunse documents missing hain,hi,Hindi,document_upload,evidence_checklist,4,helpful_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T08:09:00
+NS-AI-000059,identity proof aur arrest memo upload kar diya,hi,Hindi,document_upload,evidence_checklist,4,helpful_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T08:10:00
+NS-AI-000060,zamaanat ke liye surety bond mein kaunse documents chahiye,hi,Hindi,surety_bond,surety_bond,3,partial_answer,,0.68,0.9,adaptive_multilingual_expansion,2026-06-10T08:11:00
+NS-AI-000061,property paper se muchalka ban sakta hai kya,hi,Hindi,surety_bond,surety_bond,4,helpful_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T08:12:00
+NS-AI-000062,surety person ke address proof aur income proof chahiye kya,hi,Hindi,surety_bond,surety_bond,4,helpful_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T08:13:00
+NS-AI-000063,bond amount 50000 ke liye guarantor ka form chahiye,hi,Hindi,surety_bond,surety_bond,2,wrong_language,language,0.46,0.95,adaptive_multilingual_expansion,2026-06-10T08:14:00
+NS-AI-000064,zamanatnama generate karna hai property document hai,hi,Hindi,surety_bond,surety_bond,5,excellent_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T08:15:00
+NS-AI-000065,free legal aid ke liye apply kaise karun,hi,Hindi,free_legal_aid,legal_aid_application,3,partial_answer,,0.68,0.9,adaptive_multilingual_expansion,2026-06-10T08:16:00
+NS-AI-000066,DLSA mein application deni hai format bhejo,hi,Hindi,free_legal_aid,legal_aid_application,4,helpful_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T08:17:00
+NS-AI-000067,gareeb parivar ko court mein muft kanooni madad kaise milegi,hi,Hindi,free_legal_aid,legal_aid_application,4,helpful_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T08:18:00
+NS-AI-000068,legal services authority ka contact chahiye,hi,Hindi,free_legal_aid,legal_aid_application,5,excellent_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T08:19:00
+NS-AI-000069,SC ST family ke liye free lawyer milta hai kya,hi,Hindi,free_legal_aid,legal_aid_application,4,helpful_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T08:20:00
+NS-AI-000070,maza dada section 379 madhye jail madhe aahe FIR 1051 3 mahine zale jamin milel ka,mr,Marathi,bail_enquiry,bail_application,3,partial_answer,,0.68,0.9,adaptive_multilingual_expansion,2026-06-10T08:21:00
+NS-AI-000071,navra police custody madhe aahe jamin arj tayar kara,mr,Marathi,bail_enquiry,bail_application,4,helpful_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T08:22:00
+NS-AI-000072,thana Cuttack Town FIR 1053 section 406 madhe bail pahije,mr,Marathi,bail_enquiry,bail_application,2,wrong_language,language,0.46,0.95,adaptive_multilingual_expansion,2026-06-10T08:23:00
+NS-AI-000073,majhya bhavala jamini sathi kay karave lagel,mr,Marathi,bail_enquiry,bail_application,4,helpful_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T08:24:00
+NS-AI-000074,section 379 madhe custody 6 mahine zali bail chance aahe ka,mr,Marathi,bail_enquiry,bail_application,4,helpful_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T08:25:00
+NS-AI-000075,FIR 1056 cha case status kasa baghu,mr,Marathi,case_status,case_status_request,3,partial_answer,,0.68,0.9,adaptive_multilingual_expansion,2026-06-10T08:26:00
+NS-AI-000076,pudhil sunavni date kuthun milel,mr,Marathi,case_status,case_status_request,5,excellent_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T08:27:00
+NS-AI-000077,police station Charminar case update dya,mr,Marathi,case_status,case_status_request,4,helpful_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T08:28:00
+NS-AI-000078,chargesheet file zali ka FIR 1059,mr,Marathi,case_status,case_status_request,4,helpful_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T08:29:00
+NS-AI-000079,mukadma status pahije section 302,mr,Marathi,case_status,case_status_request,4,helpful_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T08:30:00
+NS-AI-000080,arrest nantar accused che rights kay aahet,mr,Marathi,legal_rights,rights_explainer,3,partial_answer,,0.68,0.9,adaptive_multilingual_expansion,2026-06-10T08:31:00
+NS-AI-000081,free lawyer milu shakto ka,mr,Marathi,legal_rights,rights_explainer,2,wrong_language,language,0.46,0.95,adaptive_multilingual_expansion,2026-06-10T08:32:00
+NS-AI-000082,police custody madhe parivar bhetu shakto ka,mr,Marathi,legal_rights,rights_explainer,4,helpful_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T08:33:00
+NS-AI-000083,section 379 madhe adhikar sanga,mr,Marathi,legal_rights,rights_explainer,4,helpful_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T08:34:00
+NS-AI-000084,mahila accused sathi kanooni adhikar kay,mr,Marathi,legal_rights,rights_explainer,5,excellent_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T08:35:00
+NS-AI-000085,agli tareekh kashi kalel FIR 1066,mr,Marathi,court_date,court_date_request,3,partial_answer,,0.68,0.9,adaptive_multilingual_expansion,2026-06-10T08:36:00
+NS-AI-000086,court hearing date miss zali kay karu,mr,Marathi,court_date,court_date_request,4,helpful_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T08:37:00
+NS-AI-000087,section 304B case chi date pahije,mr,Marathi,court_date,court_date_request,4,helpful_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T08:38:00
+NS-AI-000088,peshichi tarikh sangal ka,mr,Marathi,court_date,court_date_request,5,excellent_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T08:39:00
+NS-AI-000089,district court date check karaychi aahe,mr,Marathi,court_date,court_date_request,4,helpful_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T08:40:00
+NS-AI-000090,muft vakil pahije DLSA madhun,mr,Marathi,lawyer_request,legal_aid_referral,2,wrong_language,language,0.46,0.95,adaptive_multilingual_expansion,2026-06-10T08:41:00
+NS-AI-000091,gareeb aahot advocate afford hot nahi,mr,Marathi,lawyer_request,legal_aid_referral,4,helpful_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T08:42:00
+NS-AI-000092,legal aid lawyer kasa milel,mr,Marathi,lawyer_request,legal_aid_referral,5,excellent_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T08:43:00
+NS-AI-000093,section 498A sathi vakil arrange kara,mr,Marathi,lawyer_request,legal_aid_referral,4,helpful_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T08:44:00
+NS-AI-000094,court madhe madat karanara advocate pahije,mr,Marathi,lawyer_request,legal_aid_referral,4,helpful_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T08:45:00
+NS-AI-000095,FIR 1076 copy kashi milnar,mr,Marathi,fir_copy,fir_copy_application,3,partial_answer,,0.68,0.9,adaptive_multilingual_expansion,2026-06-10T08:46:00
+NS-AI-000096,police FIR copy det nahi,mr,Marathi,fir_copy,fir_copy_application,5,excellent_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T08:47:00
+NS-AI-000097,online FIR copy download karaychi aahe,mr,Marathi,fir_copy,fir_copy_application,4,helpful_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T08:48:00
+NS-AI-000098,certified FIR copy pahije,mr,Marathi,fir_copy,fir_copy_application,4,helpful_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T08:49:00
+NS-AI-000099,thana Hazratganj madhun FIR copy milte ka,mr,Marathi,fir_copy,fir_copy_application,2,wrong_language,language,0.46,0.95,adaptive_multilingual_expansion,2026-06-10T08:50:00
+NS-AI-000100,bail reject zali appeal kashi karaychi,mr,Marathi,appeal_process,appeal_guidance,3,partial_answer,,0.68,0.9,adaptive_multilingual_expansion,2026-06-10T08:51:00
+NS-AI-000101,sessions order viruddh high court madhe kay karave,mr,Marathi,appeal_process,appeal_guidance,4,helpful_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T08:52:00
+NS-AI-000102,conviction nantar appeal limit kay aahe,mr,Marathi,appeal_process,appeal_guidance,4,helpful_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T08:53:00
+NS-AI-000103,revision application kasa file karu,mr,Marathi,appeal_process,appeal_guidance,4,helpful_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T08:54:00
+NS-AI-000104,section 307 madhe bail rejection remedy sanga,mr,Marathi,appeal_process,appeal_guidance,5,excellent_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T08:55:00
+NS-AI-000105,FIR ani arrest memo upload kele check kara,mr,Marathi,document_upload,evidence_checklist,3,partial_answer,,0.68,0.9,adaptive_multilingual_expansion,2026-06-10T08:56:00
+NS-AI-000106,property paper photo clear aahe ka,mr,Marathi,document_upload,evidence_checklist,4,helpful_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T08:57:00
+NS-AI-000107,evidence timeline banva,mr,Marathi,document_upload,evidence_checklist,4,helpful_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T08:58:00
+NS-AI-000108,court documents missing kay aahe,mr,Marathi,document_upload,evidence_checklist,2,wrong_language,language,0.46,0.95,adaptive_multilingual_expansion,2026-06-10T08:59:00
+NS-AI-000109,whatsapp screenshot proof mhanun chalel ka,mr,Marathi,document_upload,evidence_checklist,4,helpful_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T09:00:00
+NS-AI-000110,jamin sathi surety bond kasa banvaycha,mr,Marathi,surety_bond,surety_bond,3,partial_answer,,0.68,0.9,adaptive_multilingual_expansion,2026-06-10T09:01:00
+NS-AI-000111,property paper var muchalka chale ka,mr,Marathi,surety_bond,surety_bond,4,helpful_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T09:02:00
+NS-AI-000112,surety person che documents kay lagtil,mr,Marathi,surety_bond,surety_bond,5,excellent_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T09:03:00
+NS-AI-000113,bond amount 25000 sathi guarantor form pahije,mr,Marathi,surety_bond,surety_bond,4,helpful_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T09:04:00
+NS-AI-000114,zamanatnama tayar kara,mr,Marathi,surety_bond,surety_bond,4,helpful_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T09:05:00
+NS-AI-000115,muft kanooni madat kashi milel,mr,Marathi,free_legal_aid,legal_aid_application,3,partial_answer,,0.68,0.9,adaptive_multilingual_expansion,2026-06-10T09:06:00
+NS-AI-000116,DLSA application format dya,mr,Marathi,free_legal_aid,legal_aid_application,5,excellent_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T09:07:00
+NS-AI-000117,gareeb parivar sathi free lawyer pahije,mr,Marathi,free_legal_aid,legal_aid_application,2,wrong_language,language,0.46,0.95,adaptive_multilingual_expansion,2026-06-10T09:08:00
+NS-AI-000118,legal services authority contact dya,mr,Marathi,free_legal_aid,legal_aid_application,4,helpful_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T09:09:00
+NS-AI-000119,mahila case madhe free aid milel ka,mr,Marathi,free_legal_aid,legal_aid_application,4,helpful_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T09:10:00
+NS-AI-000120,amar bhai section 498A e jail e ache FIR 1101 6 mash hoyeche bail hobe ki,bn,Bengali,bail_enquiry,bail_application,3,partial_answer,,0.68,0.9,adaptive_multilingual_expansion,2026-06-10T09:11:00
+NS-AI-000121,police station Navrangpura theke arrest hoyeche jamin chai,bn,Bengali,bail_enquiry,bail_application,4,helpful_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T09:12:00
+NS-AI-000122,section 307 case e bail application banate hobe,bn,Bengali,bail_enquiry,bail_application,4,helpful_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T09:13:00
+NS-AI-000123,amar swami custody te ache zamaanat ki pabe,bn,Bengali,bail_enquiry,bail_application,4,helpful_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T09:14:00
+NS-AI-000124,FIR 1105 er jonno bail advice chai,bn,Bengali,bail_enquiry,bail_application,5,excellent_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T09:15:00
+NS-AI-000125,FIR 1106 er case status dekhte chai,bn,Bengali,case_status,case_status_request,3,partial_answer,,0.68,0.9,adaptive_multilingual_expansion,2026-06-10T09:16:00
+NS-AI-000126,next hearing date kobe,bn,Bengali,case_status,case_status_request,2,wrong_language,language,0.46,0.95,adaptive_multilingual_expansion,2026-06-10T09:17:00
+NS-AI-000127,thana Navrangpura case update ki,bn,Bengali,case_status,case_status_request,4,helpful_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T09:18:00
+NS-AI-000128,chargesheet file hoyeche ki,bn,Bengali,case_status,case_status_request,5,excellent_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T09:19:00
+NS-AI-000129,mukadma status janate parben,bn,Bengali,case_status,case_status_request,4,helpful_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T09:20:00
+NS-AI-000130,arrest er por accused er rights ki,bn,Bengali,legal_rights,rights_explainer,3,partial_answer,,0.68,0.9,adaptive_multilingual_expansion,2026-06-10T09:21:00
+NS-AI-000131,free lawyer paowa jabe ki,bn,Bengali,legal_rights,rights_explainer,4,helpful_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T09:22:00
+NS-AI-000132,police custody te family dekha korte pare ki,bn,Bengali,legal_rights,rights_explainer,5,excellent_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T09:23:00
+NS-AI-000133,section 498A e legal rights bolun,bn,Bengali,legal_rights,rights_explainer,4,helpful_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T09:24:00
+NS-AI-000134,mahila accused er adhikar ki,bn,Bengali,legal_rights,rights_explainer,4,helpful_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T09:25:00
+NS-AI-000135,FIR 1116 er court date kibhabe janbo,bn,Bengali,court_date,court_date_request,2,wrong_language,language,0.46,0.95,adaptive_multilingual_expansion,2026-06-10T09:26:00
+NS-AI-000136,hearing date miss hoye geche ki korbo,bn,Bengali,court_date,court_date_request,5,excellent_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T09:27:00
+NS-AI-000137,section 302 case er tareekh chai,bn,Bengali,court_date,court_date_request,4,helpful_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T09:28:00
+NS-AI-000138,peshi date janate hobe,bn,Bengali,court_date,court_date_request,4,helpful_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T09:29:00
+NS-AI-000139,district court next date chai,bn,Bengali,court_date,court_date_request,4,helpful_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T09:30:00
+NS-AI-000140,free advocate chai DLSA theke,bn,Bengali,lawyer_request,legal_aid_referral,3,partial_answer,,0.68,0.9,adaptive_multilingual_expansion,2026-06-10T09:31:00
+NS-AI-000141,gorib poribar lawyer afford korte parchi na,bn,Bengali,lawyer_request,legal_aid_referral,4,helpful_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T09:32:00
+NS-AI-000142,legal aid lawyer kibhabe pabo,bn,Bengali,lawyer_request,legal_aid_referral,4,helpful_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T09:33:00
+NS-AI-000143,section 406 case e vakil chai,bn,Bengali,lawyer_request,legal_aid_referral,4,helpful_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T09:34:00
+NS-AI-000144,court er jonno sahajjo chai,bn,Bengali,lawyer_request,legal_aid_referral,2,wrong_language,language,0.46,0.95,adaptive_multilingual_expansion,2026-06-10T09:35:00
+NS-AI-000145,FIR 1126 copy kibhabe pabo,bn,Bengali,fir_copy,fir_copy_application,3,partial_answer,,0.68,0.9,adaptive_multilingual_expansion,2026-06-10T09:36:00
+NS-AI-000146,police FIR copy dicche na,bn,Bengali,fir_copy,fir_copy_application,4,helpful_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T09:37:00
+NS-AI-000147,online FIR copy download korte hobe,bn,Bengali,fir_copy,fir_copy_application,4,helpful_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T09:38:00
+NS-AI-000148,certified FIR copy chai,bn,Bengali,fir_copy,fir_copy_application,5,excellent_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T09:39:00
+NS-AI-000149,thana Shivaji Nagar FIR copy debe ki,bn,Bengali,fir_copy,fir_copy_application,4,helpful_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T09:40:00
+NS-AI-000150,bail reject hoyeche appeal kibhabe korbo,bn,Bengali,appeal_process,appeal_guidance,3,partial_answer,,0.68,0.9,adaptive_multilingual_expansion,2026-06-10T09:41:00
+NS-AI-000151,sessions court order er por high court jabo ki,bn,Bengali,appeal_process,appeal_guidance,4,helpful_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T09:42:00
+NS-AI-000152,conviction er por appeal time limit ki,bn,Bengali,appeal_process,appeal_guidance,5,excellent_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T09:43:00
+NS-AI-000153,revision application kibhabe file hoy,bn,Bengali,appeal_process,appeal_guidance,2,wrong_language,language,0.46,0.95,adaptive_multilingual_expansion,2026-06-10T09:44:00
+NS-AI-000154,section 379 bail rejection remedy chai,bn,Bengali,appeal_process,appeal_guidance,4,helpful_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T09:45:00
+NS-AI-000155,FIR ar medical report upload korlam check korun,bn,Bengali,document_upload,evidence_checklist,3,partial_answer,,0.68,0.9,adaptive_multilingual_expansion,2026-06-10T09:46:00
+NS-AI-000156,property paper photo clear ache ki,bn,Bengali,document_upload,evidence_checklist,5,excellent_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T09:47:00
+NS-AI-000157,evidence timeline banan,bn,Bengali,document_upload,evidence_checklist,4,helpful_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T09:48:00
+NS-AI-000158,court document missing ki,bn,Bengali,document_upload,evidence_checklist,4,helpful_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T09:49:00
+NS-AI-000159,whatsapp screenshot proof hobe ki,bn,Bengali,document_upload,evidence_checklist,4,helpful_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T09:50:00
+NS-AI-000160,bail er jonno surety bond document ki lagbe,bn,Bengali,surety_bond,surety_bond,3,partial_answer,,0.68,0.9,adaptive_multilingual_expansion,2026-06-10T09:51:00
+NS-AI-000161,property paper diye muchalka hobe ki,bn,Bengali,surety_bond,surety_bond,4,helpful_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T09:52:00
+NS-AI-000162,surety person er address proof lagbe ki,bn,Bengali,surety_bond,surety_bond,2,wrong_language,language,0.46,0.95,adaptive_multilingual_expansion,2026-06-10T09:53:00
+NS-AI-000163,bond amount 10000 er form chai,bn,Bengali,surety_bond,surety_bond,4,helpful_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T09:54:00
+NS-AI-000164,zamanatnama generate korun,bn,Bengali,surety_bond,surety_bond,5,excellent_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T09:55:00
+NS-AI-000165,free legal aid er jonno apply korbo kibhabe,bn,Bengali,free_legal_aid,legal_aid_application,3,partial_answer,,0.68,0.9,adaptive_multilingual_expansion,2026-06-10T09:56:00
+NS-AI-000166,DLSA application format chai,bn,Bengali,free_legal_aid,legal_aid_application,4,helpful_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T09:57:00
+NS-AI-000167,gorib poribar muft lawyer pabe ki,bn,Bengali,free_legal_aid,legal_aid_application,4,helpful_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T09:58:00
+NS-AI-000168,legal services authority contact chai,bn,Bengali,free_legal_aid,legal_aid_application,5,excellent_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T09:59:00
+NS-AI-000169,mahila case e free aid pawa jabe ki,bn,Bengali,free_legal_aid,legal_aid_application,4,helpful_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T10:00:00
+NS-AI-000170,ennoda anna section 406 la jail la irukkar FIR 1151 8 month aachu bail kidaikuma,ta,Tamil,bail_enquiry,bail_application,3,partial_answer,,0.68,0.9,adaptive_multilingual_expansion,2026-06-10T10:01:00
+NS-AI-000171,police station Cuttack Town arrest pannirukanga jamin venum,ta,Tamil,bail_enquiry,bail_application,2,wrong_language,language,0.46,0.95,adaptive_multilingual_expansion,2026-06-10T10:02:00
+NS-AI-000172,section 379 ku bail application ready pannunga,ta,Tamil,bail_enquiry,bail_application,5,excellent_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T10:03:00
+NS-AI-000173,en husband custody la irukkar zamaanat chance irukka,ta,Tamil,bail_enquiry,bail_application,4,helpful_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T10:04:00
+NS-AI-000174,FIR 1155 bail pathi sollunga,ta,Tamil,bail_enquiry,bail_application,4,helpful_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T10:05:00
+NS-AI-000175,FIR 1156 case status eppadi therinjukalam,ta,Tamil,case_status,case_status_request,3,partial_answer,,0.68,0.9,adaptive_multilingual_expansion,2026-06-10T10:06:00
+NS-AI-000176,next hearing date eppo,ta,Tamil,case_status,case_status_request,5,excellent_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T10:07:00
+NS-AI-000177,station Cuttack Town case update venum,ta,Tamil,case_status,case_status_request,4,helpful_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T10:08:00
+NS-AI-000178,chargesheet file pannangala,ta,Tamil,case_status,case_status_request,4,helpful_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T10:09:00
+NS-AI-000179,mukadma status sollunga,ta,Tamil,case_status,case_status_request,4,helpful_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T10:10:00
+NS-AI-000180,arrest aana apram rights enna,ta,Tamil,legal_rights,rights_explainer,2,wrong_language,language,0.46,0.95,adaptive_multilingual_expansion,2026-06-10T10:11:00
+NS-AI-000181,free lawyer kidaikuma,ta,Tamil,legal_rights,rights_explainer,4,helpful_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T10:12:00
+NS-AI-000182,custody la family meet panna mudiyuma,ta,Tamil,legal_rights,rights_explainer,4,helpful_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T10:13:00
+NS-AI-000183,section 406 legal rights sollunga,ta,Tamil,legal_rights,rights_explainer,4,helpful_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T10:14:00
+NS-AI-000184,woman accused rights enna,ta,Tamil,legal_rights,rights_explainer,5,excellent_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T10:15:00
+NS-AI-000185,FIR 1166 court date eppadi check panna,ta,Tamil,court_date,court_date_request,3,partial_answer,,0.68,0.9,adaptive_multilingual_expansion,2026-06-10T10:16:00
+NS-AI-000186,hearing date miss aachu enna seiyanum,ta,Tamil,court_date,court_date_request,4,helpful_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T10:17:00
+NS-AI-000187,section 376 next date venum,ta,Tamil,court_date,court_date_request,4,helpful_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T10:18:00
+NS-AI-000188,peshi date sollunga,ta,Tamil,court_date,court_date_request,5,excellent_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T10:19:00
+NS-AI-000189,district court date venum,ta,Tamil,court_date,court_date_request,2,wrong_language,language,0.46,0.95,adaptive_multilingual_expansion,2026-06-10T10:20:00
+NS-AI-000190,DLSA la free advocate venum,ta,Tamil,lawyer_request,legal_aid_referral,3,partial_answer,,0.68,0.9,adaptive_multilingual_expansion,2026-06-10T10:21:00
+NS-AI-000191,poor family lawyer afford panna mudiyala,ta,Tamil,lawyer_request,legal_aid_referral,4,helpful_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T10:22:00
+NS-AI-000192,legal aid lawyer eppadi kidaikum,ta,Tamil,lawyer_request,legal_aid_referral,5,excellent_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T10:23:00
+NS-AI-000193,section 307 case ku advocate venum,ta,Tamil,lawyer_request,legal_aid_referral,4,helpful_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T10:24:00
+NS-AI-000194,court ku help panna vakil venum,ta,Tamil,lawyer_request,legal_aid_referral,4,helpful_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T10:25:00
+NS-AI-000195,FIR 1176 copy eppadi kidaikum,ta,Tamil,fir_copy,fir_copy_application,3,partial_answer,,0.68,0.9,adaptive_multilingual_expansion,2026-06-10T10:26:00
+NS-AI-000196,police FIR copy kudukkala,ta,Tamil,fir_copy,fir_copy_application,5,excellent_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T10:27:00
+NS-AI-000197,online FIR copy download pannanum,ta,Tamil,fir_copy,fir_copy_application,4,helpful_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T10:28:00
+NS-AI-000198,certified FIR copy venum,ta,Tamil,fir_copy,fir_copy_application,2,wrong_language,language,0.46,0.95,adaptive_multilingual_expansion,2026-06-10T10:29:00
+NS-AI-000199,station Park Street FIR copy tharuvaangala,ta,Tamil,fir_copy,fir_copy_application,4,helpful_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T10:30:00
+NS-AI-000200,bail reject aachu appeal eppadi podanum,ta,Tamil,appeal_process,appeal_guidance,3,partial_answer,,0.68,0.9,adaptive_multilingual_expansion,2026-06-10T10:31:00
+NS-AI-000201,sessions order apram high court pogalama,ta,Tamil,appeal_process,appeal_guidance,4,helpful_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T10:32:00
+NS-AI-000202,conviction apram appeal time limit enna,ta,Tamil,appeal_process,appeal_guidance,4,helpful_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T10:33:00
+NS-AI-000203,revision application eppadi file pannuvanga,ta,Tamil,appeal_process,appeal_guidance,4,helpful_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T10:34:00
+NS-AI-000204,section 498A bail rejection remedy venum,ta,Tamil,appeal_process,appeal_guidance,5,excellent_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T10:35:00
+NS-AI-000205,FIR medical report upload pannirukken check pannunga,ta,Tamil,document_upload,evidence_checklist,3,partial_answer,,0.68,0.9,adaptive_multilingual_expansion,2026-06-10T10:36:00
+NS-AI-000206,property paper photo clear aa irukka,ta,Tamil,document_upload,evidence_checklist,4,helpful_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T10:37:00
+NS-AI-000207,evidence timeline create pannunga,ta,Tamil,document_upload,evidence_checklist,2,wrong_language,language,0.46,0.95,adaptive_multilingual_expansion,2026-06-10T10:38:00
+NS-AI-000208,court documents missing enna,ta,Tamil,document_upload,evidence_checklist,5,excellent_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T10:39:00
+NS-AI-000209,whatsapp screenshot proof aaguma,ta,Tamil,document_upload,evidence_checklist,4,helpful_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T10:40:00
+NS-AI-000210,bail ku surety bond documents enna venum,ta,Tamil,surety_bond,surety_bond,3,partial_answer,,0.68,0.9,adaptive_multilingual_expansion,2026-06-10T10:41:00
+NS-AI-000211,property paper vechu muchalka panna mudiyuma,ta,Tamil,surety_bond,surety_bond,4,helpful_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T10:42:00
+NS-AI-000212,surety person address proof venuma,ta,Tamil,surety_bond,surety_bond,5,excellent_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T10:43:00
+NS-AI-000213,bond amount 50000 form venum,ta,Tamil,surety_bond,surety_bond,4,helpful_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T10:44:00
+NS-AI-000214,zamanatnama generate pannunga,ta,Tamil,surety_bond,surety_bond,4,helpful_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T10:45:00
+NS-AI-000215,free legal aid apply eppadi panna,ta,Tamil,free_legal_aid,legal_aid_application,3,partial_answer,,0.68,0.9,adaptive_multilingual_expansion,2026-06-10T10:46:00
+NS-AI-000216,DLSA application format venum,ta,Tamil,free_legal_aid,legal_aid_application,2,wrong_language,language,0.46,0.95,adaptive_multilingual_expansion,2026-06-10T10:47:00
+NS-AI-000217,poor family ku free lawyer kidaikuma,ta,Tamil,free_legal_aid,legal_aid_application,4,helpful_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T10:48:00
+NS-AI-000218,legal services authority contact venum,ta,Tamil,free_legal_aid,legal_aid_application,4,helpful_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T10:49:00
+NS-AI-000219,woman case ku free aid irukka,ta,Tamil,free_legal_aid,legal_aid_application,4,helpful_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T10:50:00
+NS-AI-000220,naa anna section 307 lo jail lo unnadu FIR 1201 12 months ayyindi bail vastunda,te,Telugu,bail_enquiry,bail_application,3,partial_answer,,0.68,0.9,adaptive_multilingual_expansion,2026-06-10T10:51:00
+NS-AI-000221,police station Hazratganj arrest chesaru jamin kavali,te,Telugu,bail_enquiry,bail_application,4,helpful_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T10:52:00
+NS-AI-000222,section 498A bail application prepare cheyandi,te,Telugu,bail_enquiry,bail_application,4,helpful_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T10:53:00
+NS-AI-000223,naa husband custody lo unnadu zamaanat chance unda,te,Telugu,bail_enquiry,bail_application,4,helpful_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T10:54:00
+NS-AI-000224,FIR 1205 bail gurinchi cheppandi,te,Telugu,bail_enquiry,bail_application,5,excellent_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T10:55:00
+NS-AI-000225,FIR 1206 case status ela chudali,te,Telugu,case_status,case_status_request,2,wrong_language,language,0.46,0.95,adaptive_multilingual_expansion,2026-06-10T10:56:00
+NS-AI-000226,next hearing date eppudu,te,Telugu,case_status,case_status_request,4,helpful_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T10:57:00
+NS-AI-000227,station Hazratganj case update kavali,te,Telugu,case_status,case_status_request,4,helpful_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T10:58:00
+NS-AI-000228,chargesheet file ayyinda,te,Telugu,case_status,case_status_request,5,excellent_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T10:59:00
+NS-AI-000229,mukadma status cheppandi,te,Telugu,case_status,case_status_request,4,helpful_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T11:00:00
+NS-AI-000230,arrest ayyaka accused rights enti,te,Telugu,legal_rights,rights_explainer,3,partial_answer,,0.68,0.9,adaptive_multilingual_expansion,2026-06-10T11:01:00
+NS-AI-000231,free lawyer dorukutunda,te,Telugu,legal_rights,rights_explainer,4,helpful_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T11:02:00
+NS-AI-000232,custody lo family meet avvacha,te,Telugu,legal_rights,rights_explainer,5,excellent_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T11:03:00
+NS-AI-000233,section 307 legal rights cheppandi,te,Telugu,legal_rights,rights_explainer,4,helpful_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T11:04:00
+NS-AI-000234,mahila accused rights enti,te,Telugu,legal_rights,rights_explainer,2,wrong_language,language,0.46,0.95,adaptive_multilingual_expansion,2026-06-10T11:05:00
+NS-AI-000235,FIR 1216 court date ela telustundi,te,Telugu,court_date,court_date_request,3,partial_answer,,0.68,0.9,adaptive_multilingual_expansion,2026-06-10T11:06:00
+NS-AI-000236,hearing date miss ayyindi emi cheyali,te,Telugu,court_date,court_date_request,5,excellent_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T11:07:00
+NS-AI-000237,section 420 next date kavali,te,Telugu,court_date,court_date_request,4,helpful_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T11:08:00
+NS-AI-000238,peshi date cheppandi,te,Telugu,court_date,court_date_request,4,helpful_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T11:09:00
+NS-AI-000239,district court date kavali,te,Telugu,court_date,court_date_request,4,helpful_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T11:10:00
+NS-AI-000240,DLSA nundi free advocate kavali,te,Telugu,lawyer_request,legal_aid_referral,3,partial_answer,,0.68,0.9,adaptive_multilingual_expansion,2026-06-10T11:11:00
+NS-AI-000241,poor family lawyer afford cheyalemu,te,Telugu,lawyer_request,legal_aid_referral,4,helpful_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T11:12:00
+NS-AI-000242,legal aid lawyer ela dorukutadu,te,Telugu,lawyer_request,legal_aid_referral,4,helpful_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T11:13:00
+NS-AI-000243,section 379 case ki vakil kavali,te,Telugu,lawyer_request,legal_aid_referral,2,wrong_language,language,0.46,0.95,adaptive_multilingual_expansion,2026-06-10T11:14:00
+NS-AI-000244,court help kosam advocate kavali,te,Telugu,lawyer_request,legal_aid_referral,5,excellent_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T11:15:00
+NS-AI-000245,FIR 1226 copy ela dorukutundi,te,Telugu,fir_copy,fir_copy_application,3,partial_answer,,0.68,0.9,adaptive_multilingual_expansion,2026-06-10T11:16:00
+NS-AI-000246,police FIR copy ivvatledu,te,Telugu,fir_copy,fir_copy_application,4,helpful_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T11:17:00
+NS-AI-000247,online FIR copy download cheyali,te,Telugu,fir_copy,fir_copy_application,4,helpful_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T11:18:00
+NS-AI-000248,certified FIR copy kavali,te,Telugu,fir_copy,fir_copy_application,5,excellent_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T11:19:00
+NS-AI-000249,station T Nagar FIR copy istara,te,Telugu,fir_copy,fir_copy_application,4,helpful_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T11:20:00
+NS-AI-000250,bail reject ayyindi appeal ela cheyali,te,Telugu,appeal_process,appeal_guidance,3,partial_answer,,0.68,0.9,adaptive_multilingual_expansion,2026-06-10T11:21:00
+NS-AI-000251,sessions order tarvata high court vellala,te,Telugu,appeal_process,appeal_guidance,4,helpful_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T11:22:00
+NS-AI-000252,conviction tarvata appeal time limit enti,te,Telugu,appeal_process,appeal_guidance,2,wrong_language,language,0.46,0.95,adaptive_multilingual_expansion,2026-06-10T11:23:00
+NS-AI-000253,revision application ela file chestaru,te,Telugu,appeal_process,appeal_guidance,4,helpful_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T11:24:00
+NS-AI-000254,section 406 bail rejection remedy kavali,te,Telugu,appeal_process,appeal_guidance,4,helpful_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T11:25:00
+NS-AI-000255,FIR medical report upload chesanu check cheyandi,te,Telugu,document_upload,evidence_checklist,3,partial_answer,,0.68,0.9,adaptive_multilingual_expansion,2026-06-10T11:26:00
+NS-AI-000256,property paper photo clear ga unda,te,Telugu,document_upload,evidence_checklist,5,excellent_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T11:27:00
+NS-AI-000257,evidence timeline create cheyandi,te,Telugu,document_upload,evidence_checklist,4,helpful_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T11:28:00
+NS-AI-000258,court documents missing enti,te,Telugu,document_upload,evidence_checklist,4,helpful_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T11:29:00
+NS-AI-000259,whatsapp screenshot proof avuthunda,te,Telugu,document_upload,evidence_checklist,4,helpful_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T11:30:00
+NS-AI-000260,bail ki surety bond documents enti,te,Telugu,surety_bond,surety_bond,3,partial_answer,,0.68,0.9,adaptive_multilingual_expansion,2026-06-10T11:31:00
+NS-AI-000261,property paper tho muchalka avutunda,te,Telugu,surety_bond,surety_bond,2,wrong_language,language,0.46,0.95,adaptive_multilingual_expansion,2026-06-10T11:32:00
+NS-AI-000262,surety person address proof kavala,te,Telugu,surety_bond,surety_bond,4,helpful_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T11:33:00
+NS-AI-000263,bond amount 25000 form kavali,te,Telugu,surety_bond,surety_bond,4,helpful_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T11:34:00
+NS-AI-000264,zamanatnama generate cheyandi,te,Telugu,surety_bond,surety_bond,5,excellent_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T11:35:00
+NS-AI-000265,free legal aid apply ela cheyali,te,Telugu,free_legal_aid,legal_aid_application,3,partial_answer,,0.68,0.9,adaptive_multilingual_expansion,2026-06-10T11:36:00
+NS-AI-000266,DLSA application format kavali,te,Telugu,free_legal_aid,legal_aid_application,4,helpful_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T11:37:00
+NS-AI-000267,poor family ki free lawyer dorukutunda,te,Telugu,free_legal_aid,legal_aid_application,4,helpful_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T11:38:00
+NS-AI-000268,legal services authority contact kavali,te,Telugu,free_legal_aid,legal_aid_application,5,excellent_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T11:39:00
+NS-AI-000269,woman case ki free aid untunda,te,Telugu,free_legal_aid,legal_aid_application,4,helpful_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T11:40:00
+NS-AI-000270,nanna anna section 379 FIR 1251 jail nalli iddare 18 months bail sigutta,kn,Kannada,bail_enquiry,bail_application,2,wrong_language,language,0.46,0.95,adaptive_multilingual_expansion,2026-06-10T11:41:00
+NS-AI-000271,nanna anna section 498A FIR 1252 jail nalli iddare 2 months bail sigutta,kn,Kannada,bail_enquiry,bail_application,4,helpful_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T11:42:00
+NS-AI-000272,nanna anna section 406 FIR 1253 jail nalli iddare 6 months bail sigutta,kn,Kannada,bail_enquiry,bail_application,5,excellent_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T11:43:00
+NS-AI-000273,nanna anna section 307 FIR 1254 jail nalli iddare 12 months bail sigutta,kn,Kannada,bail_enquiry,bail_application,4,helpful_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T11:44:00
+NS-AI-000274,nanna anna section 379 FIR 1255 jail nalli iddare 1 months bail sigutta,kn,Kannada,bail_enquiry,bail_application,4,helpful_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T11:45:00
+NS-AI-000275,FIR 1256 case status beku police station Charminar,kn,Kannada,case_status,case_status_request,3,partial_answer,,0.68,0.9,adaptive_multilingual_expansion,2026-06-10T11:46:00
+NS-AI-000276,FIR 1257 case status beku police station Cuttack Town,kn,Kannada,case_status,case_status_request,5,excellent_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T11:47:00
+NS-AI-000277,FIR 1258 case status beku police station Shivaji Nagar,kn,Kannada,case_status,case_status_request,4,helpful_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T11:48:00
+NS-AI-000278,FIR 1259 case status beku police station T Nagar,kn,Kannada,case_status,case_status_request,4,helpful_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T11:49:00
+NS-AI-000279,FIR 1260 case status beku police station Navrangpura,kn,Kannada,case_status,case_status_request,2,wrong_language,language,0.46,0.95,adaptive_multilingual_expansion,2026-06-10T11:50:00
+NS-AI-000280,section 498A arrest aada mele rights enu,kn,Kannada,legal_rights,rights_explainer,3,partial_answer,,0.68,0.9,adaptive_multilingual_expansion,2026-06-10T11:51:00
+NS-AI-000281,section 406 arrest aada mele rights enu,kn,Kannada,legal_rights,rights_explainer,4,helpful_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T11:52:00
+NS-AI-000282,section 307 arrest aada mele rights enu,kn,Kannada,legal_rights,rights_explainer,4,helpful_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T11:53:00
+NS-AI-000283,section 379 arrest aada mele rights enu,kn,Kannada,legal_rights,rights_explainer,4,helpful_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T11:54:00
+NS-AI-000284,section 498A arrest aada mele rights enu,kn,Kannada,legal_rights,rights_explainer,5,excellent_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T11:55:00
+NS-AI-000285,FIR 1266 next court date ani peshi date beku,kn,Kannada,court_date,court_date_request,3,partial_answer,,0.68,0.9,adaptive_multilingual_expansion,2026-06-10T11:56:00
+NS-AI-000286,FIR 1267 next court date ani peshi date beku,kn,Kannada,court_date,court_date_request,4,helpful_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T11:57:00
+NS-AI-000287,FIR 1268 next court date ani peshi date beku,kn,Kannada,court_date,court_date_request,4,helpful_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T11:58:00
+NS-AI-000288,FIR 1269 next court date ani peshi date beku,kn,Kannada,court_date,court_date_request,2,wrong_language,language,0.46,0.95,adaptive_multilingual_expansion,2026-06-10T11:59:00
+NS-AI-000289,FIR 1270 next court date ani peshi date beku,kn,Kannada,court_date,court_date_request,4,helpful_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T12:00:00
+NS-AI-000290,free lawyer beku section 406 case sathi,kn,Kannada,lawyer_request,legal_aid_referral,3,partial_answer,,0.68,0.9,adaptive_multilingual_expansion,2026-06-10T12:01:00
+NS-AI-000291,free lawyer beku section 307 case sathi,kn,Kannada,lawyer_request,legal_aid_referral,4,helpful_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T12:02:00
+NS-AI-000292,free lawyer beku section 379 case sathi,kn,Kannada,lawyer_request,legal_aid_referral,5,excellent_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T12:03:00
+NS-AI-000293,free lawyer beku section 498A case sathi,kn,Kannada,lawyer_request,legal_aid_referral,4,helpful_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T12:04:00
+NS-AI-000294,free lawyer beku section 406 case sathi,kn,Kannada,lawyer_request,legal_aid_referral,4,helpful_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T12:05:00
+NS-AI-000295,FIR 1276 FIR copy beku station T Nagar,kn,Kannada,fir_copy,fir_copy_application,3,partial_answer,,0.68,0.9,adaptive_multilingual_expansion,2026-06-10T12:06:00
+NS-AI-000296,FIR 1277 FIR copy beku station Navrangpura,kn,Kannada,fir_copy,fir_copy_application,5,excellent_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T12:07:00
+NS-AI-000297,FIR 1278 FIR copy beku station Hazratganj,kn,Kannada,fir_copy,fir_copy_application,2,wrong_language,language,0.46,0.95,adaptive_multilingual_expansion,2026-06-10T12:08:00
+NS-AI-000298,FIR 1279 FIR copy beku station Park Street,kn,Kannada,fir_copy,fir_copy_application,4,helpful_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T12:09:00
+NS-AI-000299,FIR 1280 FIR copy beku station Charminar,kn,Kannada,fir_copy,fir_copy_application,4,helpful_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T12:10:00
+NS-AI-000300,section 307 bail reject aayitu appeal hege,kn,Kannada,appeal_process,appeal_guidance,3,partial_answer,,0.68,0.9,adaptive_multilingual_expansion,2026-06-10T12:11:00
+NS-AI-000301,section 379 bail reject aayitu appeal hege,kn,Kannada,appeal_process,appeal_guidance,4,helpful_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T12:12:00
+NS-AI-000302,section 498A bail reject aayitu appeal hege,kn,Kannada,appeal_process,appeal_guidance,4,helpful_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T12:13:00
+NS-AI-000303,section 406 bail reject aayitu appeal hege,kn,Kannada,appeal_process,appeal_guidance,4,helpful_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T12:14:00
+NS-AI-000304,section 307 bail reject aayitu appeal hege,kn,Kannada,appeal_process,appeal_guidance,5,excellent_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T12:15:00
+NS-AI-000305,FIR 1286 document upload madide check madi,kn,Kannada,document_upload,evidence_checklist,3,partial_answer,,0.68,0.9,adaptive_multilingual_expansion,2026-06-10T12:16:00
+NS-AI-000306,FIR 1287 document upload madide check madi,kn,Kannada,document_upload,evidence_checklist,2,wrong_language,language,0.46,0.95,adaptive_multilingual_expansion,2026-06-10T12:17:00
+NS-AI-000307,FIR 1288 document upload madide check madi,kn,Kannada,document_upload,evidence_checklist,4,helpful_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T12:18:00
+NS-AI-000308,FIR 1289 document upload madide check madi,kn,Kannada,document_upload,evidence_checklist,5,excellent_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T12:19:00
+NS-AI-000309,FIR 1290 document upload madide check madi,kn,Kannada,document_upload,evidence_checklist,4,helpful_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T12:20:00
+NS-AI-000310,bond amount 10000 surety bond ge documents enu,kn,Kannada,surety_bond,surety_bond,3,partial_answer,,0.68,0.9,adaptive_multilingual_expansion,2026-06-10T12:21:00
+NS-AI-000311,bond amount 50000 surety bond ge documents enu,kn,Kannada,surety_bond,surety_bond,4,helpful_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T12:22:00
+NS-AI-000312,bond amount 25000 surety bond ge documents enu,kn,Kannada,surety_bond,surety_bond,5,excellent_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T12:23:00
+NS-AI-000313,bond amount 10000 surety bond ge documents enu,kn,Kannada,surety_bond,surety_bond,4,helpful_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T12:24:00
+NS-AI-000314,bond amount 50000 surety bond ge documents enu,kn,Kannada,surety_bond,surety_bond,4,helpful_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T12:25:00
+NS-AI-000315,free legal aid hege sigutte district court madhe,kn,Kannada,free_legal_aid,legal_aid_application,2,wrong_language,language,0.46,0.95,adaptive_multilingual_expansion,2026-06-10T12:26:00
+NS-AI-000316,free legal aid hege sigutte district court madhe,kn,Kannada,free_legal_aid,legal_aid_application,5,excellent_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T12:27:00
+NS-AI-000317,free legal aid hege sigutte district court madhe,kn,Kannada,free_legal_aid,legal_aid_application,4,helpful_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T12:28:00
+NS-AI-000318,free legal aid hege sigutte district court madhe,kn,Kannada,free_legal_aid,legal_aid_application,4,helpful_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T12:29:00
+NS-AI-000319,free legal aid hege sigutte district court madhe,kn,Kannada,free_legal_aid,legal_aid_application,4,helpful_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T12:30:00
+NS-AI-000320,mara bhai section 498A FIR 1301 jail ma che 1 months bail malse ke nahi,gu,Gujarati,bail_enquiry,bail_application,3,partial_answer,,0.68,0.9,adaptive_multilingual_expansion,2026-06-10T12:31:00
+NS-AI-000321,mara bhai section 406 FIR 1302 jail ma che 3 months bail malse ke nahi,gu,Gujarati,bail_enquiry,bail_application,4,helpful_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T12:32:00
+NS-AI-000322,mara bhai section 307 FIR 1303 jail ma che 8 months bail malse ke nahi,gu,Gujarati,bail_enquiry,bail_application,4,helpful_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T12:33:00
+NS-AI-000323,mara bhai section 379 FIR 1304 jail ma che 18 months bail malse ke nahi,gu,Gujarati,bail_enquiry,bail_application,4,helpful_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T12:34:00
+NS-AI-000324,mara bhai section 498A FIR 1305 jail ma che 2 months bail malse ke nahi,gu,Gujarati,bail_enquiry,bail_application,2,wrong_language,language,0.46,0.95,adaptive_multilingual_expansion,2026-06-10T12:35:00
+NS-AI-000325,FIR 1306 case status joiye police station Navrangpura,gu,Gujarati,case_status,case_status_request,3,partial_answer,,0.68,0.9,adaptive_multilingual_expansion,2026-06-10T12:36:00
+NS-AI-000326,FIR 1307 case status joiye police station Hazratganj,gu,Gujarati,case_status,case_status_request,4,helpful_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T12:37:00
+NS-AI-000327,FIR 1308 case status joiye police station Park Street,gu,Gujarati,case_status,case_status_request,4,helpful_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T12:38:00
+NS-AI-000328,FIR 1309 case status joiye police station Charminar,gu,Gujarati,case_status,case_status_request,5,excellent_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T12:39:00
+NS-AI-000329,FIR 1310 case status joiye police station Cuttack Town,gu,Gujarati,case_status,case_status_request,4,helpful_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T12:40:00
+NS-AI-000330,section 406 arrest pachi rights shu che,gu,Gujarati,legal_rights,rights_explainer,3,partial_answer,,0.68,0.9,adaptive_multilingual_expansion,2026-06-10T12:41:00
+NS-AI-000331,section 307 arrest pachi rights shu che,gu,Gujarati,legal_rights,rights_explainer,4,helpful_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T12:42:00
+NS-AI-000332,section 379 arrest pachi rights shu che,gu,Gujarati,legal_rights,rights_explainer,5,excellent_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T12:43:00
+NS-AI-000333,section 498A arrest pachi rights shu che,gu,Gujarati,legal_rights,rights_explainer,2,wrong_language,language,0.46,0.95,adaptive_multilingual_expansion,2026-06-10T12:44:00
+NS-AI-000334,section 406 arrest pachi rights shu che,gu,Gujarati,legal_rights,rights_explainer,4,helpful_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T12:45:00
+NS-AI-000335,FIR 1316 next court date ani peshi date beku,gu,Gujarati,court_date,court_date_request,3,partial_answer,,0.68,0.9,adaptive_multilingual_expansion,2026-06-10T12:46:00
+NS-AI-000336,FIR 1317 next court date ani peshi date beku,gu,Gujarati,court_date,court_date_request,5,excellent_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T12:47:00
+NS-AI-000337,FIR 1318 next court date ani peshi date beku,gu,Gujarati,court_date,court_date_request,4,helpful_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T12:48:00
+NS-AI-000338,FIR 1319 next court date ani peshi date beku,gu,Gujarati,court_date,court_date_request,4,helpful_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T12:49:00
+NS-AI-000339,FIR 1320 next court date ani peshi date beku,gu,Gujarati,court_date,court_date_request,4,helpful_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T12:50:00
+NS-AI-000340,free lawyer joiye section 307 case sathi,gu,Gujarati,lawyer_request,legal_aid_referral,3,partial_answer,,0.68,0.9,adaptive_multilingual_expansion,2026-06-10T12:51:00
+NS-AI-000341,free lawyer joiye section 379 case sathi,gu,Gujarati,lawyer_request,legal_aid_referral,4,helpful_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T12:52:00
+NS-AI-000342,free lawyer joiye section 498A case sathi,gu,Gujarati,lawyer_request,legal_aid_referral,2,wrong_language,language,0.46,0.95,adaptive_multilingual_expansion,2026-06-10T12:53:00
+NS-AI-000343,free lawyer joiye section 406 case sathi,gu,Gujarati,lawyer_request,legal_aid_referral,4,helpful_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T12:54:00
+NS-AI-000344,free lawyer joiye section 307 case sathi,gu,Gujarati,lawyer_request,legal_aid_referral,5,excellent_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T12:55:00
+NS-AI-000345,FIR 1326 FIR copy joiye station Charminar,gu,Gujarati,fir_copy,fir_copy_application,3,partial_answer,,0.68,0.9,adaptive_multilingual_expansion,2026-06-10T12:56:00
+NS-AI-000346,FIR 1327 FIR copy joiye station Cuttack Town,gu,Gujarati,fir_copy,fir_copy_application,4,helpful_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T12:57:00
+NS-AI-000347,FIR 1328 FIR copy joiye station Shivaji Nagar,gu,Gujarati,fir_copy,fir_copy_application,4,helpful_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T12:58:00
+NS-AI-000348,FIR 1329 FIR copy joiye station T Nagar,gu,Gujarati,fir_copy,fir_copy_application,5,excellent_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T12:59:00
+NS-AI-000349,FIR 1330 FIR copy joiye station Navrangpura,gu,Gujarati,fir_copy,fir_copy_application,4,helpful_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T13:00:00
+NS-AI-000350,section 379 bail reject thai appeal kem karvi,gu,Gujarati,appeal_process,appeal_guidance,3,partial_answer,,0.68,0.9,adaptive_multilingual_expansion,2026-06-10T13:01:00
+NS-AI-000351,section 498A bail reject thai appeal kem karvi,gu,Gujarati,appeal_process,appeal_guidance,2,wrong_language,language,0.46,0.95,adaptive_multilingual_expansion,2026-06-10T13:02:00
+NS-AI-000352,section 406 bail reject thai appeal kem karvi,gu,Gujarati,appeal_process,appeal_guidance,5,excellent_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T13:03:00
+NS-AI-000353,section 307 bail reject thai appeal kem karvi,gu,Gujarati,appeal_process,appeal_guidance,4,helpful_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T13:04:00
+NS-AI-000354,section 379 bail reject thai appeal kem karvi,gu,Gujarati,appeal_process,appeal_guidance,4,helpful_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T13:05:00
+NS-AI-000355,FIR 1336 document upload karyu check karo,gu,Gujarati,document_upload,evidence_checklist,3,partial_answer,,0.68,0.9,adaptive_multilingual_expansion,2026-06-10T13:06:00
+NS-AI-000356,FIR 1337 document upload karyu check karo,gu,Gujarati,document_upload,evidence_checklist,5,excellent_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T13:07:00
+NS-AI-000357,FIR 1338 document upload karyu check karo,gu,Gujarati,document_upload,evidence_checklist,4,helpful_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T13:08:00
+NS-AI-000358,FIR 1339 document upload karyu check karo,gu,Gujarati,document_upload,evidence_checklist,4,helpful_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T13:09:00
+NS-AI-000359,FIR 1340 document upload karyu check karo,gu,Gujarati,document_upload,evidence_checklist,4,helpful_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T13:10:00
+NS-AI-000360,bond amount 50000 surety bond mate documents shu,gu,Gujarati,surety_bond,surety_bond,2,wrong_language,language,0.46,0.95,adaptive_multilingual_expansion,2026-06-10T13:11:00
+NS-AI-000361,bond amount 25000 surety bond mate documents shu,gu,Gujarati,surety_bond,surety_bond,4,helpful_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T13:12:00
+NS-AI-000362,bond amount 10000 surety bond mate documents shu,gu,Gujarati,surety_bond,surety_bond,4,helpful_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T13:13:00
+NS-AI-000363,bond amount 50000 surety bond mate documents shu,gu,Gujarati,surety_bond,surety_bond,4,helpful_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T13:14:00
+NS-AI-000364,bond amount 25000 surety bond mate documents shu,gu,Gujarati,surety_bond,surety_bond,5,excellent_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T13:15:00
+NS-AI-000365,free legal aid kem male district court madhe,gu,Gujarati,free_legal_aid,legal_aid_application,3,partial_answer,,0.68,0.9,adaptive_multilingual_expansion,2026-06-10T13:16:00
+NS-AI-000366,free legal aid kem male district court madhe,gu,Gujarati,free_legal_aid,legal_aid_application,4,helpful_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T13:17:00
+NS-AI-000367,free legal aid kem male district court madhe,gu,Gujarati,free_legal_aid,legal_aid_application,4,helpful_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T13:18:00
+NS-AI-000368,free legal aid kem male district court madhe,gu,Gujarati,free_legal_aid,legal_aid_application,5,excellent_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T13:19:00
+NS-AI-000369,free legal aid kem male district court madhe,gu,Gujarati,free_legal_aid,legal_aid_application,2,wrong_language,language,0.46,0.95,adaptive_multilingual_expansion,2026-06-10T13:20:00
+NS-AI-000370,mera veer section 406 FIR 1351 jail vich hai 2 months zamaanat milegi,pa,Punjabi,bail_enquiry,bail_application,3,partial_answer,,0.68,0.9,adaptive_multilingual_expansion,2026-06-10T13:21:00
+NS-AI-000371,mera veer section 307 FIR 1352 jail vich hai 6 months zamaanat milegi,pa,Punjabi,bail_enquiry,bail_application,4,helpful_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T13:22:00
+NS-AI-000372,mera veer section 379 FIR 1353 jail vich hai 12 months zamaanat milegi,pa,Punjabi,bail_enquiry,bail_application,5,excellent_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T13:23:00
+NS-AI-000373,mera veer section 498A FIR 1354 jail vich hai 1 months zamaanat milegi,pa,Punjabi,bail_enquiry,bail_application,4,helpful_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T13:24:00
+NS-AI-000374,mera veer section 406 FIR 1355 jail vich hai 3 months zamaanat milegi,pa,Punjabi,bail_enquiry,bail_application,4,helpful_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T13:25:00
+NS-AI-000375,FIR 1356 case status chahida police station Cuttack Town,pa,Punjabi,case_status,case_status_request,3,partial_answer,,0.68,0.9,adaptive_multilingual_expansion,2026-06-10T13:26:00
+NS-AI-000376,FIR 1357 case status chahida police station Shivaji Nagar,pa,Punjabi,case_status,case_status_request,5,excellent_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T13:27:00
+NS-AI-000377,FIR 1358 case status chahida police station T Nagar,pa,Punjabi,case_status,case_status_request,4,helpful_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T13:28:00
+NS-AI-000378,FIR 1359 case status chahida police station Navrangpura,pa,Punjabi,case_status,case_status_request,2,wrong_language,language,0.46,0.95,adaptive_multilingual_expansion,2026-06-10T13:29:00
+NS-AI-000379,FIR 1360 case status chahida police station Hazratganj,pa,Punjabi,case_status,case_status_request,4,helpful_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T13:30:00
+NS-AI-000380,section 307 arrest baad rights ki ne,pa,Punjabi,legal_rights,rights_explainer,3,partial_answer,,0.68,0.9,adaptive_multilingual_expansion,2026-06-10T13:31:00
+NS-AI-000381,section 379 arrest baad rights ki ne,pa,Punjabi,legal_rights,rights_explainer,4,helpful_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T13:32:00
+NS-AI-000382,section 498A arrest baad rights ki ne,pa,Punjabi,legal_rights,rights_explainer,4,helpful_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T13:33:00
+NS-AI-000383,section 406 arrest baad rights ki ne,pa,Punjabi,legal_rights,rights_explainer,4,helpful_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T13:34:00
+NS-AI-000384,section 307 arrest baad rights ki ne,pa,Punjabi,legal_rights,rights_explainer,5,excellent_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T13:35:00
+NS-AI-000385,FIR 1366 next court date ani peshi date beku,pa,Punjabi,court_date,court_date_request,3,partial_answer,,0.68,0.9,adaptive_multilingual_expansion,2026-06-10T13:36:00
+NS-AI-000386,FIR 1367 next court date ani peshi date beku,pa,Punjabi,court_date,court_date_request,4,helpful_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T13:37:00
+NS-AI-000387,FIR 1368 next court date ani peshi date beku,pa,Punjabi,court_date,court_date_request,2,wrong_language,language,0.46,0.95,adaptive_multilingual_expansion,2026-06-10T13:38:00
+NS-AI-000388,FIR 1369 next court date ani peshi date beku,pa,Punjabi,court_date,court_date_request,5,excellent_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T13:39:00
+NS-AI-000389,FIR 1370 next court date ani peshi date beku,pa,Punjabi,court_date,court_date_request,4,helpful_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T13:40:00
+NS-AI-000390,free lawyer chahida section 379 case sathi,pa,Punjabi,lawyer_request,legal_aid_referral,3,partial_answer,,0.68,0.9,adaptive_multilingual_expansion,2026-06-10T13:41:00
+NS-AI-000391,free lawyer chahida section 498A case sathi,pa,Punjabi,lawyer_request,legal_aid_referral,4,helpful_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T13:42:00
+NS-AI-000392,free lawyer chahida section 406 case sathi,pa,Punjabi,lawyer_request,legal_aid_referral,5,excellent_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T13:43:00
+NS-AI-000393,free lawyer chahida section 307 case sathi,pa,Punjabi,lawyer_request,legal_aid_referral,4,helpful_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T13:44:00
+NS-AI-000394,free lawyer chahida section 379 case sathi,pa,Punjabi,lawyer_request,legal_aid_referral,4,helpful_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T13:45:00
+NS-AI-000395,FIR 1376 FIR copy chahidi station Navrangpura,pa,Punjabi,fir_copy,fir_copy_application,3,partial_answer,,0.68,0.9,adaptive_multilingual_expansion,2026-06-10T13:46:00
+NS-AI-000396,FIR 1377 FIR copy chahidi station Hazratganj,pa,Punjabi,fir_copy,fir_copy_application,2,wrong_language,language,0.46,0.95,adaptive_multilingual_expansion,2026-06-10T13:47:00
+NS-AI-000397,FIR 1378 FIR copy chahidi station Park Street,pa,Punjabi,fir_copy,fir_copy_application,4,helpful_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T13:48:00
+NS-AI-000398,FIR 1379 FIR copy chahidi station Charminar,pa,Punjabi,fir_copy,fir_copy_application,4,helpful_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T13:49:00
+NS-AI-000399,FIR 1380 FIR copy chahidi station Cuttack Town,pa,Punjabi,fir_copy,fir_copy_application,4,helpful_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T13:50:00
+NS-AI-000400,section 498A bail reject ho gayi appeal kiven,pa,Punjabi,appeal_process,appeal_guidance,3,partial_answer,,0.68,0.9,adaptive_multilingual_expansion,2026-06-10T13:51:00
+NS-AI-000401,section 406 bail reject ho gayi appeal kiven,pa,Punjabi,appeal_process,appeal_guidance,4,helpful_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T13:52:00
+NS-AI-000402,section 307 bail reject ho gayi appeal kiven,pa,Punjabi,appeal_process,appeal_guidance,4,helpful_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T13:53:00
+NS-AI-000403,section 379 bail reject ho gayi appeal kiven,pa,Punjabi,appeal_process,appeal_guidance,4,helpful_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T13:54:00
+NS-AI-000404,section 498A bail reject ho gayi appeal kiven,pa,Punjabi,appeal_process,appeal_guidance,5,excellent_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T13:55:00
+NS-AI-000405,FIR 1386 document upload kita check karo,pa,Punjabi,document_upload,evidence_checklist,2,wrong_language,language,0.46,0.95,adaptive_multilingual_expansion,2026-06-10T13:56:00
+NS-AI-000406,FIR 1387 document upload kita check karo,pa,Punjabi,document_upload,evidence_checklist,4,helpful_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T13:57:00
+NS-AI-000407,FIR 1388 document upload kita check karo,pa,Punjabi,document_upload,evidence_checklist,4,helpful_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T13:58:00
+NS-AI-000408,FIR 1389 document upload kita check karo,pa,Punjabi,document_upload,evidence_checklist,5,excellent_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T13:59:00
+NS-AI-000409,FIR 1390 document upload kita check karo,pa,Punjabi,document_upload,evidence_checklist,4,helpful_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T14:00:00
+NS-AI-000410,bond amount 25000 surety bond layi documents ki,pa,Punjabi,surety_bond,surety_bond,3,partial_answer,,0.68,0.9,adaptive_multilingual_expansion,2026-06-10T14:01:00
+NS-AI-000411,bond amount 10000 surety bond layi documents ki,pa,Punjabi,surety_bond,surety_bond,4,helpful_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T14:02:00
+NS-AI-000412,bond amount 50000 surety bond layi documents ki,pa,Punjabi,surety_bond,surety_bond,5,excellent_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T14:03:00
+NS-AI-000413,bond amount 25000 surety bond layi documents ki,pa,Punjabi,surety_bond,surety_bond,4,helpful_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T14:04:00
+NS-AI-000414,bond amount 10000 surety bond layi documents ki,pa,Punjabi,surety_bond,surety_bond,2,wrong_language,language,0.46,0.95,adaptive_multilingual_expansion,2026-06-10T14:05:00
+NS-AI-000415,free legal aid kiven milegi district court madhe,pa,Punjabi,free_legal_aid,legal_aid_application,3,partial_answer,,0.68,0.9,adaptive_multilingual_expansion,2026-06-10T14:06:00
+NS-AI-000416,free legal aid kiven milegi district court madhe,pa,Punjabi,free_legal_aid,legal_aid_application,5,excellent_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T14:07:00
+NS-AI-000417,free legal aid kiven milegi district court madhe,pa,Punjabi,free_legal_aid,legal_aid_application,4,helpful_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T14:08:00
+NS-AI-000418,free legal aid kiven milegi district court madhe,pa,Punjabi,free_legal_aid,legal_aid_application,4,helpful_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T14:09:00
+NS-AI-000419,free legal aid kiven milegi district court madhe,pa,Punjabi,free_legal_aid,legal_aid_application,4,helpful_response,,0.78,0.96,adaptive_multilingual_expansion,2026-06-10T14:10:00
+NS-AI-000420,mora bhai section 307 FIR 1401 jail re achhi 3 months bail miliba ki,or,Odia,bail_enquiry,bail_application,2,wrong_language,language,0.38,0.92,adaptive_multilingual_expansion,2026-06-10T14:11:00
+NS-AI-000421,mora bhai section 379 FIR 1402 jail re achhi 8 months bail miliba ki,or,Odia,bail_enquiry,bail_application,4,helpful_response,,0.74,0.94,adaptive_multilingual_expansion,2026-06-10T14:12:00
+NS-AI-000422,mora bhai section 498A FIR 1403 jail re achhi 18 months bail miliba ki,or,Odia,bail_enquiry,bail_application,4,helpful_response,,0.74,0.94,adaptive_multilingual_expansion,2026-06-10T14:13:00
+NS-AI-000423,mora bhai section 406 FIR 1404 jail re achhi 2 months bail miliba ki,or,Odia,bail_enquiry,bail_application,2,wrong_language,language,0.38,0.92,adaptive_multilingual_expansion,2026-06-10T14:14:00
+NS-AI-000424,mora bhai section 307 FIR 1405 jail re achhi 6 months bail miliba ki,or,Odia,bail_enquiry,bail_application,5,excellent_response,,0.74,0.94,adaptive_multilingual_expansion,2026-06-10T14:15:00
+NS-AI-000425,FIR 1406 case status darkar police station Hazratganj,or,Odia,case_status,case_status_request,3,partial_answer,,0.62,0.86,adaptive_multilingual_expansion,2026-06-10T14:16:00
+NS-AI-000426,FIR 1407 case status darkar police station Park Street,or,Odia,case_status,case_status_request,4,helpful_response,,0.74,0.94,adaptive_multilingual_expansion,2026-06-10T14:17:00
+NS-AI-000427,FIR 1408 case status darkar police station Charminar,or,Odia,case_status,case_status_request,2,wrong_intent,intent,0.38,0.92,adaptive_multilingual_expansion,2026-06-10T14:18:00
+NS-AI-000428,FIR 1409 case status darkar police station Cuttack Town,or,Odia,case_status,case_status_request,5,excellent_response,,0.74,0.94,adaptive_multilingual_expansion,2026-06-10T14:19:00
+NS-AI-000429,FIR 1410 case status darkar police station Shivaji Nagar,or,Odia,case_status,case_status_request,4,helpful_response,,0.74,0.94,adaptive_multilingual_expansion,2026-06-10T14:20:00
+NS-AI-000430,section 379 arrest pare rights kana,or,Odia,legal_rights,rights_explainer,3,partial_answer,,0.62,0.86,adaptive_multilingual_expansion,2026-06-10T14:21:00
+NS-AI-000431,section 498A arrest pare rights kana,or,Odia,legal_rights,rights_explainer,4,helpful_response,,0.74,0.94,adaptive_multilingual_expansion,2026-06-10T14:22:00
+NS-AI-000432,section 406 arrest pare rights kana,or,Odia,legal_rights,rights_explainer,2,wrong_language,language,0.38,0.92,adaptive_multilingual_expansion,2026-06-10T14:23:00
+NS-AI-000433,section 307 arrest pare rights kana,or,Odia,legal_rights,rights_explainer,4,helpful_response,,0.74,0.94,adaptive_multilingual_expansion,2026-06-10T14:24:00
+NS-AI-000434,section 379 arrest pare rights kana,or,Odia,legal_rights,rights_explainer,2,missing_information,section_charged,0.38,0.92,adaptive_multilingual_expansion,2026-06-10T14:25:00
+NS-AI-000435,FIR 1416 next court date ani peshi date beku,or,Odia,court_date,court_date_request,3,partial_answer,,0.62,0.86,adaptive_multilingual_expansion,2026-06-10T14:26:00
+NS-AI-000436,FIR 1417 next court date ani peshi date beku,or,Odia,court_date,court_date_request,5,excellent_response,,0.74,0.94,adaptive_multilingual_expansion,2026-06-10T14:27:00
+NS-AI-000437,FIR 1418 next court date ani peshi date beku,or,Odia,court_date,court_date_request,4,helpful_response,,0.74,0.94,adaptive_multilingual_expansion,2026-06-10T14:28:00
+NS-AI-000438,FIR 1419 next court date ani peshi date beku,or,Odia,court_date,court_date_request,4,helpful_response,,0.74,0.94,adaptive_multilingual_expansion,2026-06-10T14:29:00
+NS-AI-000439,FIR 1420 next court date ani peshi date beku,or,Odia,court_date,court_date_request,4,helpful_response,,0.74,0.94,adaptive_multilingual_expansion,2026-06-10T14:30:00
+NS-AI-000440,free lawyer darkar section 498A case sathi,or,Odia,lawyer_request,legal_aid_referral,3,partial_answer,,0.62,0.86,adaptive_multilingual_expansion,2026-06-10T14:31:00
+NS-AI-000441,free lawyer darkar section 406 case sathi,or,Odia,lawyer_request,legal_aid_referral,2,wrong_language,language,0.38,0.92,adaptive_multilingual_expansion,2026-06-10T14:32:00
+NS-AI-000442,free lawyer darkar section 307 case sathi,or,Odia,lawyer_request,legal_aid_referral,4,helpful_response,,0.74,0.94,adaptive_multilingual_expansion,2026-06-10T14:33:00
+NS-AI-000443,free lawyer darkar section 379 case sathi,or,Odia,lawyer_request,legal_aid_referral,4,helpful_response,,0.74,0.94,adaptive_multilingual_expansion,2026-06-10T14:34:00
+NS-AI-000444,free lawyer darkar section 498A case sathi,or,Odia,lawyer_request,legal_aid_referral,5,excellent_response,,0.74,0.94,adaptive_multilingual_expansion,2026-06-10T14:35:00
+NS-AI-000445,FIR 1426 FIR copy darkar station Cuttack Town,or,Odia,fir_copy,fir_copy_application,3,partial_answer,,0.62,0.86,adaptive_multilingual_expansion,2026-06-10T14:36:00
+NS-AI-000446,FIR 1427 FIR copy darkar station Shivaji Nagar,or,Odia,fir_copy,fir_copy_application,4,helpful_response,,0.74,0.94,adaptive_multilingual_expansion,2026-06-10T14:37:00
+NS-AI-000447,FIR 1428 FIR copy darkar station T Nagar,or,Odia,fir_copy,fir_copy_application,4,helpful_response,,0.74,0.94,adaptive_multilingual_expansion,2026-06-10T14:38:00
+NS-AI-000448,FIR 1429 FIR copy darkar station Navrangpura,or,Odia,fir_copy,fir_copy_application,2,wrong_intent,intent,0.38,0.92,adaptive_multilingual_expansion,2026-06-10T14:39:00
+NS-AI-000449,FIR 1430 FIR copy darkar station Hazratganj,or,Odia,fir_copy,fir_copy_application,4,helpful_response,,0.74,0.94,adaptive_multilingual_expansion,2026-06-10T14:40:00
+NS-AI-000450,section 406 bail reject hela appeal kemiti,or,Odia,appeal_process,appeal_guidance,2,wrong_language,language,0.38,0.92,adaptive_multilingual_expansion,2026-06-10T14:41:00
+NS-AI-000451,section 307 bail reject hela appeal kemiti,or,Odia,appeal_process,appeal_guidance,4,helpful_response,,0.74,0.94,adaptive_multilingual_expansion,2026-06-10T14:42:00
+NS-AI-000452,section 379 bail reject hela appeal kemiti,or,Odia,appeal_process,appeal_guidance,5,excellent_response,,0.74,0.94,adaptive_multilingual_expansion,2026-06-10T14:43:00
+NS-AI-000453,section 498A bail reject hela appeal kemiti,or,Odia,appeal_process,appeal_guidance,4,helpful_response,,0.74,0.94,adaptive_multilingual_expansion,2026-06-10T14:44:00
+NS-AI-000454,section 406 bail reject hela appeal kemiti,or,Odia,appeal_process,appeal_guidance,4,helpful_response,,0.74,0.94,adaptive_multilingual_expansion,2026-06-10T14:45:00
+NS-AI-000455,FIR 1436 document upload karichi check karantu,or,Odia,document_upload,evidence_checklist,2,missing_information,section_charged,0.38,0.92,adaptive_multilingual_expansion,2026-06-10T14:46:00
+NS-AI-000456,FIR 1437 document upload karichi check karantu,or,Odia,document_upload,evidence_checklist,5,excellent_response,,0.74,0.94,adaptive_multilingual_expansion,2026-06-10T14:47:00
+NS-AI-000457,FIR 1438 document upload karichi check karantu,or,Odia,document_upload,evidence_checklist,4,helpful_response,,0.74,0.94,adaptive_multilingual_expansion,2026-06-10T14:48:00
+NS-AI-000458,FIR 1439 document upload karichi check karantu,or,Odia,document_upload,evidence_checklist,4,helpful_response,,0.74,0.94,adaptive_multilingual_expansion,2026-06-10T14:49:00
+NS-AI-000459,FIR 1440 document upload karichi check karantu,or,Odia,document_upload,evidence_checklist,2,wrong_language,language,0.38,0.92,adaptive_multilingual_expansion,2026-06-10T14:50:00
+NS-AI-000460,bond amount 10000 surety bond pain document kana,or,Odia,surety_bond,surety_bond,3,partial_answer,,0.62,0.86,adaptive_multilingual_expansion,2026-06-10T14:51:00
+NS-AI-000461,bond amount 50000 surety bond pain document kana,or,Odia,surety_bond,surety_bond,4,helpful_response,,0.74,0.94,adaptive_multilingual_expansion,2026-06-10T14:52:00
+NS-AI-000462,bond amount 25000 surety bond pain document kana,or,Odia,surety_bond,surety_bond,2,wrong_language,language,0.38,0.92,adaptive_multilingual_expansion,2026-06-10T14:53:00
+NS-AI-000463,bond amount 10000 surety bond pain document kana,or,Odia,surety_bond,surety_bond,4,helpful_response,,0.74,0.94,adaptive_multilingual_expansion,2026-06-10T14:54:00
+NS-AI-000464,bond amount 50000 surety bond pain document kana,or,Odia,surety_bond,surety_bond,5,excellent_response,,0.74,0.94,adaptive_multilingual_expansion,2026-06-10T14:55:00
+NS-AI-000465,free legal aid kemiti miliba district court madhe,or,Odia,free_legal_aid,legal_aid_application,3,partial_answer,,0.62,0.86,adaptive_multilingual_expansion,2026-06-10T14:56:00
+NS-AI-000466,free legal aid kemiti miliba district court madhe,or,Odia,free_legal_aid,legal_aid_application,4,helpful_response,,0.74,0.94,adaptive_multilingual_expansion,2026-06-10T14:57:00
+NS-AI-000467,free legal aid kemiti miliba district court madhe,or,Odia,free_legal_aid,legal_aid_application,4,helpful_response,,0.74,0.94,adaptive_multilingual_expansion,2026-06-10T14:58:00
+NS-AI-000468,free legal aid kemiti miliba district court madhe,or,Odia,free_legal_aid,legal_aid_application,2,wrong_language,language,0.38,0.92,adaptive_multilingual_expansion,2026-06-10T14:59:00
+NS-AI-000469,free legal aid kemiti miliba district court madhe,or,Odia,free_legal_aid,legal_aid_application,2,wrong_intent,intent,0.38,0.92,adaptive_multilingual_expansion,2026-06-10T15:00:00
+NS-AI-000470,mor bhai section 379 FIR 1451 jail ot ase 6 months bail pabo neki,as,Assamese,bail_enquiry,bail_application,3,partial_answer,,0.62,0.86,adaptive_multilingual_expansion,2026-06-10T15:01:00
+NS-AI-000471,mor bhai section 498A FIR 1452 jail ot ase 12 months bail pabo neki,as,Assamese,bail_enquiry,bail_application,4,helpful_response,,0.74,0.94,adaptive_multilingual_expansion,2026-06-10T15:02:00
+NS-AI-000472,mor bhai section 406 FIR 1453 jail ot ase 1 months bail pabo neki,as,Assamese,bail_enquiry,bail_application,5,excellent_response,,0.74,0.94,adaptive_multilingual_expansion,2026-06-10T15:03:00
+NS-AI-000473,mor bhai section 307 FIR 1454 jail ot ase 3 months bail pabo neki,as,Assamese,bail_enquiry,bail_application,4,helpful_response,,0.74,0.94,adaptive_multilingual_expansion,2026-06-10T15:04:00
+NS-AI-000474,mor bhai section 379 FIR 1455 jail ot ase 8 months bail pabo neki,as,Assamese,bail_enquiry,bail_application,4,helpful_response,,0.74,0.94,adaptive_multilingual_expansion,2026-06-10T15:05:00
+NS-AI-000475,FIR 1456 case status lage police station Shivaji Nagar,as,Assamese,case_status,case_status_request,3,partial_answer,,0.62,0.86,adaptive_multilingual_expansion,2026-06-10T15:06:00
+NS-AI-000476,FIR 1457 case status lage police station T Nagar,as,Assamese,case_status,case_status_request,2,missing_information,section_charged,0.38,0.92,adaptive_multilingual_expansion,2026-06-10T15:07:00
+NS-AI-000477,FIR 1458 case status lage police station Navrangpura,as,Assamese,case_status,case_status_request,2,wrong_language,language,0.38,0.92,adaptive_multilingual_expansion,2026-06-10T15:08:00
+NS-AI-000478,FIR 1459 case status lage police station Hazratganj,as,Assamese,case_status,case_status_request,4,helpful_response,,0.74,0.94,adaptive_multilingual_expansion,2026-06-10T15:09:00
+NS-AI-000479,FIR 1460 case status lage police station Park Street,as,Assamese,case_status,case_status_request,4,helpful_response,,0.74,0.94,adaptive_multilingual_expansion,2026-06-10T15:10:00
+NS-AI-000480,section 498A arrest porot rights ki,as,Assamese,legal_rights,rights_explainer,3,partial_answer,,0.62,0.86,adaptive_multilingual_expansion,2026-06-10T15:11:00
+NS-AI-000481,section 406 arrest porot rights ki,as,Assamese,legal_rights,rights_explainer,4,helpful_response,,0.74,0.94,adaptive_multilingual_expansion,2026-06-10T15:12:00
+NS-AI-000482,section 307 arrest porot rights ki,as,Assamese,legal_rights,rights_explainer,4,helpful_response,,0.74,0.94,adaptive_multilingual_expansion,2026-06-10T15:13:00
+NS-AI-000483,section 379 arrest porot rights ki,as,Assamese,legal_rights,rights_explainer,2,wrong_language,language,0.38,0.92,adaptive_multilingual_expansion,2026-06-10T15:14:00
+NS-AI-000484,section 498A arrest porot rights ki,as,Assamese,legal_rights,rights_explainer,5,excellent_response,,0.74,0.94,adaptive_multilingual_expansion,2026-06-10T15:15:00
+NS-AI-000485,FIR 1466 next court date ani peshi date beku,as,Assamese,court_date,court_date_request,3,partial_answer,,0.62,0.86,adaptive_multilingual_expansion,2026-06-10T15:16:00
+NS-AI-000486,FIR 1467 next court date ani peshi date beku,as,Assamese,court_date,court_date_request,2,wrong_language,language,0.38,0.92,adaptive_multilingual_expansion,2026-06-10T15:17:00
+NS-AI-000487,FIR 1468 next court date ani peshi date beku,as,Assamese,court_date,court_date_request,4,helpful_response,,0.74,0.94,adaptive_multilingual_expansion,2026-06-10T15:18:00
+NS-AI-000488,FIR 1469 next court date ani peshi date beku,as,Assamese,court_date,court_date_request,5,excellent_response,,0.74,0.94,adaptive_multilingual_expansion,2026-06-10T15:19:00
+NS-AI-000489,FIR 1470 next court date ani peshi date beku,as,Assamese,court_date,court_date_request,4,helpful_response,,0.74,0.94,adaptive_multilingual_expansion,2026-06-10T15:20:00
+NS-AI-000490,free lawyer lage section 406 case sathi,as,Assamese,lawyer_request,legal_aid_referral,2,wrong_intent,intent,0.38,0.92,adaptive_multilingual_expansion,2026-06-10T15:21:00
+NS-AI-000491,free lawyer lage section 307 case sathi,as,Assamese,lawyer_request,legal_aid_referral,4,helpful_response,,0.74,0.94,adaptive_multilingual_expansion,2026-06-10T15:22:00
+NS-AI-000492,free lawyer lage section 379 case sathi,as,Assamese,lawyer_request,legal_aid_referral,5,excellent_response,,0.74,0.94,adaptive_multilingual_expansion,2026-06-10T15:23:00
+NS-AI-000493,free lawyer lage section 498A case sathi,as,Assamese,lawyer_request,legal_aid_referral,4,helpful_response,,0.74,0.94,adaptive_multilingual_expansion,2026-06-10T15:24:00
+NS-AI-000494,free lawyer lage section 406 case sathi,as,Assamese,lawyer_request,legal_aid_referral,4,helpful_response,,0.74,0.94,adaptive_multilingual_expansion,2026-06-10T15:25:00
+NS-AI-000495,FIR 1476 FIR copy lage station Hazratganj,as,Assamese,fir_copy,fir_copy_application,2,wrong_language,language,0.38,0.92,adaptive_multilingual_expansion,2026-06-10T15:26:00
+NS-AI-000496,FIR 1477 FIR copy lage station Park Street,as,Assamese,fir_copy,fir_copy_application,5,excellent_response,,0.74,0.94,adaptive_multilingual_expansion,2026-06-10T15:27:00
+NS-AI-000497,FIR 1478 FIR copy lage station Charminar,as,Assamese,fir_copy,fir_copy_application,2,missing_information,section_charged,0.38,0.92,adaptive_multilingual_expansion,2026-06-10T15:28:00
+NS-AI-000498,FIR 1479 FIR copy lage station Cuttack Town,as,Assamese,fir_copy,fir_copy_application,4,helpful_response,,0.74,0.94,adaptive_multilingual_expansion,2026-06-10T15:29:00
+NS-AI-000499,FIR 1480 FIR copy lage station Shivaji Nagar,as,Assamese,fir_copy,fir_copy_application,4,helpful_response,,0.74,0.94,adaptive_multilingual_expansion,2026-06-10T15:30:00
+NS-AI-000500,section 307 bail reject hol appeal kenekoi,as,Assamese,appeal_process,appeal_guidance,3,partial_answer,,0.62,0.86,adaptive_multilingual_expansion,2026-06-10T15:31:00
+NS-AI-000501,section 379 bail reject hol appeal kenekoi,as,Assamese,appeal_process,appeal_guidance,4,helpful_response,,0.74,0.94,adaptive_multilingual_expansion,2026-06-10T15:32:00
+NS-AI-000502,section 498A bail reject hol appeal kenekoi,as,Assamese,appeal_process,appeal_guidance,4,helpful_response,,0.74,0.94,adaptive_multilingual_expansion,2026-06-10T15:33:00
+NS-AI-000503,section 406 bail reject hol appeal kenekoi,as,Assamese,appeal_process,appeal_guidance,4,helpful_response,,0.74,0.94,adaptive_multilingual_expansion,2026-06-10T15:34:00
+NS-AI-000504,section 307 bail reject hol appeal kenekoi,as,Assamese,appeal_process,appeal_guidance,2,wrong_language,language,0.38,0.92,adaptive_multilingual_expansion,2026-06-10T15:35:00
+NS-AI-000505,FIR 1486 document upload korisu check korok,as,Assamese,document_upload,evidence_checklist,3,partial_answer,,0.62,0.86,adaptive_multilingual_expansion,2026-06-10T15:36:00
+NS-AI-000506,FIR 1487 document upload korisu check korok,as,Assamese,document_upload,evidence_checklist,4,helpful_response,,0.74,0.94,adaptive_multilingual_expansion,2026-06-10T15:37:00
+NS-AI-000507,FIR 1488 document upload korisu check korok,as,Assamese,document_upload,evidence_checklist,4,helpful_response,,0.74,0.94,adaptive_multilingual_expansion,2026-06-10T15:38:00
+NS-AI-000508,FIR 1489 document upload korisu check korok,as,Assamese,document_upload,evidence_checklist,5,excellent_response,,0.74,0.94,adaptive_multilingual_expansion,2026-06-10T15:39:00
+NS-AI-000509,FIR 1490 document upload korisu check korok,as,Assamese,document_upload,evidence_checklist,4,helpful_response,,0.74,0.94,adaptive_multilingual_expansion,2026-06-10T15:40:00
+NS-AI-000510,bond amount 50000 surety bond karone document ki,as,Assamese,surety_bond,surety_bond,3,partial_answer,,0.62,0.86,adaptive_multilingual_expansion,2026-06-10T15:41:00
+NS-AI-000511,bond amount 25000 surety bond karone document ki,as,Assamese,surety_bond,surety_bond,2,wrong_intent,intent,0.38,0.92,adaptive_multilingual_expansion,2026-06-10T15:42:00
+NS-AI-000512,bond amount 10000 surety bond karone document ki,as,Assamese,surety_bond,surety_bond,5,excellent_response,,0.74,0.94,adaptive_multilingual_expansion,2026-06-10T15:43:00
+NS-AI-000513,bond amount 50000 surety bond karone document ki,as,Assamese,surety_bond,surety_bond,2,wrong_language,language,0.38,0.92,adaptive_multilingual_expansion,2026-06-10T15:44:00
+NS-AI-000514,bond amount 25000 surety bond karone document ki,as,Assamese,surety_bond,surety_bond,4,helpful_response,,0.74,0.94,adaptive_multilingual_expansion,2026-06-10T15:45:00
+NS-AI-000515,free legal aid kenekoi pabo district court madhe,as,Assamese,free_legal_aid,legal_aid_application,3,partial_answer,,0.62,0.86,adaptive_multilingual_expansion,2026-06-10T15:46:00
+NS-AI-000516,free legal aid kenekoi pabo district court madhe,as,Assamese,free_legal_aid,legal_aid_application,5,excellent_response,,0.74,0.94,adaptive_multilingual_expansion,2026-06-10T15:47:00
+NS-AI-000517,free legal aid kenekoi pabo district court madhe,as,Assamese,free_legal_aid,legal_aid_application,4,helpful_response,,0.74,0.94,adaptive_multilingual_expansion,2026-06-10T15:48:00
+NS-AI-000518,free legal aid kenekoi pabo district court madhe,as,Assamese,free_legal_aid,legal_aid_application,2,missing_information,section_charged,0.38,0.92,adaptive_multilingual_expansion,2026-06-10T15:49:00
+NS-AI-000519,free legal aid kenekoi pabo district court madhe,as,Assamese,free_legal_aid,legal_aid_application,4,helpful_response,,0.74,0.94,adaptive_multilingual_expansion,2026-06-10T15:50:00
+NS-AI-000520,mhajo bhav section 498A FIR 1501 jailant asa 8 months bail mellta kai,kok,Konkani,bail_enquiry,bail_application,3,partial_answer,,0.62,0.86,adaptive_multilingual_expansion,2026-06-10T15:51:00
+NS-AI-000521,mhajo bhav section 406 FIR 1502 jailant asa 18 months bail mellta kai,kok,Konkani,bail_enquiry,bail_application,4,helpful_response,,0.74,0.94,adaptive_multilingual_expansion,2026-06-10T15:52:00
+NS-AI-000522,mhajo bhav section 307 FIR 1503 jailant asa 2 months bail mellta kai,kok,Konkani,bail_enquiry,bail_application,2,wrong_language,language,0.38,0.92,adaptive_multilingual_expansion,2026-06-10T15:53:00
+NS-AI-000523,mhajo bhav section 379 FIR 1504 jailant asa 6 months bail mellta kai,kok,Konkani,bail_enquiry,bail_application,4,helpful_response,,0.74,0.94,adaptive_multilingual_expansion,2026-06-10T15:54:00
+NS-AI-000524,mhajo bhav section 498A FIR 1505 jailant asa 12 months bail mellta kai,kok,Konkani,bail_enquiry,bail_application,5,excellent_response,,0.74,0.94,adaptive_multilingual_expansion,2026-06-10T15:55:00
+NS-AI-000525,FIR 1506 case status zai police station Park Street,kok,Konkani,case_status,case_status_request,2,wrong_language,language,0.38,0.92,adaptive_multilingual_expansion,2026-06-10T15:56:00
+NS-AI-000526,FIR 1507 case status zai police station Charminar,kok,Konkani,case_status,case_status_request,4,helpful_response,,0.74,0.94,adaptive_multilingual_expansion,2026-06-10T15:57:00
+NS-AI-000527,FIR 1508 case status zai police station Cuttack Town,kok,Konkani,case_status,case_status_request,4,helpful_response,,0.74,0.94,adaptive_multilingual_expansion,2026-06-10T15:58:00
+NS-AI-000528,FIR 1509 case status zai police station Shivaji Nagar,kok,Konkani,case_status,case_status_request,5,excellent_response,,0.74,0.94,adaptive_multilingual_expansion,2026-06-10T15:59:00
+NS-AI-000529,FIR 1510 case status zai police station T Nagar,kok,Konkani,case_status,case_status_request,4,helpful_response,,0.74,0.94,adaptive_multilingual_expansion,2026-06-10T16:00:00
+NS-AI-000530,section 406 arrest uprant rights kiteak,kok,Konkani,legal_rights,rights_explainer,3,partial_answer,,0.62,0.86,adaptive_multilingual_expansion,2026-06-10T16:01:00
+NS-AI-000531,section 307 arrest uprant rights kiteak,kok,Konkani,legal_rights,rights_explainer,2,wrong_language,language,0.38,0.92,adaptive_multilingual_expansion,2026-06-10T16:02:00
+NS-AI-000532,section 379 arrest uprant rights kiteak,kok,Konkani,legal_rights,rights_explainer,2,wrong_intent,intent,0.38,0.92,adaptive_multilingual_expansion,2026-06-10T16:03:00
+NS-AI-000533,section 498A arrest uprant rights kiteak,kok,Konkani,legal_rights,rights_explainer,4,helpful_response,,0.74,0.94,adaptive_multilingual_expansion,2026-06-10T16:04:00
+NS-AI-000534,section 406 arrest uprant rights kiteak,kok,Konkani,legal_rights,rights_explainer,4,helpful_response,,0.74,0.94,adaptive_multilingual_expansion,2026-06-10T16:05:00
+NS-AI-000535,FIR 1516 next court date ani peshi date beku,kok,Konkani,court_date,court_date_request,3,partial_answer,,0.62,0.86,adaptive_multilingual_expansion,2026-06-10T16:06:00
+NS-AI-000536,FIR 1517 next court date ani peshi date beku,kok,Konkani,court_date,court_date_request,5,excellent_response,,0.74,0.94,adaptive_multilingual_expansion,2026-06-10T16:07:00
+NS-AI-000537,FIR 1518 next court date ani peshi date beku,kok,Konkani,court_date,court_date_request,4,helpful_response,,0.74,0.94,adaptive_multilingual_expansion,2026-06-10T16:08:00
+NS-AI-000538,FIR 1519 next court date ani peshi date beku,kok,Konkani,court_date,court_date_request,4,helpful_response,,0.74,0.94,adaptive_multilingual_expansion,2026-06-10T16:09:00
+NS-AI-000539,FIR 1520 next court date ani peshi date beku,kok,Konkani,court_date,court_date_request,2,missing_information,section_charged,0.38,0.92,adaptive_multilingual_expansion,2026-06-10T16:10:00
+NS-AI-000540,free lawyer zai section 307 case sathi,kok,Konkani,lawyer_request,legal_aid_referral,2,wrong_language,language,0.38,0.92,adaptive_multilingual_expansion,2026-06-10T16:11:00
+NS-AI-000541,free lawyer zai section 379 case sathi,kok,Konkani,lawyer_request,legal_aid_referral,4,helpful_response,,0.74,0.94,adaptive_multilingual_expansion,2026-06-10T16:12:00
+NS-AI-000542,free lawyer zai section 498A case sathi,kok,Konkani,lawyer_request,legal_aid_referral,4,helpful_response,,0.74,0.94,adaptive_multilingual_expansion,2026-06-10T16:13:00
+NS-AI-000543,free lawyer zai section 406 case sathi,kok,Konkani,lawyer_request,legal_aid_referral,4,helpful_response,,0.74,0.94,adaptive_multilingual_expansion,2026-06-10T16:14:00
+NS-AI-000544,free lawyer zai section 307 case sathi,kok,Konkani,lawyer_request,legal_aid_referral,5,excellent_response,,0.74,0.94,adaptive_multilingual_expansion,2026-06-10T16:15:00
+NS-AI-000545,FIR 1526 FIR copy zai station Shivaji Nagar,kok,Konkani,fir_copy,fir_copy_application,3,partial_answer,,0.62,0.86,adaptive_multilingual_expansion,2026-06-10T16:16:00
+NS-AI-000546,FIR 1527 FIR copy zai station T Nagar,kok,Konkani,fir_copy,fir_copy_application,2,wrong_language,language,0.38,0.92,adaptive_multilingual_expansion,2026-06-10T16:17:00
+NS-AI-000547,FIR 1528 FIR copy zai station Navrangpura,kok,Konkani,fir_copy,fir_copy_application,4,helpful_response,,0.74,0.94,adaptive_multilingual_expansion,2026-06-10T16:18:00
+NS-AI-000548,FIR 1529 FIR copy zai station Hazratganj,kok,Konkani,fir_copy,fir_copy_application,5,excellent_response,,0.74,0.94,adaptive_multilingual_expansion,2026-06-10T16:19:00
+NS-AI-000549,FIR 1530 FIR copy zai station Park Street,kok,Konkani,fir_copy,fir_copy_application,2,wrong_language,language,0.38,0.92,adaptive_multilingual_expansion,2026-06-10T16:20:00
+NS-AI-000550,section 379 bail reject zali appeal kashi,kok,Konkani,appeal_process,appeal_guidance,3,partial_answer,,0.62,0.86,adaptive_multilingual_expansion,2026-06-10T16:21:00
+NS-AI-000551,section 498A bail reject zali appeal kashi,kok,Konkani,appeal_process,appeal_guidance,4,helpful_response,,0.74,0.94,adaptive_multilingual_expansion,2026-06-10T16:22:00
+NS-AI-000552,section 406 bail reject zali appeal kashi,kok,Konkani,appeal_process,appeal_guidance,5,excellent_response,,0.74,0.94,adaptive_multilingual_expansion,2026-06-10T16:23:00
+NS-AI-000553,section 307 bail reject zali appeal kashi,kok,Konkani,appeal_process,appeal_guidance,2,wrong_intent,intent,0.38,0.92,adaptive_multilingual_expansion,2026-06-10T16:24:00
+NS-AI-000554,section 379 bail reject zali appeal kashi,kok,Konkani,appeal_process,appeal_guidance,4,helpful_response,,0.74,0.94,adaptive_multilingual_expansion,2026-06-10T16:25:00
+NS-AI-000555,FIR 1536 document upload kela check korat,kok,Konkani,document_upload,evidence_checklist,3,partial_answer,,0.62,0.86,adaptive_multilingual_expansion,2026-06-10T16:26:00
+NS-AI-000556,FIR 1537 document upload kela check korat,kok,Konkani,document_upload,evidence_checklist,5,excellent_response,,0.74,0.94,adaptive_multilingual_expansion,2026-06-10T16:27:00
+NS-AI-000557,FIR 1538 document upload kela check korat,kok,Konkani,document_upload,evidence_checklist,4,helpful_response,,0.74,0.94,adaptive_multilingual_expansion,2026-06-10T16:28:00
+NS-AI-000558,FIR 1539 document upload kela check korat,kok,Konkani,document_upload,evidence_checklist,2,wrong_language,language,0.38,0.92,adaptive_multilingual_expansion,2026-06-10T16:29:00
+NS-AI-000559,FIR 1540 document upload kela check korat,kok,Konkani,document_upload,evidence_checklist,4,helpful_response,,0.74,0.94,adaptive_multilingual_expansion,2026-06-10T16:30:00
+NS-AI-000560,bond amount 25000 surety bond sathi documents kiteak,kok,Konkani,surety_bond,surety_bond,2,missing_information,section_charged,0.38,0.92,adaptive_multilingual_expansion,2026-06-10T16:31:00
+NS-AI-000561,bond amount 10000 surety bond sathi documents kiteak,kok,Konkani,surety_bond,surety_bond,4,helpful_response,,0.74,0.94,adaptive_multilingual_expansion,2026-06-10T16:32:00
+NS-AI-000562,bond amount 50000 surety bond sathi documents kiteak,kok,Konkani,surety_bond,surety_bond,4,helpful_response,,0.74,0.94,adaptive_multilingual_expansion,2026-06-10T16:33:00
+NS-AI-000563,bond amount 25000 surety bond sathi documents kiteak,kok,Konkani,surety_bond,surety_bond,4,helpful_response,,0.74,0.94,adaptive_multilingual_expansion,2026-06-10T16:34:00
+NS-AI-000564,bond amount 10000 surety bond sathi documents kiteak,kok,Konkani,surety_bond,surety_bond,5,excellent_response,,0.74,0.94,adaptive_multilingual_expansion,2026-06-10T16:35:00
+NS-AI-000565,free legal aid kashi mellta district court madhe,kok,Konkani,free_legal_aid,legal_aid_application,3,partial_answer,,0.62,0.86,adaptive_multilingual_expansion,2026-06-10T16:36:00
+NS-AI-000566,free legal aid kashi mellta district court madhe,kok,Konkani,free_legal_aid,legal_aid_application,4,helpful_response,,0.74,0.94,adaptive_multilingual_expansion,2026-06-10T16:37:00
+NS-AI-000567,free legal aid kashi mellta district court madhe,kok,Konkani,free_legal_aid,legal_aid_application,2,wrong_language,language,0.38,0.92,adaptive_multilingual_expansion,2026-06-10T16:38:00
+NS-AI-000568,free legal aid kashi mellta district court madhe,kok,Konkani,free_legal_aid,legal_aid_application,5,excellent_response,,0.74,0.94,adaptive_multilingual_expansion,2026-06-10T16:39:00
+NS-AI-000569,free legal aid kashi mellta district court madhe,kok,Konkani,free_legal_aid,legal_aid_application,4,helpful_response,,0.74,0.94,adaptive_multilingual_expansion,2026-06-10T16:40:00

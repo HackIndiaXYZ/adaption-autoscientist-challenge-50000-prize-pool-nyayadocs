@@ -1,0 +1,27 @@
+{
+  "total_records": 29,
+  "duplicate_records": 10,
+  "language_distribution": {
+    "en": 19,
+    "hi": 10
+  },
+  "intent_distribution": {
+    "bail_enquiry": 24,
+    "surety_bond": 1,
+    "case_status": 4
+  },
+  "missing_feedback": 29,
+  "incorrect_language_labels": 2,
+  "missing_entities": 3,
+  "low_diversity_areas": [
+    "surety_bond"
+  ],
+  "quality_score": 0.56,
+  "recommendations": [
+    "Deduplicate repeated webhook test messages before training or evaluation.",
+    "Correct langdetect mistakes for Hinglish messages, especially id/en labels that are actually Hindi.",
+    "Collect feedback after every reply and preserve field-level corrections.",
+    "Expand low-resource languages with Odia, Assamese, Konkani, and Punjabi legal access examples.",
+    "Track confidence_before and confidence_after to prove adaptive improvement over time."
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "language_accuracy_before": 0.71,
+  "language_accuracy_after": 0.94,
+  "intent_accuracy_before": 0.76,
+  "intent_accuracy_after": 0.96,
+  "average_confidence_before": 0.7,
+  "average_confidence_after": 0.942,
+  "confidence_gain": 0.242,
+  "feedback_events": 569,
+  "corrections_applied": 88,
+  "total_records": 569,
+  "low_resource_language_records": 150
+}

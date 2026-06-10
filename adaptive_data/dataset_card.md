@@ -14,6 +14,11 @@ The dataset starts with real Twilio WhatsApp interactions, deduplicates and reda
 - Adaptation: versioned before/after confidence history
 - Export: JSONL, CSV, dashboard statistics
 
+## Adaption Labs Track Integration
+The dataset is designed for Adaption Adaptive Data ingestion and export. It should be uploaded to Adaption as `nyayasetu-legal-dialogues-multilingual` using `adaptive_dataset.csv`. The exported artifacts in this folder demonstrate how legal-aid conversations become model-ready adaptive data for AI agents, fine-tuning, and evaluation systems.
+
+Credit: This dataset and pipeline were built for the Adaption Labs Adaptive Data Track.
+
 ## Results
 - Total adaptive records: 1544
 - Feedback events: 1544

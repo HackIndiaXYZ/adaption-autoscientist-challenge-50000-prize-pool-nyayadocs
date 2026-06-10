@@ -14,6 +14,23 @@ NyayaSetu is a multilingual legal-access assistant for underserved Indian citize
 ## Dataset Structure
 Each row contains sample_id, input_text, input_language, intent, entities, output_doc_type, feedback, correction, adaptation_history, confidence_before, confidence_after, session_id, and timestamp.
 
+## Adaption Platform Usage
+This dataset is prepared for upload into Adaption Adaptive Data under the dataset name `nyayasetu-legal-dialogues-multilingual`. The primary upload file is `adaptive_dataset.csv`; the model-ready export file is `adaptive_dataset.jsonl`.
+
+The project demonstrates meaningful Adaptive Data usage through:
+- Real WhatsApp legal-aid interactions as seed data
+- Multilingual adaptive expansion for underserved Indian languages
+- Human-style feedback events
+- Field-level correction events
+- Versioned adaptation history
+- Confidence_before and confidence_after metrics
+- Dashboard-ready exports for evaluation and model improvement
+
+## Public Dataset Releases
+Hugging Face: https://huggingface.co/datasets/Ananya80/nyayasetu-legal-dialogues-multilingual
+
+Kaggle: add Kaggle dataset URL after upload
+
 ## Language Coverage
 The dataset covers 11 Indian languages: Hindi, Marathi, Bengali, Tamil, Telugu, Kannada, Gujarati, Punjabi, Odia, Assamese, Konkani. Low-resource coverage is explicitly tracked for Odia, Assamese, and Konkani.
 
@@ -30,4 +47,4 @@ Example: a Hinglish bail query may be misclassified as Indonesian by automatic l
 The dataset focuses on legal access for families navigating arrest, bail, FIR copies, court dates, and legal aid in regional languages. The adaptive format makes improvement measurable for low-resource languages rather than hiding them inside aggregate model metrics.
 
 ## Credit Adaption Labs
-Built for the Adaption Adaptive Data Track to demonstrate continuous learning, human feedback loops, dataset evolution, and multilingual adaptive intelligence.
+Built for the Adaption Labs Adaptive Data Track to demonstrate continuous learning, human feedback loops, dataset evolution, and multilingual adaptive intelligence for Indian legal access.

@@ -5,11 +5,11 @@ import os
 load_dotenv()
 
 api = HfApi()
-api.upload_file(
-    path_or_fileobj="./dataset/interactions.jsonl",
-    path_in_repo="data/interactions.jsonl",
+api.upload_folder(
+    folder_path="./adaptive_data",
+    path_in_repo=".",
     repo_id="Ananya80/nyayasetu-legal-dialogues-multilingual",
     repo_type="dataset",
     token=os.getenv("HF_TOKEN"),
 )
-print("Uploaded successfull")
+print("Uploaded successful")

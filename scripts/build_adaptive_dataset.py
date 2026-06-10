@@ -547,28 +547,36 @@ def synthesize_global_civic_records():
     records = []
     base_time = datetime(2026, 6, 11, 8, 0)
     sample_index = 1
+    scenario_suffixes = [
+        "please tell me what documents I should keep",
+        "I need a simple complaint draft and next steps",
+        "family is worried and we need free legal aid",
+        "the other side is pressuring us and we need safe guidance",
+        "deadline is close and I need the correct authority to contact",
+    ]
     for intent, examples in GLOBAL_CIVIC_EXAMPLES.items():
         for language, text in examples:
-            records.append(
-                {
-                    "input_text": text,
-                    "input_language": language,
-                    "intent": intent,
-                    "entities": {
-                        "accused_name": None,
-                        "fir_number": "[REDACTED]" if "fir" in text.lower() else None,
-                        "police_station": None,
-                        "section_charged": None,
-                        "time_in_custody_months": None,
-                        "global_topic": True,
-                    },
-                    "output_doc_type": DOC_TYPES[intent],
-                    "session_id": str(uuid.uuid4()),
-                    "timestamp": (base_time + timedelta(minutes=sample_index)).isoformat(),
-                    "source": "global_civic_legal_expansion",
-                }
-            )
-            sample_index += 1
+            for suffix in scenario_suffixes:
+                records.append(
+                    {
+                        "input_text": f"{text} {suffix}",
+                        "input_language": language,
+                        "intent": intent,
+                        "entities": {
+                            "accused_name": None,
+                            "fir_number": "[REDACTED]" if "fir" in text.lower() else None,
+                            "police_station": None,
+                            "section_charged": None,
+                            "time_in_custody_months": None,
+                            "global_topic": True,
+                        },
+                        "output_doc_type": DOC_TYPES[intent],
+                        "session_id": str(uuid.uuid4()),
+                        "timestamp": (base_time + timedelta(minutes=sample_index)).isoformat(),
+                        "source": "global_civic_legal_expansion",
+                    }
+                )
+                sample_index += 1
     return records
 
 

@@ -15,9 +15,9 @@ The dataset starts with real Twilio WhatsApp interactions, deduplicates and reda
 - Export: JSONL, CSV, dashboard statistics
 
 ## Results
-- Total adaptive records: 1204
-- Feedback events: 1204
-- Corrections applied: 187
+- Total adaptive records: 1544
+- Feedback events: 1544
+- Corrections applied: 235
 - Language accuracy before: 0.71
 - Language accuracy after: 0.94
 - Intent accuracy before: 0.76

@@ -1,7 +1,7 @@
 feedback_type,records,percentage
-excellent_response,202,16.78
-helpful_response,611,50.75
-missing_information,19,1.58
-partial_answer,204,16.94
-wrong_intent,20,1.66
-wrong_language,148,12.29
+excellent_response,261,16.9
+helpful_response,786,50.91
+missing_information,24,1.55
+partial_answer,262,16.97
+wrong_intent,23,1.49
+wrong_language,188,12.18

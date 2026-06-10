@@ -3,11 +3,11 @@
   "language_accuracy_after": 0.94,
   "intent_accuracy_before": 0.76,
   "intent_accuracy_after": 0.96,
-  "average_confidence_before": 0.7,
-  "average_confidence_after": 0.942,
-  "confidence_gain": 0.242,
-  "feedback_events": 1204,
-  "corrections_applied": 187,
-  "total_records": 1204,
+  "average_confidence_before": 0.704,
+  "average_confidence_after": 0.943,
+  "confidence_gain": 0.239,
+  "feedback_events": 1544,
+  "corrections_applied": 235,
+  "total_records": 1544,
   "low_resource_language_records": 300
 }

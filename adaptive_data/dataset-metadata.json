@@ -1,0 +1,10 @@
+{
+  "title": "NyayaSetu Adaptive Legal Dataset",
+  "id": "ananyadaitkar/nyayasetu-legal-dialogues-multilingual",
+  "licenses": [
+    {
+      "name": "CC0-1.0"
+    }
+  ],
+  "description": "NyayaSetu + ZamanatAI is a multilingual adaptive legal-access dataset for Indian civic and justice workflows. It includes WhatsApp-style legal aid queries, language labels, legal intents, entities, output document types, user feedback, correction events, adaptation history, and confidence-before/after metrics. Built for the Adaption Labs Adaptive Data Track."
+}

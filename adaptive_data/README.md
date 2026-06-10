@@ -29,7 +29,7 @@ The project demonstrates meaningful Adaptive Data usage through:
 ## Public Dataset Releases
 Hugging Face: https://huggingface.co/datasets/Ananya80/nyayasetu-legal-dialogues-multilingual
 
-Kaggle: add Kaggle dataset URL after upload
+Kaggle: https://www.kaggle.com/datasets/ananyadaitkar/nyayasetu-legal-dialogues-multilingual
 
 ## Language Coverage
 The dataset covers 11 Indian languages: Hindi, Marathi, Bengali, Tamil, Telugu, Kannada, Gujarati, Punjabi, Odia, Assamese, Konkani. Low-resource coverage is explicitly tracked for Odia, Assamese, and Konkani.

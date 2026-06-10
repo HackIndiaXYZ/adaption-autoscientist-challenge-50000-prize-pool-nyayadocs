@@ -60,7 +60,7 @@ Hugging Face:
 [https://huggingface.co/datasets/Ananya80/nyayasetu-legal-dialogues-multilingual](https://huggingface.co/datasets/Ananya80/nyayasetu-legal-dialogues-multilingual)
 
 Kaggle:
-[add Kaggle dataset URL after upload]
+[https://www.kaggle.com/datasets/ananyadaitkar/nyayasetu-legal-dialogues-multilingual](https://www.kaggle.com/datasets/ananyadaitkar/nyayasetu-legal-dialogues-multilingual)
 
 ## Adaptive learning loop
 ```text

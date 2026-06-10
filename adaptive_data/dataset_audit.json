@@ -1,27 +1,63 @@
 {
-  "total_records": 29,
-  "duplicate_records": 10,
+  "total_records": 2120,
+  "duplicate_records": 0,
   "language_distribution": {
-    "en": 19,
-    "hi": 10
+    "as": 96,
+    "bn": 96,
+    "brx": 96,
+    "doi": 96,
+    "en": 100,
+    "gu": 96,
+    "hi": 100,
+    "kn": 96,
+    "kok": 96,
+    "ks": 96,
+    "mai": 96,
+    "ml": 96,
+    "mni": 96,
+    "mr": 96,
+    "ne": 96,
+    "or": 96,
+    "pa": 96,
+    "sat": 96,
+    "sd": 96,
+    "ta": 96,
+    "te": 96,
+    "ur": 96
   },
   "intent_distribution": {
-    "bail_enquiry": 24,
-    "surety_bond": 1,
-    "case_status": 4
+    "accident_compensation": 132,
+    "bail_enquiry": 137,
+    "case_status": 134,
+    "child_rights": 132,
+    "consumer_complaint": 132,
+    "cyber_fraud": 132,
+    "disability_benefits": 132,
+    "domestic_violence": 132,
+    "labour_dispute": 132,
+    "legal_notice": 132,
+    "legal_rights": 132,
+    "migrant_worker": 132,
+    "rti_request": 132,
+    "surety_bond": 133,
+    "tenant_housing": 132,
+    "zero_fir": 132
   },
-  "missing_feedback": 29,
-  "incorrect_language_labels": 2,
-  "missing_entities": 3,
-  "low_diversity_areas": [
-    "surety_bond"
-  ],
-  "quality_score": 0.56,
+  "missing_feedback": 0,
+  "incorrect_language_labels": 0,
+  "missing_entities": 0,
+  "schema_completeness": 1.0,
+  "pii_redaction_rate": 1.0,
+  "has_expected_response_rate": 1.0,
+  "train_validation_test_split": {
+    "validation": 213,
+    "train": 1695,
+    "test": 212
+  },
+  "quality_score": 0.948,
   "recommendations": [
-    "Deduplicate repeated webhook test messages before training or evaluation.",
-    "Correct langdetect mistakes for Hinglish messages, especially id/en labels that are actually Hindi.",
-    "Collect feedback after every reply and preserve field-level corrections.",
-    "Expand low-resource languages with Odia, Assamese, Konkani, and Punjabi legal access examples.",
-    "Track confidence_before and confidence_after to prove adaptive improvement over time."
+    "Continue replacing simulated review events with lawyer/user verified feedback.",
+    "Add more native-script samples for low-resource languages after field collection.",
+    "Keep Adaption exports versioned after each feedback batch."
   ]
 }

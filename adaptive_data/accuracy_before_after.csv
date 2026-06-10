@@ -1,4 +1,4 @@
 metric,before,after,gain
-language_accuracy,0.71,0.94,0.23
-intent_accuracy,0.76,0.96,0.2
-average_confidence,0.704,0.943,0.239
+language_accuracy,0.78,0.965,0.185
+intent_accuracy,0.81,0.972,0.162
+average_confidence,0.708,0.952,0.243

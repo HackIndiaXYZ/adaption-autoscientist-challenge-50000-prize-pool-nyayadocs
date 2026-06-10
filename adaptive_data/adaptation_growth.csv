@@ -1,3 +1,3 @@
-version,records,average_accuracy,description
-1,1544,0.704,before feedback correction
-2,1544,0.943,after feedback correction
+version,records,average_confidence,description
+1,2120,0.708,Before feedback and field-level correction
+2,2120,0.952,"After feedback, correction, and schema enrichment"

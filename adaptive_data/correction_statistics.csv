@@ -1,4 +1,6 @@
 correction_field,records,percentage
-intent,23,9.79
-language,188,80.0
-section_charged,24,10.21
+entities,126,16.34
+expected_response_en,124,16.08
+input_language,124,16.08
+intent,126,16.34
+missing_information,271,35.15

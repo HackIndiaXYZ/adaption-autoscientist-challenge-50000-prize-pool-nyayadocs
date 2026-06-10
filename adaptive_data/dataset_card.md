@@ -4,7 +4,7 @@
 Indian citizens often need urgent legal help in regional languages, but legal AI systems are weakest where language diversity and data scarcity are highest. This dataset demonstrates a feedback-driven legal access pipeline that improves after each interaction.
 
 ## Methodology
-The dataset starts with real Twilio WhatsApp interactions, deduplicates and redacts them, then expands coverage across 11 Indian languages and 10 legal support intents. Every record receives feedback, optional corrections, adaptation history, and before/after confidence scores.
+The dataset starts with real Twilio WhatsApp interactions, deduplicates and redacts them, then expands coverage across 22 languages and 16 legal/civic justice intents. Every record includes a train/validation/test split, legal domain, urgency label, evidence checklist, missing-information labels, expected response, feedback, corrections, adaptation history, PII redaction flag, and before/after confidence scores.
 
 ## Adaptive Pipeline
 - Intake: WhatsApp or web query
@@ -20,13 +20,16 @@ The dataset is designed for Adaption Adaptive Data ingestion and export. It shou
 Credit: This dataset and pipeline were built for the Adaption Labs Adaptive Data Track.
 
 ## Results
-- Total adaptive records: 1544
-- Feedback events: 1544
-- Corrections applied: 235
-- Language accuracy before: 0.71
-- Language accuracy after: 0.94
-- Intent accuracy before: 0.76
-- Intent accuracy after: 0.96
+- Total adaptive records: 2120
+- Feedback events: 2120
+- Corrections applied: 771
+- Languages supported: 22
+- Legal/civic intents: 16
+- Language accuracy before: 0.78
+- Language accuracy after: 0.965
+- Intent accuracy before: 0.81
+- Intent accuracy after: 0.972
+- Average row quality score: 0.948
 
 ## Statistics
 See language_statistics.csv, feedback_statistics.csv, correction_statistics.csv, adaptation_growth.csv, and accuracy_before_after.csv for dashboard-ready analytics.

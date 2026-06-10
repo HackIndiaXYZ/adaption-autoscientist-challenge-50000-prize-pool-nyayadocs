@@ -12,7 +12,7 @@ NyayaSetu is a multilingual legal-access assistant for underserved Indian citize
 6. The improved record is exported for retraining, evaluation, and dashboard analytics.
 
 ## Dataset Structure
-Each row contains sample_id, input_text, input_language, intent, entities, output_doc_type, feedback, correction, adaptation_history, confidence_before, confidence_after, session_id, and timestamp.
+Each row contains sample_id, train/validation/test split, source_type, input_text, input_language, language_name, region_hint, legal_domain, intent, output_doc_type, urgency, entity fields, evidence checklist, missing-information labels, expected response, safety disclaimer, feedback, correction fields, adaptation history, confidence_before, confidence_after, quality_score, PII redaction flag, session_id, and timestamp.
 
 ## Adaption Platform Usage
 This dataset is prepared for upload into Adaption Adaptive Data under the dataset name `nyayasetu-legal-dialogues-multilingual`. The primary upload file is `adaptive_dataset.csv`; the model-ready export file is `adaptive_dataset.jsonl`.
@@ -32,13 +32,13 @@ Hugging Face: https://huggingface.co/datasets/Ananya80/nyayasetu-legal-dialogues
 Kaggle: https://www.kaggle.com/datasets/ananyadaitkar/nyayasetu-legal-dialogues-multilingual
 
 ## Language Coverage
-The dataset covers 11 Indian languages: Hindi, Marathi, Bengali, Tamil, Telugu, Kannada, Gujarati, Punjabi, Odia, Assamese, Konkani. Low-resource coverage is explicitly tracked for Odia, Assamese, and Konkani.
+The dataset covers 22 languages: Hindi, Marathi, Bengali, Tamil, Telugu, Kannada, Gujarati, Punjabi, Odia, Assamese, Konkani, Malayalam, Urdu, Nepali, Sindhi, Maithili, Santali, Bodo, Dogri, Kashmiri, Manipuri, and English. Low-resource coverage is explicitly tracked for Odia, Assamese, Konkani, Urdu, Nepali, Sindhi, Maithili, Santali, Bodo, Dogri, Kashmiri, and Manipuri.
 
 ## Feedback Pipeline
-Feedback types include wrong_language, wrong_intent, partial_answer, missing_information, helpful_response, and excellent_response. This release contains 1544 feedback events.
+Feedback types include wrong_language, wrong_intent, partial_answer, missing_information, helpful_response, and excellent_response. This release contains 2,120 feedback events.
 
 ## Correction Pipeline
-Corrections are represented as structured field updates such as language, intent, and section_charged. This release contains 235 correction events.
+Corrections are represented as structured field updates such as input_language, intent, entities, expected_response_en, and missing_information. This release contains 771 correction events.
 
 ## Adaptation Examples
 Example: a Hinglish bail query may be misclassified as Indonesian by automatic language detection. User feedback corrects language from id to hi, stores the correction, and raises confidence from 0.38 to 0.92 in the adaptation history.

@@ -86,10 +86,12 @@ Model-ready adaptive dataset export
 ```
 
 Current adaptive release:
-- 1,544 records
-- 1,544 feedback events
-- 235 correction events
-- 11 Indian languages plus English/global civic legal queries
-- Low-resource coverage for Odia, Assamese, and Konkani
+- 2,120 gold-quality adaptive records
+- 2,120 feedback events
+- 771 correction events
+- 22 languages with train/validation/test split
+- 16 legal and civic justice intents
+- Low-resource coverage for Odia, Assamese, Konkani, Urdu, Nepali, Sindhi, Maithili, Santali, Bodo, Dogri, Kashmiri, and Manipuri
+- Flat model-ready schema with expected responses, evidence checklist, missing-information labels, correction fields, confidence_before/confidence_after, and PII redaction flags
 
 Credit: Built for the Adaption Labs Adaptive Data Track.

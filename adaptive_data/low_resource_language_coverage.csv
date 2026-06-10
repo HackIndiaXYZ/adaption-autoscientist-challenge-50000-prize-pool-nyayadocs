@@ -1,4 +1,13 @@
 language_code,language_name,records,intent_coverage,coverage_status
-or,Odia,100,10,complete
-as,Assamese,100,10,complete
-kok,Konkani,100,10,complete
+or,Odia,96,16,complete
+as,Assamese,96,16,complete
+kok,Konkani,96,16,complete
+ur,Urdu,96,16,complete
+ne,Nepali,96,16,complete
+sd,Sindhi,96,16,complete
+mai,Maithili,96,16,complete
+sat,Santali,96,16,complete
+brx,Bodo,96,16,complete
+doi,Dogri,96,16,complete
+ks,Kashmiri,96,16,complete
+mni,Manipuri,96,16,complete

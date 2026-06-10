@@ -1,13 +1,16 @@
 {
-  "language_accuracy_before": 0.71,
-  "language_accuracy_after": 0.94,
-  "intent_accuracy_before": 0.76,
-  "intent_accuracy_after": 0.96,
-  "average_confidence_before": 0.704,
-  "average_confidence_after": 0.943,
-  "confidence_gain": 0.239,
-  "feedback_events": 1544,
-  "corrections_applied": 235,
-  "total_records": 1544,
-  "low_resource_language_records": 300
+  "total_records": 2120,
+  "languages_supported": 22,
+  "legal_intents": 16,
+  "feedback_events": 2120,
+  "corrections_applied": 771,
+  "language_accuracy_before": 0.78,
+  "language_accuracy_after": 0.965,
+  "intent_accuracy_before": 0.81,
+  "intent_accuracy_after": 0.972,
+  "average_confidence_before": 0.708,
+  "average_confidence_after": 0.952,
+  "confidence_gain": 0.243,
+  "average_row_quality_score": 0.948,
+  "low_resource_language_records": 1152
 }

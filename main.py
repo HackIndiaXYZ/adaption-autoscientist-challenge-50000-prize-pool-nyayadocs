@@ -221,13 +221,13 @@ REPLY_TEMPLATES = {
 CIVIC_TOPIC_KEYWORDS = {
     "domestic_violence": ["domestic violence", "protection order", "violence", "maar", "pitai", "wife beating", "घरेलू", "हिंसा"],
     "cyber_fraud": ["cyber", "upi", "fraud", "scam", "online fraud", "1930", "cybercrime", "otp", "bank fraud"],
-    "labour_dispute": ["salary", "wage", "employer", "terminated", "labour", "labor", "worker", "payment not", "कामगार", "वेतन"],
+    "labour_dispute": ["salary", "pagar", "wage", "employer", "terminated", "labour", "labor", "worker", "payment not", "कामगार", "वेतन"],
     "tenant_housing": ["landlord", "tenant", "rent", "deposit", "evict", "vacate", "house owner", "मकान मालिक"],
     "consumer_complaint": ["consumer", "warranty", "defective", "refund", "product", "seller", "bill", "invoice"],
     "rti_request": ["rti", "public records", "information request", "सूचना का अधिकार"],
     "zero_fir": ["zero fir", "refused to register", "police refused", "complaint refused", "FIR nahi likh"],
     "fir_copy": ["fir copy", "copy of fir", "certified copy", "FIR की copy", "FIR copy"],
-    "accident_compensation": ["accident", "compensation", "insurance claim", "vehicle theft", "motor accident", "injured"],
+    "accident_compensation": ["accident", "compensation", "insurance claim", "vehicle theft", "motor accident", "injured", "construction site", "worksite", "medical bills", "hospital bill"],
     "legal_notice": ["legal notice", "loan default", "notice mila", "demand notice"],
     "nri_property": ["nri", "power of attorney", "passport withheld", "visa agent", "property case in india", "abroad"],
     "document_translation": ["translation", "translate", "court notice from", "hindi to english"],
@@ -238,6 +238,27 @@ CIVIC_TOPIC_KEYWORDS = {
     "migrant_worker": ["migrant worker", "passport withheld", "employer abroad", "construction site", "worksite"],
     "refugee_detention": ["refugee", "detention notice", "detained family", "asylum"],
 }
+
+CIVIC_TOPIC_PRIORITY = [
+    "domestic_violence",
+    "cyber_fraud",
+    "accident_compensation",
+    "disability_benefits",
+    "migrant_worker",
+    "refugee_detention",
+    "child_rights",
+    "elder_property",
+    "caste_discrimination",
+    "tenant_housing",
+    "consumer_complaint",
+    "labour_dispute",
+    "nri_property",
+    "document_translation",
+    "legal_notice",
+    "zero_fir",
+    "fir_copy",
+    "rti_request",
+]
 
 
 class BailCheckRequest(BaseModel):
@@ -604,7 +625,8 @@ def classify_civic_topic(message: str, base_intent: str) -> str:
     if base_intent in protected_intents:
         return base_intent
 
-    for topic, keywords in CIVIC_TOPIC_KEYWORDS.items():
+    for topic in CIVIC_TOPIC_PRIORITY:
+        keywords = CIVIC_TOPIC_KEYWORDS[topic]
         if any(keyword.lower() in text for keyword in keywords):
             return topic
 

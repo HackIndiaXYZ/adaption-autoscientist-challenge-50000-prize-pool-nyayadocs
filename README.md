@@ -37,8 +37,6 @@ Adaptive Data + Demo Layer
 JSONL interaction logging, Hugging Face dataset, Next.js live dashboard
 ```
 
-## Adaptive Data dataset
-[https://huggingface.co/datasets/Ananya80/nyayasetu-legal-dialogues-multilingual](https://huggingface.co/datasets/Ananya80/nyayasetu-legal-dialogues-multilingual)
 
 ## Adaption integration
 NyayaSetu uses Adaption Adaptive Data as the submission dataset layer. Real Twilio WhatsApp interactions are logged into JSONL, then transformed into an adaptive legal-access dataset with feedback events, correction events, adaptation history, and confidence-before/after metrics.
@@ -55,12 +53,12 @@ adaptive_data/adaption_expert_legal_qa.csv
 
 The dataset is designed for the Adaption Adaptive Data Track and demonstrates dynamic multilingual legal data ingestion, adaptation, evaluation-ready metadata, and export for AI agents and fine-tuning pipelines.
 
-## Open datasets
+## Adaptive datasets
 Hugging Face:
-[https://huggingface.co/datasets/Ananya80/nyayasetu-legal-dialogues-multilingual](https://huggingface.co/datasets/Ananya80/nyayasetu-legal-dialogues-multilingual)
+https://huggingface.co/datasets/Ananya80/adaption-nyayasetu-legal-aid-v2/blob/main/README.md
 
 Kaggle:
-[https://www.kaggle.com/datasets/ananyadaitkar/nyayasetu-legal-dialogues-multilingual](https://www.kaggle.com/datasets/ananyadaitkar/nyayasetu-legal-dialogues-multilingual)
+https://www.kaggle.com/datasets/ananyadaitkar/adaption-nyay-11a12a20-7eff-44e7-9777-ed63eb036f73/data
 
 ## Adaptive learning loop
 ```text

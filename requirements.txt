@@ -10,3 +10,4 @@ pytesseract
 Pillow
 groq
 websockets
+pandas

@@ -81,6 +81,17 @@ DetectorFactory.seed = 0
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger("nyayasetu")
 
+# 🧠 Initialize Adaptive Learning Engine
+try:
+    from adaptive_learning import AdaptiveLearningEngine
+    adaptive_engine = AdaptiveLearningEngine("data/nyayasetu_legal_aid.csv")
+    logger.info(f"✅ Adaptive learning enabled with {len(adaptive_engine.dataset)} records")
+    ADAPTIVE_LEARNING_ENABLED = True
+except Exception as e:
+    logger.warning(f"⚠️ Adaptive learning disabled: {e}")
+    adaptive_engine = None
+    ADAPTIVE_LEARNING_ENABLED = False
+
 app = FastAPI(title="NyayaSetu WhatsApp Bot")
 app.add_middleware(
     CORSMiddleware,
@@ -648,8 +659,37 @@ def classify_civic_topic(message: str, base_intent: str) -> str:
 
 
 def classify_with_groq(message: str, language: str) -> dict:
+    """Enhanced classification with adaptive learning"""
     service = LLMService(get_config())
-    return service.classify_message(message, language)
+    result = service.classify_message(message, language)
+    
+    # 🧠 Apply adaptive corrections if enabled
+    if ADAPTIVE_LEARNING_ENABLED and adaptive_engine:
+        confidence = result.get('confidence', 0.5)
+        correction = adaptive_engine.suggest_intent_correction(
+            message, 
+            result['intent'], 
+            confidence
+        )
+        
+        if correction:
+            logger.info(
+                f"🔄 Adaptive correction: {result['intent']} → "
+                f"{correction['suggested_intent']} (confidence: {confidence:.2f} → {correction['confidence']:.2f})"
+            )
+            result['intent'] = correction['suggested_intent']
+            result['confidence'] = correction['confidence']
+            result['adaptive_correction_applied'] = True
+        
+        # Log interaction for future learning
+        adaptive_engine.log_interaction(
+            message, 
+            result['intent'], 
+            language, 
+            confidence
+        )
+    
+    return result
 
 
 def generate_bail_grounds_with_groq(eligibility_data: dict, case_facts: str) -> list[str]:
@@ -1049,6 +1089,67 @@ def dataset_export() -> FileResponse:
         filename="nyayasetu_dataset.jsonl",
         headers={"Content-Disposition": "attachment; filename=nyayasetu_dataset.jsonl"},
     )
+
+
+# 🧠 Adaptive Learning Endpoints
+@app.get("/api/adaptive-stats")
+async def get_adaptive_stats() -> JSONResponse:
+    """Get adaptive learning statistics and improvements"""
+    if not ADAPTIVE_LEARNING_ENABLED or not adaptive_engine:
+        return JSONResponse({
+            "enabled": False,
+            "message": "Adaptive learning is not enabled"
+        })
+    
+    stats = adaptive_engine.get_improvement_stats()
+    return JSONResponse({
+        "enabled": True,
+        "stats": stats,
+        "timestamp": datetime.utcnow().isoformat()
+    })
+
+
+@app.get("/api/quality-insights")
+async def get_quality_insights(
+    intent: Optional[str] = None,
+    language: Optional[str] = None
+) -> JSONResponse:
+    """Get quality insights for specific intent/language"""
+    if not ADAPTIVE_LEARNING_ENABLED or not adaptive_engine:
+        return JSONResponse({
+            "enabled": False,
+            "message": "Adaptive learning is not enabled"
+        })
+    
+    insights = adaptive_engine.get_quality_insights(intent, language)
+    return JSONResponse({
+        "intent": intent,
+        "language": language,
+        "insights": insights
+    })
+
+
+@app.get("/api/similar-examples")
+async def get_similar_examples(
+    intent: str,
+    language: str,
+    limit: int = 5
+) -> JSONResponse:
+    """Get similar high-quality examples from adaptive dataset"""
+    if not ADAPTIVE_LEARNING_ENABLED or not adaptive_engine:
+        return JSONResponse({
+            "enabled": False,
+            "examples": [],
+            "message": "Adaptive learning is not enabled"
+        })
+    
+    examples = adaptive_engine.get_similar_examples(intent, language, limit)
+    return JSONResponse({
+        "intent": intent,
+        "language": language,
+        "examples": examples,
+        "count": len(examples)
+    })
 
 
 @app.websocket("/ws")

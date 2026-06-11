@@ -88,16 +88,45 @@ Confidence_before -> confidence_after
 Model-ready adaptive dataset export
 ```
 
+## Testing and Evaluation
+
+### Run Tests
+```bash
+pip install -r requirements.txt
+pytest tests/ -v
+```
+
+Test coverage includes:
+- Intent classification accuracy
+- Entity extraction
+- Multilingual support
+- Rule-based fallback system
+
+### Run Evaluation
+Generate accuracy metrics from the adaptive dataset:
+```bash
+python scripts/evaluate.py
+```
+
+This script:
+- Calculates language detection accuracy (before/after corrections)
+- Calculates intent classification accuracy (before/after corrections)
+- Analyzes correction rates and confidence improvements
+- Generates `adaptive_data/adaptation_metrics.json`
+- Validates the claimed accuracy improvements
+
 Current adaptive release:
-- **3,496 production adaptive records** in `data/nyayasetu_legal_aid.csv`
-- 3,496 feedback events (100% coverage)
-- 1,272 correction events (36.4% correction rate)
+- **2,184 production adaptive records** in `data/nyayasetu_legal_aid.csv`
+- 2,184 feedback events (100% coverage)
+- 767 correction events (35.1% correction rate)
 - 12 low-resource languages: Maithili, Santali, Bodo, Dogri, Kashmiri, Manipuri, Konkani, Sindhi, Assamese, Odia, Urdu, Nepali
-- 16 legal and civic justice intents
+- 8 legal and civic justice intents
 - Adaptive learning system integrated into production (`adaptive_learning.py`)
-- Language accuracy improvement: 78% → 96.5%
-- Intent accuracy improvement: 81% → 97.2%
+- Language accuracy improvement: 75% → 99%
+- Intent accuracy improvement: 78% → 98%
+- Confidence improvement: 0.763 → 0.970 (+0.207)
 - Flat model-ready schema with expected responses, evidence checklist, missing-information labels, correction fields, confidence_before/confidence_after, and PII redaction flags
 - Original 9/10 Adaption scoring dataset (256 rows): `adaptive_data/adaption_expert_legal_qa_original.csv`
+- **Evaluation script**: Run `python scripts/evaluate.py` to regenerate metrics
 
 Credit: Built for the Adaption Labs Adaptive Data Track.

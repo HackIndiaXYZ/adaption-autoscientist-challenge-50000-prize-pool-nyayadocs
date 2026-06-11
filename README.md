@@ -63,7 +63,7 @@ Hugging Face:
 https://huggingface.co/datasets/Ananya80/adaption-nyayasetu-legal-aid-v2/blob/main/README.md
 
 Kaggle:
-https://www.kaggle.com/datasets/ananyadaitkar/adaption-nyay-11a12a20-7eff-44e7-9777-ed63eb036f73/data
+https://www.kaggle.com/datasets/ananyadaitkar/adaption-nyay-177c8907-3193-49c1-b337-32d744f4b2e2
 
 ## Adaptive learning loop
 ```text

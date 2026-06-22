@@ -1,0 +1,39 @@
+{
+  "dataset_name": "NyayaSetu Unified Legal Aid + ZamanatAI + CivicDocs",
+  "total_records": 2451,
+  "module_distribution": {
+    "legal_aid": 900,
+    "zamanatai": 651,
+    "civicdocs": 900
+  },
+  "task_distribution": {
+    "legal_intent_and_safe_response": 1251,
+    "bail_or_surety_structured_workflow": 300,
+    "service_classification": 180,
+    "ocr_field_extraction": 180,
+    "missing_document_detection": 180,
+    "identity_mismatch_detection": 180,
+    "application_readiness": 180
+  },
+  "split_distribution": {
+    "validation": 243,
+    "train": 1969,
+    "test": 239
+  },
+  "civic_services": [
+    "income_certificate",
+    "caste_certificate",
+    "domicile_certificate",
+    "disability_pension",
+    "legal_aid_application"
+  ],
+  "evaluation_targets": [
+    "module accuracy",
+    "intent accuracy",
+    "structured JSON validity",
+    "missing-document F1",
+    "OCR correction accuracy",
+    "safety-boundary compliance"
+  ],
+  "official_document_boundary": "Dataset trains application preparation and routing, never certificate issuance."
+}

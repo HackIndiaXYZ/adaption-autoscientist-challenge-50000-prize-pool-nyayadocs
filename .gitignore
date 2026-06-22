@@ -5,6 +5,7 @@ __pycache__/
 node_modules/
 data/*.json
 data/*.jsonl
+!data/nyayasetu_unified_schema.json
 dataset/*.jsonl
 outputs/
 static/

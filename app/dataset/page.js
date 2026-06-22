@@ -1,20 +1,20 @@
 import { Navbar, PageHero, shellStyle } from "../components";
 
 const languages = [
-  ["Hindi", 38],
-  ["Marathi", 16],
-  ["Tamil", 13],
-  ["Bengali", 11],
-  ["Gujarati", 9],
-  ["Telugu", 7],
-  ["Other", 6]
+  ["Hindi", 24],
+  ["English", 20],
+  ["Tamil", 12],
+  ["Marathi", 10],
+  ["Bengali", 9],
+  ["Telugu", 9],
+  ["Other Indian languages", 16]
 ];
 
 const samples = [
-  ["Hindi", "Salary Dispute", "Missing salary slip added to evidence checklist"],
-  ["Tamil", "Cyber Fraud", "Bank transaction proof marked essential"],
-  ["Marathi", "Consumer Complaint", "Warranty invoice requested"],
-  ["Gujarati", "Bail Enquiry", "Custody period normalized to months"]
+  ["Legal Aid", "Salary Dispute", "Missing salary slip added to evidence checklist"],
+  ["ZamanatAI", "Bail Enquiry", "Custody period normalized and surety evidence requested"],
+  ["CivicDocs", "Income Certificate", "OCR name mismatch marked for confirmation"],
+  ["CivicDocs", "Disability Pension", "Medical certificate and bank proof identified as mandatory"]
 ];
 
 export default function DatasetPage() {
@@ -23,7 +23,7 @@ export default function DatasetPage() {
       <Navbar />
       <section style={shellStyle}>
         <PageHero kicker="Adaptive Data Engine" title="Every correction improves the justice map.">
-          NyayaSetu logs anonymised interactions, missing evidence, language gaps, and human corrections so legal-aid workflows improve over time.
+          One balanced dataset trains Legal Aid, ZamanatAI, and CivicDocs across intent classification, safe response generation, OCR correction, missing-document detection, and application readiness.
         </PageHero>
 
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: 16, marginTop: 16 }}>
@@ -31,10 +31,10 @@ export default function DatasetPage() {
             <h2 style={{ marginBottom: 12 }}>Adaptive Metrics</h2>
             <div style={{ display: "grid", gridTemplateColumns: "repeat(2,1fr)", gap: 10 }}>
               {[
-                ["Languages Added", "10"],
-                ["Corrections Learned", "2,814"],
-                ["Evidence Files Processed", "18,902"],
-                ["Legal Aid Referrals", "4,238"]
+                ["Unified Records", "2,451"],
+                ["Held-out Test Rows", "239"],
+                ["CivicDocs Records", "900"],
+                ["Modules", "3"]
               ].map(([label, value]) => (
                 <div key={label} className="card2">
                   <div className="stat-num">{value}</div>
@@ -42,7 +42,7 @@ export default function DatasetPage() {
                 </div>
               ))}
             </div>
-            <a href="https://huggingface.co/datasets" className="btn-primary" style={{ display: "inline-block", width: "auto", textDecoration: "none", marginTop: 16 }}>
+            <a href="https://huggingface.co/datasets/Ananya80/nyayasetu-legal-dialogues-multilingual" className="btn-primary" style={{ display: "inline-block", width: "auto", textDecoration: "none", marginTop: 16 }}>
               Download Dataset
             </a>
           </section>
@@ -84,8 +84,8 @@ export default function DatasetPage() {
             {[
               "Police station extraction improved for Hindi abbreviations",
               "Bail urgency tuned using custody duration",
-              "Property OCR confidence now asks for confirmation below 70%",
-              "Labour complaint templates adapted for state language"
+              "Property OCR confidence now asks for confirmation below 75%",
+              "CivicDocs stores redacted field corrections without retaining personal values"
             ].map((item) => (
               <div key={item} className="msg-card" style={{ display: "flex", gap: 10, alignItems: "center" }}>
                 <span className="badge badge-green">✓</span>

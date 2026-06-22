@@ -19,7 +19,7 @@ class TestIntentClassification:
         message = "I need to apply for bail for my brother who is in custody"
         intent_key = classify_intent(message)
         intent = INTENT_MAP[intent_key]
-        assert intent == "bail_application", f"Expected 'bail_application', got '{intent}'"
+        assert intent == "bail_enquiry", f"Expected 'bail_enquiry', got '{intent}'"
     
     def test_surety_bond_intent(self):
         """Test surety bond intent detection"""
@@ -40,7 +40,7 @@ class TestIntentClassification:
         message = "I need a lawyer but cannot afford one"
         intent_key = classify_intent(message)
         intent = INTENT_MAP[intent_key]
-        assert intent == "legal_aid", f"Expected 'legal_aid', got '{intent}'"
+        assert intent == "legal_rights", f"Expected 'legal_rights', got '{intent}'"
     
     def test_rule_based_extraction_with_entities(self):
         """Test full rule-based extraction with entities"""
@@ -58,7 +58,7 @@ class TestIntentClassification:
         message = "मुझे जमानत के लिए आवेदन करना है"
         result = rule_based_extraction(message, "hi")
         
-        assert result["intent"] in ["bail_application", "legal_aid", "general_inquiry"]
+        assert result["intent"] == "bail_enquiry"
         assert result["language_of_message"] == "hi"
 
 
@@ -76,8 +76,8 @@ class TestIntentKeywords:
         for message in bail_messages:
             intent_key = classify_intent(message)
             intent = INTENT_MAP[intent_key]
-            assert intent == "bail_application", \
-                f"Message '{message}' should be classified as bail_application, got '{intent}'"
+            assert intent == "bail_enquiry", \
+                f"Message '{message}' should be classified as bail_enquiry, got '{intent}'"
     
     def test_surety_keywords(self):
         """Test surety-related keywords"""

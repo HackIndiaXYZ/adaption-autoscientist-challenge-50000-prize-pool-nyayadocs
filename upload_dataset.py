@@ -6,9 +6,7 @@ load_dotenv()
 
 api = HfApi()
 
-# First, let's check current files
-print("Uploading enhanced dataset to HuggingFace...")
-print("Folder: ./adaptive_data")
+print("Uploading NyayaSetu adaptive and unified datasets to Hugging Face...")
 print("Repo: Ananya80/nyayasetu-legal-dialogues-multilingual")
 
 api.upload_folder(
@@ -17,8 +15,20 @@ api.upload_folder(
     repo_id="Ananya80/nyayasetu-legal-dialogues-multilingual",
     repo_type="dataset",
     token=os.getenv("HF_TOKEN"),
-    commit_message="Enhanced dataset v2.0: 3496 records with 10 patterns per intent for 10/10 quality",
+    commit_message="Update adaptive legal-aid dataset artifacts",
 )
-print("\n✅ Upload successful!")
-print("Dataset now has 3,496 records (65% increase)")
+for filename in [
+    "nyayasetu_unified_autoscientist.csv",
+    "nyayasetu_unified_eval.csv",
+    "nyayasetu_unified_schema.json",
+]:
+    api.upload_file(
+        path_or_fileobj=f"./data/{filename}",
+        path_in_repo=f"unified/{filename}",
+        repo_id="Ananya80/nyayasetu-legal-dialogues-multilingual",
+        repo_type="dataset",
+        token=os.getenv("HF_TOKEN"),
+        commit_message=f"Publish unified AutoScientist artifact: {filename}",
+    )
+print("\nUpload successful: adaptive artifacts plus 2,451-record unified dataset")
 print("Visit: https://huggingface.co/datasets/Ananya80/nyayasetu-legal-dialogues-multilingual")

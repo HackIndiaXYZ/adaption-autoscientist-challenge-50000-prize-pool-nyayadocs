@@ -36,6 +36,7 @@ export function Navbar() {
         <Link href="/">Dashboard</Link>
         <Link href="/demo">Demo</Link>
         <Link href="/zamanat">ZamanatAI</Link>
+        <Link href="/civicdocs">CivicDocs</Link>
         <Link href="/dataset">Dataset</Link>
       </div>
       <div style={{ display: "flex", alignItems: "center", gap: 10 }}>

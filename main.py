@@ -5,7 +5,7 @@ import logging
 import os
 import re
 import uuid
-from datetime import datetime
+from datetime import datetime, timezone
 from io import BytesIO
 from pathlib import Path
 from typing import Any, Optional
@@ -13,14 +13,14 @@ from typing import Any, Optional
 import pytesseract
 import requests
 from dotenv import load_dotenv
-from fastapi import Depends, FastAPI, File, Request, UploadFile, WebSocket, WebSocketDisconnect
+from fastapi import Depends, FastAPI, File, Form, HTTPException, Request, UploadFile, WebSocket, WebSocketDisconnect
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import FileResponse, JSONResponse, Response
 from fastapi.staticfiles import StaticFiles
 from groq import Groq
 from langdetect import DetectorFactory, LangDetectException, detect
 from PIL import Image
-from pydantic import BaseModel
+from pydantic import BaseModel, Field
 from reportlab.lib.pagesizes import A4
 from reportlab.lib.styles import getSampleStyleSheet
 from reportlab.platypus import Paragraph, SimpleDocTemplate, Spacer
@@ -58,7 +58,7 @@ def log_to_adaptive_data(
         "output_doc_type": output_doc_type,
         "feedback": None,
         "session_id": str(uuid.uuid4()),
-        "timestamp": datetime.utcnow().isoformat(),
+        "timestamp": datetime.now(timezone.utc).isoformat(),
     }
 
     os.makedirs("./dataset", exist_ok=True)
@@ -171,8 +171,8 @@ Avoid generic statements.
 Do not guarantee bail."""
 
 KEYWORDS = {
-    "bail": ["bail", "jamani", "zamaanat", "जमानत", "ज़मानत", "जमानत"],
     "surety": ["surety", "bond", "zamanat", "ज़मानतनामा"],
+    "bail": ["bail", "jamani", "zamaanat", "जमानत", "ज़मानत", "जमानत"],
     "status": ["case", "FIR", "hearing", "मुकदमा"],
     "rights": ["rights", "lawyer", "advocate", "अधिकार"],
 }
@@ -290,6 +290,71 @@ class SuretyBondRequest(BaseModel):
     accused: dict
     surety: dict
     property: dict
+
+
+class CivicAssessmentRequest(BaseModel):
+    service_type: str
+    applicant_data: dict
+    available_documents: list[str] = Field(default_factory=list)
+    extracted_documents: list[dict] = Field(default_factory=list)
+
+
+class CivicPacketRequest(CivicAssessmentRequest):
+    preferred_language: str = "en"
+    declaration: str = "I confirm that the information supplied for this application-preparation packet is accurate to the best of my knowledge."
+
+
+class CivicFeedbackRequest(BaseModel):
+    service_type: str
+    field_name: str
+    old_value: str = ""
+    corrected_value: str
+    language: str = "en"
+    document_type: str = "unknown"
+
+
+CIVICDOCS_SERVICES = {
+    "income_certificate": {
+        "name": "Income Certificate Application",
+        "description": "Prepare an income-certificate application packet for the authorised state revenue authority.",
+        "issuing_authority": "State Revenue Department / Tehsildar",
+        "required_fields": ["applicant_name", "date_of_birth", "address", "district", "state", "annual_family_income", "purpose"],
+        "required_documents": ["identity_proof", "address_proof", "income_proof", "passport_photo", "self_declaration"],
+        "conditional_documents": ["salary_slip", "bank_statement", "employer_certificate", "ration_card"],
+    },
+    "caste_certificate": {
+        "name": "Caste Certificate Application",
+        "description": "Prepare a caste-certificate application packet with lineage and residence evidence for verification by the competent authority.",
+        "issuing_authority": "State Revenue / Social Justice Department",
+        "required_fields": ["applicant_name", "date_of_birth", "address", "district", "state", "category", "caste_name", "father_or_guardian_name"],
+        "required_documents": ["identity_proof", "address_proof", "birth_or_school_record", "family_caste_evidence", "passport_photo", "self_declaration"],
+        "conditional_documents": ["father_caste_certificate", "relative_caste_certificate", "migration_record", "genealogy_affidavit"],
+    },
+    "domicile_certificate": {
+        "name": "Domicile / Residence Certificate Application",
+        "description": "Prepare a residence-evidence packet for the competent state or district authority.",
+        "issuing_authority": "State Revenue Department / District Administration",
+        "required_fields": ["applicant_name", "date_of_birth", "current_address", "district", "state", "years_of_residence", "purpose"],
+        "required_documents": ["identity_proof", "address_proof", "residence_history", "passport_photo", "self_declaration"],
+        "conditional_documents": ["school_record", "property_tax_receipt", "rent_agreement", "electricity_bill", "parent_domicile_certificate"],
+    },
+    "disability_pension": {
+        "name": "Disability Pension / Benefit Application",
+        "description": "Prepare a disability-benefit application packet and identify missing medical and banking evidence.",
+        "issuing_authority": "State Social Welfare Department",
+        "required_fields": ["applicant_name", "date_of_birth", "address", "district", "state", "disability_type", "disability_percentage", "bank_account_last4"],
+        "required_documents": ["identity_proof", "address_proof", "disability_certificate", "bank_passbook", "passport_photo"],
+        "conditional_documents": ["udid_card", "income_certificate", "medical_board_report", "age_proof"],
+    },
+    "legal_aid_application": {
+        "name": "Free Legal Aid Application",
+        "description": "Prepare an application to the Legal Services Authority with case facts and eligibility evidence.",
+        "issuing_authority": "District / State Legal Services Authority",
+        "required_fields": ["applicant_name", "address", "district", "state", "legal_issue", "opposite_party", "case_or_fir_number", "income_or_eligibility_basis"],
+        "required_documents": ["identity_proof", "address_proof", "case_document", "income_or_category_proof"],
+        "conditional_documents": ["fir_copy", "court_notice", "medical_record", "domestic_violence_record", "custody_document"],
+    },
+}
 
 
 class AppConfig(BaseModel):
@@ -579,7 +644,15 @@ def validate_nlu_result(result: Any, message: str, language: str) -> dict:
 def rule_based_extraction(message: str, language: str) -> dict:
     intent = INTENT_MAP[classify_intent(message)]
     fir_number = extract_first_match(message, r"\bFIR\s*(?:No\.?|Number|#|:)?\s*([A-Za-z0-9/-]+)")
-    police_station = extract_first_match(message, r"(?:police station|PS|थाना)\s*:?\s*([A-Za-z\u0900-\u097F ]{2,50})")
+    police_station = extract_first_match(
+        message,
+        r"([A-Za-z\u0900-\u097F ]{2,50})\s+(?:police station|PS|थाना)\b",
+    ) or extract_first_match(
+        message,
+        r"(?:police station|PS|थाना)\s*:?\s*([A-Za-z\u0900-\u097F ]{2,50})",
+    )
+    if police_station:
+        police_station = re.sub(r"^(?:at|in)\s+", "", police_station, flags=re.IGNORECASE)
     section_charged = extract_first_match(message, r"(?:section|धारा)\s*([0-9]{2,3}[A-Za-z]?)")
     accused_name = extract_first_match(message, r"(?:accused|name|आरोपी|नाम)\s*:?\s*([A-Za-z\u0900-\u097F ]{2,50})")
     time_in_custody_days = extract_custody_days(message)
@@ -793,7 +866,7 @@ def log_interaction(data: dict) -> None:
         record["accused_name"] = "[NAME]"
     if record.get("fir_number"):
         record["fir_number"] = "[FIR]"
-    record["timestamp"] = datetime.utcnow().isoformat()
+    record["timestamp"] = datetime.now(timezone.utc).isoformat()
     record["session_id"] = str(uuid.uuid4())
 
     DATASET_PATH.parent.mkdir(exist_ok=True)
@@ -921,6 +994,228 @@ def extract_property_text(image_bytes: bytes) -> dict:
         "state": state,
         "raw_text": raw_text,
     }
+
+
+def _ocr_text(image_bytes: bytes) -> str:
+    image = Image.open(io.BytesIO(image_bytes))
+    try:
+        return pytesseract.image_to_string(image)
+    except pytesseract.TesseractNotFoundError:
+        logger.warning("Tesseract is not installed; CivicDocs OCR returned an empty result")
+        return ""
+
+
+def _field_from_text(text: str, patterns: list[str]) -> tuple[str, float]:
+    for index, pattern in enumerate(patterns):
+        match = re.search(pattern, text, flags=re.IGNORECASE | re.MULTILINE)
+        if match:
+            value = re.sub(r"\s+", " ", match.group(1)).strip(" :-\n\t")
+            if value:
+                return value[:160], round(max(0.62, 0.94 - index * 0.06), 2)
+    return "", 0.0
+
+
+def extract_civic_document_fields(image_bytes: bytes, document_type: str = "auto") -> dict:
+    raw_text = _ocr_text(image_bytes)
+    field_patterns = {
+        "applicant_name": [
+            r"^(?:Name|Applicant Name|Holder Name)\s*[:\-]\s*(.+)$",
+            r"^(?:नाम|आवेदक का नाम)\s*[:\-]\s*(.+)$",
+        ],
+        "father_or_guardian_name": [
+            r"^(?:Father(?:'s)? Name|Guardian Name|S/O|D/O|W/O)\s*[:\-]?\s*(.+)$",
+            r"^(?:पिता का नाम|अभिभावक का नाम)\s*[:\-]\s*(.+)$",
+        ],
+        "date_of_birth": [
+            r"(?:Date of Birth|DOB|जन्म तिथि)\s*[:\-]?\s*([0-3]?\d[\/\-.][01]?\d[\/\-.](?:19|20)\d{2})",
+        ],
+        "address": [
+            r"^(?:Address|Permanent Address|Residential Address|पता)\s*[:\-]\s*(.+)$",
+        ],
+        "district": [r"^(?:District|जिला)\s*[:\-]\s*(.+)$"],
+        "state": [r"^(?:State|राज्य)\s*[:\-]\s*(.+)$"],
+        "annual_family_income": [
+            r"(?:Annual(?: Family)? Income|Total Annual Income|वार्षिक आय)\s*[:\-]?\s*(?:Rs\.?|INR|₹)?\s*([\d,]+)",
+        ],
+        "caste_name": [r"^(?:Caste|जाति)\s*[:\-]\s*(.+)$"],
+        "category": [r"^(?:Category|Class|वर्ग)\s*[:\-]\s*(SC|ST|OBC|EWS|General|सामान्य|अनुसूचित.+)$"],
+        "disability_type": [r"^(?:Disability Type|Type of Disability|दिव्यांगता का प्रकार)\s*[:\-]\s*(.+)$"],
+        "disability_percentage": [r"(?:Disability Percentage|Percentage of Disability|दिव्यांगता प्रतिशत)\s*[:\-]?\s*(\d{1,3})\s*%?"],
+        "certificate_number": [r"(?:Certificate No\.?|Certificate Number|प्रमाण पत्र संख्या)\s*[:\-]?\s*([A-Za-z0-9\/-]+)"],
+        "aadhaar_last4": [r"(?:Aadhaar|आधार)(?: Number| No\.?)?\s*[:\-]?\s*(?:X{4}[ -]?){2}([0-9]{4})", r"\b\d{4}[ -]\d{4}[ -](\d{4})\b"],
+        "bank_account_last4": [r"(?:Account No\.?|A/C No\.?|खाता संख्या)\s*[:\-]?\s*(?:X+|\*+)?([0-9]{4})\b"],
+        "document_number": [r"(?:Document No\.?|ID No\.?|Registration No\.?)\s*[:\-]?\s*([A-Za-z0-9\/-]+)"],
+    }
+    fields = {}
+    confidences = {}
+    for field_name, patterns in field_patterns.items():
+        value, confidence = _field_from_text(raw_text, patterns)
+        fields[field_name] = value
+        confidences[field_name] = confidence
+
+    found = sum(1 for value in fields.values() if value)
+    overall_confidence = round(sum(confidences.values()) / max(1, found), 2) if found else 0.0
+    return {
+        "document_type": document_type,
+        "fields": fields,
+        "confidence": confidences,
+        "overall_confidence": overall_confidence,
+        "requires_confirmation": overall_confidence < 0.75 or found < 2,
+        "raw_text": raw_text,
+        "privacy_notice": "Review and confirm OCR fields. NyayaSetu does not store uploaded document images in this workflow.",
+    }
+
+
+def _normalised_comparison(value: Any) -> str:
+    return re.sub(r"[^a-z0-9]", "", str(value or "").lower())
+
+
+def check_civic_application(payload: CivicAssessmentRequest) -> dict:
+    service = CIVICDOCS_SERVICES.get(payload.service_type)
+    if not service:
+        raise ValueError(f"Unsupported CivicDocs service: {payload.service_type}")
+
+    applicant = {key: str(value).strip() for key, value in payload.applicant_data.items() if value is not None}
+    missing_fields = [field for field in service["required_fields"] if not applicant.get(field)]
+    available = {item.strip().lower() for item in payload.available_documents if item.strip()}
+    missing_documents = [document for document in service["required_documents"] if document.lower() not in available]
+
+    values_by_field: dict[str, list[dict]] = {}
+    low_confidence_fields = []
+    for document in payload.extracted_documents:
+        doc_type = str(document.get("document_type") or "uploaded_document")
+        fields = document.get("fields") or {}
+        confidence = document.get("confidence") or {}
+        for field_name, value in fields.items():
+            if not value:
+                continue
+            values_by_field.setdefault(field_name, []).append({"value": value, "document_type": doc_type})
+            if float(confidence.get(field_name) or 0) < 0.75:
+                low_confidence_fields.append({"field": field_name, "document_type": doc_type, "value": value})
+
+    mismatches = []
+    for field_name, observations in values_by_field.items():
+        distinct = {_normalised_comparison(item["value"]) for item in observations if item["value"]}
+        applicant_value = applicant.get(field_name)
+        if applicant_value:
+            distinct.add(_normalised_comparison(applicant_value))
+        distinct.discard("")
+        if len(distinct) > 1:
+            mismatches.append({"field": field_name, "observations": observations, "applicant_value": applicant_value or ""})
+
+    field_score = 1 - len(missing_fields) / max(1, len(service["required_fields"]))
+    document_score = 1 - len(missing_documents) / max(1, len(service["required_documents"]))
+    consistency_score = max(0.0, 1 - len(mismatches) * 0.2 - len(low_confidence_fields) * 0.04)
+    readiness_score = round((field_score * 0.4 + document_score * 0.4 + consistency_score * 0.2) * 100)
+
+    blockers = []
+    if missing_fields:
+        blockers.append("Complete all mandatory applicant fields")
+    if missing_documents:
+        blockers.append("Collect the mandatory supporting documents")
+    if mismatches:
+        blockers.append("Resolve spelling or identity mismatches across documents")
+    if low_confidence_fields:
+        blockers.append("Confirm low-confidence OCR fields against the original documents")
+
+    return {
+        "service_type": payload.service_type,
+        "service_name": service["name"],
+        "description": service["description"],
+        "issuing_authority": service["issuing_authority"],
+        "readiness_score": readiness_score,
+        "status": "ready_for_authority_review" if readiness_score >= 90 and not mismatches else "needs_attention" if readiness_score >= 60 else "incomplete",
+        "missing_fields": missing_fields,
+        "missing_documents": missing_documents,
+        "conditional_documents": service["conditional_documents"],
+        "mismatches": mismatches,
+        "low_confidence_fields": low_confidence_fields,
+        "blockers": blockers,
+        "next_steps": [
+            "Confirm every OCR-extracted field against the original document",
+            "Resolve name, date-of-birth, and address mismatches before submission",
+            f"Submit only through the authorised {service['issuing_authority']} portal or office",
+            "Keep acknowledgement and application/reference number after submission",
+        ],
+        "disclaimer": "NyayaSetu prepares an application packet. It does not issue, approve, or guarantee any government certificate or benefit.",
+    }
+
+
+def generate_civic_application_packet(payload: CivicPacketRequest, assessment: dict) -> bytes:
+    buffer = BytesIO()
+    document = SimpleDocTemplate(buffer, pagesize=A4, rightMargin=42, leftMargin=42, topMargin=42, bottomMargin=42)
+    styles = getSampleStyleSheet()
+    service = CIVICDOCS_SERVICES[payload.service_type]
+    story = [
+        Paragraph("NYAYASETU CIVICDOCS", styles["Title"]),
+        Spacer(1, 12),
+        Paragraph(service["name"].upper(), styles["Heading1"]),
+        Spacer(1, 12),
+        Paragraph("APPLICATION PREPARATION PACKET - NOT AN OFFICIAL CERTIFICATE", styles["Heading2"]),
+        Spacer(1, 12),
+        Paragraph(f"Authorised issuing authority: {service['issuing_authority']}", styles["Normal"]),
+        Spacer(1, 12),
+        Paragraph(f"Readiness score: {assessment['readiness_score']}% ({assessment['status']})", styles["Normal"]),
+        Spacer(1, 12),
+        Paragraph("Applicant Information", styles["Heading2"]),
+        Spacer(1, 12),
+    ]
+    for field_name in service["required_fields"]:
+        label = field_name.replace("_", " ").title()
+        value = str(payload.applicant_data.get(field_name) or "[TO BE COMPLETED]")
+        story.extend([Paragraph(f"<b>{label}:</b> {value}", styles["Normal"]), Spacer(1, 8)])
+
+    story.extend([Paragraph("Supporting Document Checklist", styles["Heading2"]), Spacer(1, 12)])
+    available = {item.lower() for item in payload.available_documents}
+    for item in service["required_documents"]:
+        status = "AVAILABLE" if item.lower() in available else "MISSING"
+        story.extend([Paragraph(f"[ {status} ] {item.replace('_', ' ').title()}", styles["Normal"]), Spacer(1, 8)])
+
+    if assessment["mismatches"]:
+        story.extend([Paragraph("Identity / Data Mismatches Requiring Resolution", styles["Heading2"]), Spacer(1, 12)])
+        for mismatch in assessment["mismatches"]:
+            story.extend([Paragraph(f"- {mismatch['field'].replace('_', ' ').title()}: verify values across uploaded documents.", styles["Normal"]), Spacer(1, 8)])
+
+    story.extend([
+        Paragraph("Declaration", styles["Heading2"]),
+        Spacer(1, 12),
+        Paragraph(payload.declaration, styles["Normal"]),
+        Spacer(1, 20),
+        Paragraph("Applicant signature: ______________________________", styles["Normal"]),
+        Spacer(1, 12),
+        Paragraph("Date: __________________  Place: __________________", styles["Normal"]),
+        Spacer(1, 20),
+        Paragraph("Important", styles["Heading2"]),
+        Spacer(1, 8),
+        Paragraph(assessment["disclaimer"], styles["Normal"]),
+        Spacer(1, 12),
+        Paragraph("Generated by NyayaSetu CivicDocs - multilingual public-service application assistance", styles["Italic"]),
+    ])
+    document.build(story)
+    return buffer.getvalue()
+
+
+def log_civic_feedback(payload: CivicFeedbackRequest) -> dict:
+    record = {
+        "sample_id": f"CIVIC-{uuid.uuid4()}",
+        "module": "civicdocs",
+        "service_type": payload.service_type,
+        "language": payload.language,
+        "document_type": payload.document_type,
+        "feedback_type": "ocr_field_correction",
+        "correction": {
+            "field": payload.field_name,
+            "old": "[REDACTED]" if payload.old_value else "",
+            "new": "[REDACTED]",
+            "source": "user_confirmation",
+        },
+        "timestamp": datetime.now(timezone.utc).isoformat(),
+    }
+    path = Path("dataset") / "civicdocs_feedback.jsonl"
+    path.parent.mkdir(exist_ok=True)
+    with path.open("a", encoding="utf-8") as handle:
+        handle.write(json.dumps(record, ensure_ascii=False) + "\n")
+    return {"saved": True, "sample_id": record["sample_id"], "message": "Correction saved for adaptive learning without retaining the corrected personal value."}
 
 
 def generate_surety_bond_pdf(accused: dict, surety: dict, property_data: dict) -> bytes:
@@ -1055,6 +1350,81 @@ def generate_surety_bond(payload: SuretyBondRequest) -> Response:
     )
 
 
+@app.get("/civicdocs/services")
+def civicdocs_services() -> dict:
+    return {
+        "services": [
+            {
+                "service_type": key,
+                **value,
+                "boundary": "Application preparation only; the authorised government authority issues the certificate or benefit.",
+            }
+            for key, value in CIVICDOCS_SERVICES.items()
+        ]
+    }
+
+
+@app.post("/civicdocs/ocr")
+async def civicdocs_ocr(
+    file: UploadFile = File(...),
+    document_type: str = Form("auto"),
+) -> dict:
+    if file.content_type and not file.content_type.startswith("image/"):
+        raise HTTPException(status_code=400, detail="Upload a JPG, PNG, or other supported document image")
+    image_bytes = await file.read()
+    if not image_bytes:
+        raise HTTPException(status_code=400, detail="Uploaded document image is empty")
+    try:
+        return extract_civic_document_fields(image_bytes, document_type)
+    except Exception as error:
+        logger.exception("CivicDocs OCR failed")
+        raise HTTPException(status_code=422, detail=f"Could not read the document image: {error}") from error
+
+
+@app.post("/civicdocs/assess")
+def civicdocs_assess(payload: CivicAssessmentRequest) -> dict:
+    try:
+        result = check_civic_application(payload)
+    except ValueError as error:
+        raise HTTPException(status_code=400, detail=str(error)) from error
+    log_to_adaptive_data(
+        raw_message=f"CivicDocs assessment requested for {payload.service_type}",
+        language="en",
+        intent=payload.service_type,
+        entities={"service_type": payload.service_type, "applicant_name": payload.applicant_data.get("applicant_name")},
+        output_doc_type="civic_application_assessment",
+    )
+    return result
+
+
+@app.post("/civicdocs/generate-packet")
+def civicdocs_generate_packet(payload: CivicPacketRequest) -> Response:
+    try:
+        assessment = check_civic_application(payload)
+        pdf_bytes = generate_civic_application_packet(payload, assessment)
+    except ValueError as error:
+        raise HTTPException(status_code=400, detail=str(error)) from error
+
+    filename = f"civicdocs_{payload.service_type}_{datetime.now(timezone.utc).strftime('%Y%m%d_%H%M%S')}.pdf"
+    output_path = Path("outputs") / filename
+    output_path.write_bytes(pdf_bytes)
+    return Response(
+        content=pdf_bytes,
+        media_type="application/pdf",
+        headers={
+            "Content-Disposition": f'attachment; filename="{filename}"',
+            "X-CivicDocs-Readiness": str(assessment["readiness_score"]),
+        },
+    )
+
+
+@app.post("/civicdocs/feedback")
+def civicdocs_feedback(payload: CivicFeedbackRequest) -> dict:
+    if payload.service_type not in CIVICDOCS_SERVICES:
+        raise HTTPException(status_code=400, detail="Unsupported CivicDocs service")
+    return log_civic_feedback(payload)
+
+
 @app.get("/dataset/stats")
 def dataset_stats() -> dict:
     total = 0
@@ -1105,7 +1475,7 @@ async def get_adaptive_stats() -> JSONResponse:
     return JSONResponse({
         "enabled": True,
         "stats": stats,
-        "timestamp": datetime.utcnow().isoformat()
+        "timestamp": datetime.now(timezone.utc).isoformat()
     })
 
 
@@ -1213,7 +1583,7 @@ async def webhook(
         "language_name": LANGUAGE_NAMES.get(detected_language, detected_language),
         "intent": intent,
         "has_pdf": output_doc_type == "bail_application",
-        "timestamp": datetime.utcnow().isoformat(),
+        "timestamp": datetime.now(timezone.utc).isoformat(),
     }))
     log_to_adaptive_data(body, detected_language, intent, entities, output_doc_type)
 

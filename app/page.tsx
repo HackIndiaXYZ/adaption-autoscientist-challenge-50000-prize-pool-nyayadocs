@@ -206,6 +206,22 @@ export default function Home() {
           <Disclaimer />
         </aside>
       </section>
+      <section style={{ ...shellStyle, paddingTop: 0 }}>
+        <div className="module-strip">
+          {[
+            ["NyayaSetu Legal Aid", "Legal rights, case status, labour, tenancy, cyber fraud and free legal aid.", "/demo", "LEGAL"],
+            ["ZamanatAI", "Bail eligibility, bail application and surety-bond preparation.", "/zamanat", "BAIL"],
+            ["CivicDocs", "OCR-assisted income, caste, domicile, disability and legal-aid application packets.", "/civicdocs", "CIVIC"]
+          ].map(([title, description, href, badge]) => (
+            <a href={href} key={title} className="module-link">
+              <span className="badge badge-saffron">{badge}</span>
+              <strong>{title}</strong>
+              <p>{description}</p>
+              <span>Open workflow →</span>
+            </a>
+          ))}
+        </div>
+      </section>
       <BottomMarquee />
     </main>
   );
@@ -225,6 +241,7 @@ function DashboardNavbar({ isLive }: { isLive: boolean }) {
         <a href="/" className="active">Dashboard</a>
         <a href="/demo">Try it</a>
         <a href="/zamanat">ZamanatAI</a>
+        <a href="/civicdocs">CivicDocs</a>
         <a href="/dataset">Dataset</a>
       </div>
     </nav>

@@ -1,13 +1,13 @@
 # NyayaSetu + ZamanatAI
 
-WhatsApp message -> bail application + surety bond in 60 seconds.
-22 Indian languages. Zero cost to families.
+WhatsApp/web legal-aid prototype for structured intake, evidence collection,
+and court-document drafting. Generated content requires lawyer verification.
 
 ## Live demo
 [https://nyayasetu-zamanatai.vercel.app](https://nyayasetu-zamanatai.vercel.app)
 
-## Demo video
-[your YouTube link - add after recording]
+Verified on 12 June 2026. The deployed demo includes the citizen-request feed,
+justice-readiness workflow, document preview, ZamanatAI flow, and dataset view.
 
 ## Setup (one command)
 pip install -r requirements.txt && cp .env.example .env && uvicorn main:app
@@ -48,7 +48,7 @@ nyayasetu-legal-dialogues-multilingual
 
 Production adaptive dataset:
 ```text
-data/nyayasetu_legal_aid.csv (3,496 records)
+data/nyayasetu_legal_aid.csv (2,184 records)
 ```
 
 Original submission dataset (9/10 score):
@@ -56,7 +56,10 @@ Original submission dataset (9/10 score):
 adaptive_data/adaption_expert_legal_qa_original.csv (256 records)
 ```
 
-The dataset is designed for the Adaption Adaptive Data Track and demonstrates dynamic multilingual legal data ingestion, adaptation, evaluation-ready metadata, and export for AI agents and fine-tuning pipelines.
+The checked-in production dataset currently contains Hindi and English records
+across eight legal/civic intents. The application architecture includes language
+detection and translation fallbacks for broader multilingual workflows, but the
+dataset should not be described as 22-language training data.
 
 ## Adaptive datasets
 Hugging Face:
@@ -109,24 +112,79 @@ python scripts/evaluate.py
 ```
 
 This script:
-- Calculates language detection accuracy (before/after corrections)
-- Calculates intent classification accuracy (before/after corrections)
-- Analyzes correction rates and confidence improvements
+- Summarizes confidence values before and after recorded corrections
+- Analyzes correction rates and dataset coverage
 - Generates `adaptive_data/adaptation_metrics.json`
-- Validates the claimed accuracy improvements
+- Produces descriptive dataset metrics; it is not a held-out accuracy benchmark
 
 Current adaptive release:
 - **2,184 production adaptive records** in `data/nyayasetu_legal_aid.csv`
 - 2,184 feedback events (100% coverage)
 - 767 correction events (35.1% correction rate)
-- 12 low-resource languages: Maithili, Santali, Bodo, Dogri, Kashmiri, Manipuri, Konkani, Sindhi, Assamese, Odia, Urdu, Nepali
+- 2 represented dataset languages: Hindi and English
 - 8 legal and civic justice intents
 - Adaptive learning system integrated into production (`adaptive_learning.py`)
-- Language accuracy improvement: 75% → 99%
-- Intent accuracy improvement: 78% → 98%
 - Confidence improvement: 0.763 → 0.970 (+0.207)
 - Flat model-ready schema with expected responses, evidence checklist, missing-information labels, correction fields, confidence_before/confidence_after, and PII redaction flags
 - Original 9/10 Adaption scoring dataset (256 rows): `adaptive_data/adaption_expert_legal_qa_original.csv`
 - **Evaluation script**: Run `python scripts/evaluate.py` to regenerate metrics
 
+## Verification status
+
+| Evidence | Current status |
+|---|---|
+| Live deployment | Verified at the URL above on 12 June 2026 |
+| Automated tests | 8 pytest cases for intent/entity and multilingual rule-based behavior |
+| Dataset size | 2,184 rows, verified with pandas |
+| Dataset languages | Hindi and English |
+| Dataset intents | 8 |
+| Accuracy benchmark | Not yet available; confidence metrics are descriptive, not held-out accuracy |
+
 Credit: Built for the Adaption Labs Adaptive Data Track.
+
+## Product modules
+
+### NyayaSetu Legal Aid
+Legal rights, case status, labour, tenancy, cyber-fraud, consumer, RTI, police-refusal, and free-legal-aid workflows through WhatsApp and web intake.
+
+### ZamanatAI
+Bail eligibility assessment, bail-application PDF drafting, property-document OCR, and surety-bond drafting with explicit lawyer/court verification.
+
+### CivicDocs
+OCR-assisted application preparation for:
+
+- Income certificate
+- Caste certificate
+- Domicile / residence certificate
+- Disability pension / benefit
+- Free legal aid
+
+CivicDocs extracts reviewable fields from document images, identifies missing evidence and cross-document mismatches, calculates application readiness, and generates a preparation packet PDF. It does **not** issue, approve, or guarantee an official certificate or benefit.
+
+Backend endpoints:
+
+```text
+GET  /civicdocs/services
+POST /civicdocs/ocr
+POST /civicdocs/assess
+POST /civicdocs/generate-packet
+POST /civicdocs/feedback
+```
+
+## Unified AutoScientist dataset
+
+```text
+data/nyayasetu_unified_autoscientist.csv
+data/nyayasetu_unified_eval.csv
+data/nyayasetu_unified_schema.json
+```
+
+Current distribution:
+
+- 2,451 total records
+- 900 NyayaSetu Legal Aid records
+- 651 ZamanatAI records
+- 900 CivicDocs records
+- 239 held-out test records
+
+Evaluation targets include module accuracy, intent accuracy, structured-JSON validity, missing-document F1, OCR-correction accuracy, and safety-boundary compliance.

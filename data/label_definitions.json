@@ -1,0 +1,31 @@
+{
+  "modules": {
+    "legal_aid": "General legal-access and rights workflow outside bail/surety and civic certificate preparation.",
+    "zamanatai": "Arrest-to-bail, bail application, surety, bond and bail-property workflow.",
+    "civicdocs": "OCR-assisted public-service and legal-aid application preparation workflow."
+  },
+  "intents": {
+    "bail_enquiry": {"module": "zamanatai", "definition": "Bail eligibility, custody threshold or bail application request."},
+    "surety_bond": {"module": "zamanatai", "definition": "Surety, bond, muchchalka or bail property-document request."},
+    "case_status": {"module": "legal_aid", "definition": "Case, FIR, charge-sheet or hearing status request."},
+    "legal_rights": {"module": "legal_aid", "definition": "Arrest, lawyer, production, legal aid or general accused-rights request."},
+    "labour_dispute": {"module": "legal_aid", "definition": "Unpaid wages, termination, contractor or workplace-rights request."},
+    "tenant_housing": {"module": "legal_aid", "definition": "Rent, eviction, deposit or landlord dispute."},
+    "cyber_fraud": {"module": "legal_aid", "definition": "UPI, OTP, online scam or digital financial fraud."},
+    "consumer_complaint": {"module": "legal_aid", "definition": "Defective product, warranty, refund or consumer grievance."},
+    "domestic_violence": {"module": "legal_aid", "definition": "Domestic abuse, protection, residence, maintenance or immediate safety request."},
+    "rti_request": {"module": "legal_aid", "definition": "Request for public records or RTI drafting/appeal guidance."},
+    "zero_fir": {"module": "legal_aid", "definition": "Police refusal, jurisdiction refusal, Zero FIR or escalation request."},
+    "income_certificate": {"module": "civicdocs", "definition": "Income-certificate application preparation and evidence validation."},
+    "caste_certificate": {"module": "civicdocs", "definition": "Caste/category certificate application preparation and lineage evidence validation."},
+    "domicile_certificate": {"module": "civicdocs", "definition": "Domicile/residence application preparation and residence evidence validation."},
+    "disability_pension": {"module": "civicdocs", "definition": "Disability pension/benefit application and medical/banking evidence validation."},
+    "legal_aid_application": {"module": "civicdocs", "definition": "Formal application preparation for District/State Legal Services Authority."}
+  },
+  "urgency": {
+    "low": "No imminent harm or deadline.",
+    "medium": "Time-sensitive workflow or material loss without immediate danger.",
+    "high": "Custody, imminent deadline, serious refusal, benefit interruption or escalating risk.",
+    "emergency": "Immediate safety, child, violence, medical or active financial-loss risk."
+  }
+}

@@ -188,3 +188,47 @@ Current distribution:
 - 239 held-out test records
 
 Evaluation targets include module accuracy, intent accuracy, structured-JSON validity, missing-document F1, OCR-correction accuracy, and safety-boundary compliance.
+
+## AutoScientist model objective and benchmark
+
+Model contract:
+
+```text
+model/nyayasetu_model_contract.json
+model/README.md
+```
+
+Locked benchmark and evaluation tooling:
+
+```text
+data/nyayasetu_benchmark_v1.csv
+data/nyayasetu_benchmark_report.json
+scripts/run_rule_baseline.py
+scripts/evaluate_unified_predictions.py
+evaluation/baseline_metrics.json
+```
+
+Current fixed rule baseline on the 180-row balanced benchmark:
+
+- Module accuracy: 91.11%
+- Module macro-F1: 91.07%
+- Intent accuracy: 72.78%
+- Intent macro-F1: 64.19%
+- Missing-document macro-F1: 3.33%
+- Structured JSON validity: 100%
+- Safety-boundary compliance: 100%
+
+Benchmark labels remain provisional until two independent reviewers complete `data/reviewer_assignments.csv`. Do not claim final benchmark performance before human consensus.
+
+## Human data collection
+
+The `collection/` folder contains:
+
+- 150 scripted Twilio collection prompts
+- 100 OCR correction tasks
+- 50 document-mismatch cases
+- 100 native-script review tasks
+- 50 adversarial queries
+- 50 safety/refusal cases
+
+Scripted Twilio rows must retain provenance `field_collected_scripted`. Independently written consenting-user rows may be labeled `real_user_redacted` only after PII redaction and review.

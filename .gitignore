@@ -6,6 +6,8 @@ node_modules/
 data/*.json
 data/*.jsonl
 !data/nyayasetu_unified_schema.json
+!data/label_definitions.json
+!data/nyayasetu_benchmark_report.json
 dataset/*.jsonl
 outputs/
 static/

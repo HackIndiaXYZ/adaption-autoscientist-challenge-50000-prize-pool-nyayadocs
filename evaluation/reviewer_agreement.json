@@ -1,0 +1,9 @@
+{
+  "total_assignments": 180,
+  "completed_two_reviewer_rows": 0,
+  "module_raw_agreement": null,
+  "intent_raw_agreement": null,
+  "both_reviewers_accept_rate": null,
+  "status": "pending_human_review",
+  "warning": "Do not publish agreement percentages until two independent reviewers complete every locked benchmark row."
+}

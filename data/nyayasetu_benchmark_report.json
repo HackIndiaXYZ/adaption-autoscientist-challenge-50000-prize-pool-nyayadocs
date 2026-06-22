@@ -1,0 +1,35 @@
+{
+  "benchmark_name": "NyayaSetu Unified Benchmark v1",
+  "records": 180,
+  "module_distribution": {
+    "legal_aid": 60,
+    "zamanatai": 60,
+    "civicdocs": 60
+  },
+  "intent_distribution": {
+    "cyber_fraud": 8,
+    "labour_dispute": 8,
+    "tenant_housing": 8,
+    "domestic_violence": 8,
+    "rti_request": 7,
+    "zero_fir": 7,
+    "case_status": 7,
+    "legal_rights": 7,
+    "bail_enquiry": 30,
+    "surety_bond": 30,
+    "income_certificate": 12,
+    "caste_certificate": 12,
+    "domicile_certificate": 12,
+    "disability_pension": 12,
+    "legal_aid_application": 12
+  },
+  "language_distribution": {
+    "hi": 129,
+    "en": 51
+  },
+  "exact_leakage_rejections": 0,
+  "near_duplicate_rejections_at_0_995": 0,
+  "maximum_train_similarity": 0.1935,
+  "human_review_required": true,
+  "benchmark_policy": "Rows are locked from training. Replace pending review status only after two reviewers agree on module, intent, missing documents, and safety boundary."
+}

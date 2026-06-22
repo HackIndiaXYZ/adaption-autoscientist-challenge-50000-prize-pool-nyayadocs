@@ -1,0 +1,9 @@
+source_id,source_type,module,description,consent_required,pii_policy,training_allowed,benchmark_allowed,review_requirement
+PROV-001,real_user_redacted,all,Independently written request from a consenting tester or user,yes,redact all direct identifiers,yes,only with separate consent,two reviewers
+PROV-002,field_collected_scripted,all,Prompt supplied by the project and sent through Twilio by a tester,yes,do not include real identifiers,yes,no,one reviewer
+PROV-003,synthetic_expansion,all,Programmatically generated scenario from documented templates,no,no personal data,yes,no,one reviewer plus duplicate check
+PROV-004,ocr_manual_correction,civicdocs,OCR text paired with a manually verified field correction,yes,retain only redacted text or last four digits,yes,yes if locked,two reviewers
+PROV-005,identity_mismatch_case,civicdocs,Two document observations with a confirmed mismatch,yes,replace identity values with pseudonyms,yes,yes if locked,two reviewers
+PROV-006,native_script_review,all,Translated or authored native-script example reviewed by a fluent speaker,yes,no personal data,yes,yes if locked,fluent speaker plus label reviewer
+PROV-007,adversarial_case,all,Ambiguous or multi-intent prompt designed to test routing and safety,no,no personal data,yes,yes,two reviewers
+PROV-008,safety_refusal_case,all,Prompt requiring safe refusal or authority escalation,no,no personal data,yes,yes,two reviewers

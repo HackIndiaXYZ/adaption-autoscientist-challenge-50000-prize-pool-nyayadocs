@@ -1,0 +1,101 @@
+collection_id,provenance,document_type,field_name,ocr_observed_value,manually_verified_value,ocr_confidence,reviewer_1_accept,reviewer_2_accept,notes
+OCR-0001,ocr_manual_correction,ration_card,date_of_birth,02/02/1991 ?,02/02/1991,,,,Use only a synthetic/test document image; never upload a real identity number.
+OCR-0002,ocr_manual_correction,income_proof,address,"Test Ward 2, Demo D1strict","Test Ward 2, Demo District",,,,Use only a synthetic/test document image; never upload a real identity number.
+OCR-0003,ocr_manual_correction,school_record,district,Guwahat1,Guwahati,,,,Use only a synthetic/test document image; never upload a real identity number.
+OCR-0004,ocr_manual_correction,bank_passbook,annual_family_income,94000 ?,94000,,,,Use only a synthetic/test document image; never upload a real identity number.
+OCR-0005,ocr_manual_correction,disability_certificate,document_number,TEST-DOC-0005 ?,TEST-DOC-0005,,,,Use only a synthetic/test document image; never upload a real identity number.
+OCR-0006,ocr_manual_correction,electricity_bill,bank_account_last4,1006 ?,1006,,,,Use only a synthetic/test document image; never upload a real identity number.
+OCR-0007,ocr_manual_correction,aadhaar,applicant_name,Test Appl1cant 7,Test Applicant 7,,,,Use only a synthetic/test document image; never upload a real identity number.
+OCR-0008,ocr_manual_correction,ration_card,date_of_birth,09/09/1998 ?,09/09/1998,,,,Use only a synthetic/test document image; never upload a real identity number.
+OCR-0009,ocr_manual_correction,income_proof,address,"Test Ward 9, Demo D1strict","Test Ward 9, Demo District",,,,Use only a synthetic/test document image; never upload a real identity number.
+OCR-0010,ocr_manual_correction,school_record,district,Pune ?,Pune,,,,Use only a synthetic/test document image; never upload a real identity number.
+OCR-0011,ocr_manual_correction,bank_passbook,annual_family_income,101000 ?,101000,,,,Use only a synthetic/test document image; never upload a real identity number.
+OCR-0012,ocr_manual_correction,disability_certificate,document_number,TEST-DOC-0012 ?,TEST-DOC-0012,,,,Use only a synthetic/test document image; never upload a real identity number.
+OCR-0013,ocr_manual_correction,electricity_bill,bank_account_last4,1013 ?,1013,,,,Use only a synthetic/test document image; never upload a real identity number.
+OCR-0014,ocr_manual_correction,aadhaar,applicant_name,Test Appl1cant 14,Test Applicant 14,,,,Use only a synthetic/test document image; never upload a real identity number.
+OCR-0015,ocr_manual_correction,ration_card,date_of_birth,16/04/1995 ?,16/04/1995,,,,Use only a synthetic/test document image; never upload a real identity number.
+OCR-0016,ocr_manual_correction,income_proof,address,"Test Ward 16, Demo D1strict","Test Ward 16, Demo District",,,,Use only a synthetic/test document image; never upload a real identity number.
+OCR-0017,ocr_manual_correction,school_record,district,Chenna1,Chennai,,,,Use only a synthetic/test document image; never upload a real identity number.
+OCR-0018,ocr_manual_correction,bank_passbook,annual_family_income,108000 ?,108000,,,,Use only a synthetic/test document image; never upload a real identity number.
+OCR-0019,ocr_manual_correction,disability_certificate,document_number,TEST-DOC-0019 ?,TEST-DOC-0019,,,,Use only a synthetic/test document image; never upload a real identity number.
+OCR-0020,ocr_manual_correction,electricity_bill,bank_account_last4,1020 ?,1020,,,,Use only a synthetic/test document image; never upload a real identity number.
+OCR-0021,ocr_manual_correction,aadhaar,applicant_name,Test Appl1cant 21,Test Applicant 21,,,,Use only a synthetic/test document image; never upload a real identity number.
+OCR-0022,ocr_manual_correction,ration_card,date_of_birth,23/11/1992 ?,23/11/1992,,,,Use only a synthetic/test document image; never upload a real identity number.
+OCR-0023,ocr_manual_correction,income_proof,address,"Test Ward 23, Demo D1strict","Test Ward 23, Demo District",,,,Use only a synthetic/test document image; never upload a real identity number.
+OCR-0024,ocr_manual_correction,school_record,district,Kolkata ?,Kolkata,,,,Use only a synthetic/test document image; never upload a real identity number.
+OCR-0025,ocr_manual_correction,bank_passbook,annual_family_income,115000 ?,115000,,,,Use only a synthetic/test document image; never upload a real identity number.
+OCR-0026,ocr_manual_correction,disability_certificate,document_number,TEST-DOC-0026 ?,TEST-DOC-0026,,,,Use only a synthetic/test document image; never upload a real identity number.
+OCR-0027,ocr_manual_correction,electricity_bill,bank_account_last4,1027 ?,1027,,,,Use only a synthetic/test document image; never upload a real identity number.
+OCR-0028,ocr_manual_correction,aadhaar,applicant_name,Test Appl1cant 28,Test Applicant 28,,,,Use only a synthetic/test document image; never upload a real identity number.
+OCR-0029,ocr_manual_correction,ration_card,date_of_birth,03/06/1999 ?,03/06/1999,,,,Use only a synthetic/test document image; never upload a real identity number.
+OCR-0030,ocr_manual_correction,income_proof,address,"Test Ward 30, Demo D1strict","Test Ward 30, Demo District",,,,Use only a synthetic/test document image; never upload a real identity number.
+OCR-0031,ocr_manual_correction,school_record,district,Lucknow ?,Lucknow,,,,Use only a synthetic/test document image; never upload a real identity number.
+OCR-0032,ocr_manual_correction,bank_passbook,annual_family_income,122000 ?,122000,,,,Use only a synthetic/test document image; never upload a real identity number.
+OCR-0033,ocr_manual_correction,disability_certificate,document_number,TEST-DOC-0033 ?,TEST-DOC-0033,,,,Use only a synthetic/test document image; never upload a real identity number.
+OCR-0034,ocr_manual_correction,electricity_bill,bank_account_last4,1034 ?,1034,,,,Use only a synthetic/test document image; never upload a real identity number.
+OCR-0035,ocr_manual_correction,aadhaar,applicant_name,Test Appl1cant 35,Test Applicant 35,,,,Use only a synthetic/test document image; never upload a real identity number.
+OCR-0036,ocr_manual_correction,ration_card,date_of_birth,10/01/1996 ?,10/01/1996,,,,Use only a synthetic/test document image; never upload a real identity number.
+OCR-0037,ocr_manual_correction,income_proof,address,"Test Ward 37, Demo D1strict","Test Ward 37, Demo District",,,,Use only a synthetic/test document image; never upload a real identity number.
+OCR-0038,ocr_manual_correction,school_record,district,Guwahat1,Guwahati,,,,Use only a synthetic/test document image; never upload a real identity number.
+OCR-0039,ocr_manual_correction,bank_passbook,annual_family_income,129000 ?,129000,,,,Use only a synthetic/test document image; never upload a real identity number.
+OCR-0040,ocr_manual_correction,disability_certificate,document_number,TEST-DOC-0040 ?,TEST-DOC-0040,,,,Use only a synthetic/test document image; never upload a real identity number.
+OCR-0041,ocr_manual_correction,electricity_bill,bank_account_last4,1041 ?,1041,,,,Use only a synthetic/test document image; never upload a real identity number.
+OCR-0042,ocr_manual_correction,aadhaar,applicant_name,Test Appl1cant 42,Test Applicant 42,,,,Use only a synthetic/test document image; never upload a real identity number.
+OCR-0043,ocr_manual_correction,ration_card,date_of_birth,17/08/1993 ?,17/08/1993,,,,Use only a synthetic/test document image; never upload a real identity number.
+OCR-0044,ocr_manual_correction,income_proof,address,"Test Ward 44, Demo D1strict","Test Ward 44, Demo District",,,,Use only a synthetic/test document image; never upload a real identity number.
+OCR-0045,ocr_manual_correction,school_record,district,Pune ?,Pune,,,,Use only a synthetic/test document image; never upload a real identity number.
+OCR-0046,ocr_manual_correction,bank_passbook,annual_family_income,136000 ?,136000,,,,Use only a synthetic/test document image; never upload a real identity number.
+OCR-0047,ocr_manual_correction,disability_certificate,document_number,TEST-DOC-0047 ?,TEST-DOC-0047,,,,Use only a synthetic/test document image; never upload a real identity number.
+OCR-0048,ocr_manual_correction,electricity_bill,bank_account_last4,1048 ?,1048,,,,Use only a synthetic/test document image; never upload a real identity number.
+OCR-0049,ocr_manual_correction,aadhaar,applicant_name,Test Appl1cant 49,Test Applicant 49,,,,Use only a synthetic/test document image; never upload a real identity number.
+OCR-0050,ocr_manual_correction,ration_card,date_of_birth,24/03/1990 ?,24/03/1990,,,,Use only a synthetic/test document image; never upload a real identity number.
+OCR-0051,ocr_manual_correction,income_proof,address,"Test Ward 51, Demo D1strict","Test Ward 51, Demo District",,,,Use only a synthetic/test document image; never upload a real identity number.
+OCR-0052,ocr_manual_correction,school_record,district,Chenna1,Chennai,,,,Use only a synthetic/test document image; never upload a real identity number.
+OCR-0053,ocr_manual_correction,bank_passbook,annual_family_income,143000 ?,143000,,,,Use only a synthetic/test document image; never upload a real identity number.
+OCR-0054,ocr_manual_correction,disability_certificate,document_number,TEST-DOC-0054 ?,TEST-DOC-0054,,,,Use only a synthetic/test document image; never upload a real identity number.
+OCR-0055,ocr_manual_correction,electricity_bill,bank_account_last4,1055 ?,1055,,,,Use only a synthetic/test document image; never upload a real identity number.
+OCR-0056,ocr_manual_correction,aadhaar,applicant_name,Test Appl1cant 56,Test Applicant 56,,,,Use only a synthetic/test document image; never upload a real identity number.
+OCR-0057,ocr_manual_correction,ration_card,date_of_birth,04/10/1997 ?,04/10/1997,,,,Use only a synthetic/test document image; never upload a real identity number.
+OCR-0058,ocr_manual_correction,income_proof,address,"Test Ward 58, Demo D1strict","Test Ward 58, Demo District",,,,Use only a synthetic/test document image; never upload a real identity number.
+OCR-0059,ocr_manual_correction,school_record,district,Kolkata ?,Kolkata,,,,Use only a synthetic/test document image; never upload a real identity number.
+OCR-0060,ocr_manual_correction,bank_passbook,annual_family_income,150000 ?,150000,,,,Use only a synthetic/test document image; never upload a real identity number.
+OCR-0061,ocr_manual_correction,disability_certificate,document_number,TEST-DOC-0061 ?,TEST-DOC-0061,,,,Use only a synthetic/test document image; never upload a real identity number.
+OCR-0062,ocr_manual_correction,electricity_bill,bank_account_last4,1062 ?,1062,,,,Use only a synthetic/test document image; never upload a real identity number.
+OCR-0063,ocr_manual_correction,aadhaar,applicant_name,Test Appl1cant 63,Test Applicant 63,,,,Use only a synthetic/test document image; never upload a real identity number.
+OCR-0064,ocr_manual_correction,ration_card,date_of_birth,11/05/1994 ?,11/05/1994,,,,Use only a synthetic/test document image; never upload a real identity number.
+OCR-0065,ocr_manual_correction,income_proof,address,"Test Ward 65, Demo D1strict","Test Ward 65, Demo District",,,,Use only a synthetic/test document image; never upload a real identity number.
+OCR-0066,ocr_manual_correction,school_record,district,Lucknow ?,Lucknow,,,,Use only a synthetic/test document image; never upload a real identity number.
+OCR-0067,ocr_manual_correction,bank_passbook,annual_family_income,157000 ?,157000,,,,Use only a synthetic/test document image; never upload a real identity number.
+OCR-0068,ocr_manual_correction,disability_certificate,document_number,TEST-DOC-0068 ?,TEST-DOC-0068,,,,Use only a synthetic/test document image; never upload a real identity number.
+OCR-0069,ocr_manual_correction,electricity_bill,bank_account_last4,1069 ?,1069,,,,Use only a synthetic/test document image; never upload a real identity number.
+OCR-0070,ocr_manual_correction,aadhaar,applicant_name,Test Appl1cant 70,Test Applicant 70,,,,Use only a synthetic/test document image; never upload a real identity number.
+OCR-0071,ocr_manual_correction,ration_card,date_of_birth,18/12/1991 ?,18/12/1991,,,,Use only a synthetic/test document image; never upload a real identity number.
+OCR-0072,ocr_manual_correction,income_proof,address,"Test Ward 72, Demo D1strict","Test Ward 72, Demo District",,,,Use only a synthetic/test document image; never upload a real identity number.
+OCR-0073,ocr_manual_correction,school_record,district,Guwahat1,Guwahati,,,,Use only a synthetic/test document image; never upload a real identity number.
+OCR-0074,ocr_manual_correction,bank_passbook,annual_family_income,164000 ?,164000,,,,Use only a synthetic/test document image; never upload a real identity number.
+OCR-0075,ocr_manual_correction,disability_certificate,document_number,TEST-DOC-0075 ?,TEST-DOC-0075,,,,Use only a synthetic/test document image; never upload a real identity number.
+OCR-0076,ocr_manual_correction,electricity_bill,bank_account_last4,1076 ?,1076,,,,Use only a synthetic/test document image; never upload a real identity number.
+OCR-0077,ocr_manual_correction,aadhaar,applicant_name,Test Appl1cant 77,Test Applicant 77,,,,Use only a synthetic/test document image; never upload a real identity number.
+OCR-0078,ocr_manual_correction,ration_card,date_of_birth,25/07/1998 ?,25/07/1998,,,,Use only a synthetic/test document image; never upload a real identity number.
+OCR-0079,ocr_manual_correction,income_proof,address,"Test Ward 79, Demo D1strict","Test Ward 79, Demo District",,,,Use only a synthetic/test document image; never upload a real identity number.
+OCR-0080,ocr_manual_correction,school_record,district,Pune ?,Pune,,,,Use only a synthetic/test document image; never upload a real identity number.
+OCR-0081,ocr_manual_correction,bank_passbook,annual_family_income,171000 ?,171000,,,,Use only a synthetic/test document image; never upload a real identity number.
+OCR-0082,ocr_manual_correction,disability_certificate,document_number,TEST-DOC-0082 ?,TEST-DOC-0082,,,,Use only a synthetic/test document image; never upload a real identity number.
+OCR-0083,ocr_manual_correction,electricity_bill,bank_account_last4,1083 ?,1083,,,,Use only a synthetic/test document image; never upload a real identity number.
+OCR-0084,ocr_manual_correction,aadhaar,applicant_name,Test Appl1cant 84,Test Applicant 84,,,,Use only a synthetic/test document image; never upload a real identity number.
+OCR-0085,ocr_manual_correction,ration_card,date_of_birth,05/02/1995 ?,05/02/1995,,,,Use only a synthetic/test document image; never upload a real identity number.
+OCR-0086,ocr_manual_correction,income_proof,address,"Test Ward 86, Demo D1strict","Test Ward 86, Demo District",,,,Use only a synthetic/test document image; never upload a real identity number.
+OCR-0087,ocr_manual_correction,school_record,district,Chenna1,Chennai,,,,Use only a synthetic/test document image; never upload a real identity number.
+OCR-0088,ocr_manual_correction,bank_passbook,annual_family_income,178000 ?,178000,,,,Use only a synthetic/test document image; never upload a real identity number.
+OCR-0089,ocr_manual_correction,disability_certificate,document_number,TEST-DOC-0089 ?,TEST-DOC-0089,,,,Use only a synthetic/test document image; never upload a real identity number.
+OCR-0090,ocr_manual_correction,electricity_bill,bank_account_last4,1090 ?,1090,,,,Use only a synthetic/test document image; never upload a real identity number.
+OCR-0091,ocr_manual_correction,aadhaar,applicant_name,Test Appl1cant 91,Test Applicant 91,,,,Use only a synthetic/test document image; never upload a real identity number.
+OCR-0092,ocr_manual_correction,ration_card,date_of_birth,12/09/1992 ?,12/09/1992,,,,Use only a synthetic/test document image; never upload a real identity number.
+OCR-0093,ocr_manual_correction,income_proof,address,"Test Ward 93, Demo D1strict","Test Ward 93, Demo District",,,,Use only a synthetic/test document image; never upload a real identity number.
+OCR-0094,ocr_manual_correction,school_record,district,Kolkata ?,Kolkata,,,,Use only a synthetic/test document image; never upload a real identity number.
+OCR-0095,ocr_manual_correction,bank_passbook,annual_family_income,185000 ?,185000,,,,Use only a synthetic/test document image; never upload a real identity number.
+OCR-0096,ocr_manual_correction,disability_certificate,document_number,TEST-DOC-0096 ?,TEST-DOC-0096,,,,Use only a synthetic/test document image; never upload a real identity number.
+OCR-0097,ocr_manual_correction,electricity_bill,bank_account_last4,1097 ?,1097,,,,Use only a synthetic/test document image; never upload a real identity number.
+OCR-0098,ocr_manual_correction,aadhaar,applicant_name,Test Appl1cant 98,Test Applicant 98,,,,Use only a synthetic/test document image; never upload a real identity number.
+OCR-0099,ocr_manual_correction,ration_card,date_of_birth,19/04/1999 ?,19/04/1999,,,,Use only a synthetic/test document image; never upload a real identity number.
+OCR-0100,ocr_manual_correction,income_proof,address,"Test Ward 100, Demo D1strict","Test Ward 100, Demo District",,,,Use only a synthetic/test document image; never upload a real identity number.

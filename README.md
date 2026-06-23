@@ -181,10 +181,11 @@ data/nyayasetu_unified_schema.json
 
 Current distribution:
 
-- 2,451 total records
-- 900 NyayaSetu Legal Aid records
-- 651 ZamanatAI records
-- 900 CivicDocs records
+- 2,573 total records
+- 973 NyayaSetu Legal Aid records
+- 670 ZamanatAI records
+- 930 CivicDocs records
+- 122 live Twilio webhook observations from the deployed WhatsApp pipeline
 - 239 held-out test records
 
 Evaluation targets include module accuracy, intent accuracy, structured-JSON validity, missing-document F1, OCR-correction accuracy, and safety-boundary compliance.
@@ -225,6 +226,7 @@ Benchmark labels remain provisional until two independent reviewers complete `da
 The `collection/` folder contains:
 
 - 150 scripted Twilio collection prompts
+- 122 matched Twilio export rows in `data/field_collection_clean.csv`
 - 100 OCR correction tasks
 - 50 document-mismatch cases
 - 100 native-script review tasks

@@ -118,6 +118,7 @@ def write_csv(path: Path, rows: list[dict]):
 def build_whatsapp_prompts():
     rows = []
     send_lines = []
+    direct_send_lines = []
     index = 1
     for intent, patterns in INTENT_MESSAGES.items():
         for variant in range(10):
@@ -127,7 +128,6 @@ def build_whatsapp_prompts():
                 months=[2, 3, 4, 6, 8][variant % 5],
                 amount=[18000, 25000, 43000, 75000][variant % 4],
             )
-            message = f"{message}. Test case {index}."
             module = MODULE_FOR_INTENT.get(intent, "legal_aid")
             rows.append({
                 "collection_id": f"WA-{index:04d}",
@@ -143,10 +143,12 @@ def build_whatsapp_prompts():
                 "reply_safe_and_useful": "",
                 "collector_notes": "",
             })
-            send_lines.append(f"{index}. [{intent}] {message}")
+            send_lines.append(f"{index}. {message}")
+            direct_send_lines.append(message)
             index += 1
     write_csv(OUT / "whatsapp_scripted_collection.csv", rows)
     (OUT / "whatsapp_send_list.txt").write_text("\n".join(send_lines) + "\n", encoding="utf-8")
+    (OUT / "whatsapp_twilio_direct.txt").write_text("\n".join(direct_send_lines) + "\n", encoding="utf-8")
 
 
 def build_ocr_tasks():

@@ -1,13 +1,14 @@
 {
   "dataset_name": "NyayaSetu Unified Legal Aid + ZamanatAI + CivicDocs",
-  "total_records": 2451,
+  "total_records": 2573,
   "module_distribution": {
-    "legal_aid": 900,
-    "zamanatai": 651,
-    "civicdocs": 900
+    "legal_aid": 973,
+    "zamanatai": 670,
+    "civicdocs": 930
   },
   "task_distribution": {
     "legal_intent_and_safe_response": 1251,
+    "field_collected_twilio_observation": 122,
     "bail_or_surety_structured_workflow": 300,
     "service_classification": 180,
     "ocr_field_extraction": 180,
@@ -16,10 +17,17 @@
     "application_readiness": 180
   },
   "split_distribution": {
-    "validation": 243,
+    "validation": 365,
     "train": 1969,
     "test": 239
   },
+  "source_distribution": {
+    "NyayaSetu + ZamanatAI, credited to Adaption Labs Adaptive Data Track": 1251,
+    "Twilio WhatsApp field collection via deployed NyayaSetu webhook": 122,
+    "ZamanatAI adaptive workflow expansion": 300,
+    "NyayaSetu CivicDocs adaptive expansion": 900
+  },
+  "field_collected_twilio_records": 122,
   "civic_services": [
     "income_certificate",
     "caste_certificate",

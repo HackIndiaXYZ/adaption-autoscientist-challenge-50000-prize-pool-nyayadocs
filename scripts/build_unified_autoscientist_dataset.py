@@ -10,6 +10,7 @@ SOURCE = ROOT / "data" / "nyayasetu_legal_aid.csv"
 OUTPUT = ROOT / "data" / "nyayasetu_unified_autoscientist.csv"
 EVAL_OUTPUT = ROOT / "data" / "nyayasetu_unified_eval.csv"
 SCHEMA_OUTPUT = ROOT / "data" / "nyayasetu_unified_schema.json"
+FIELD_COLLECTION_SOURCE = ROOT / "data" / "field_collection_clean.csv"
 
 random.seed(20260622)
 
@@ -67,6 +68,74 @@ def module_for_intent(intent: str) -> str:
 def split_for(index: int) -> str:
     marker = index % 10
     return "test" if marker == 0 else "validation" if marker == 1 else "train"
+
+
+def language_name_for(code_or_name: str) -> str:
+    value = (code_or_name or "en").strip()
+    names = {
+        "en": "English",
+        "hi": "Hindi",
+        "mr": "Marathi",
+        "ta": "Tamil",
+        "te": "Telugu",
+        "bn": "Bengali",
+        "gu": "Gujarati",
+        "Hinglish": "Hinglish",
+        "English": "English",
+    }
+    return names.get(value, value or "English")
+
+
+def load_field_collection_rows(start_index: int):
+    if not FIELD_COLLECTION_SOURCE.exists():
+        return []
+    with FIELD_COLLECTION_SOURCE.open("r", encoding="utf-8") as handle:
+        source_rows = list(csv.DictReader(handle))
+    rows = []
+    for offset, row in enumerate(source_rows):
+        prompt = row.get("message") or ""
+        reply = row.get("reply") or ""
+        if not prompt or not reply:
+            continue
+        intent = row.get("expected_intent") or row.get("predicted_intent") or "unknown"
+        module = row.get("expected_module") or module_for_intent(intent)
+        prediction_correct = "yes" if row.get("expected_intent") == row.get("predicted_intent") else "pending_review"
+        completion = {
+            "module": module,
+            "intent": intent,
+            "observed_model_intent": row.get("predicted_intent") or "unknown",
+            "observed_reply": reply,
+            "prediction_correct": prediction_correct,
+            "review_status": row.get("prediction_correct") or "pending_review",
+            "source_session_id": row.get("source_session_id") or "not_available",
+            "next_adaptive_action": "human review before promotion to training" if row.get("accepted_for_training") != "yes" else "eligible for supervised training",
+            "boundary": "Field-collected WhatsApp observation; retain provenance and do not treat as lawyer-verified advice.",
+        }
+        index = start_index + offset
+        rows.append({
+            "sample_id": f"NYAYA-FIELD-{index:06d}",
+            "split": "validation" if row.get("accepted_for_training") != "yes" else split_for(index),
+            "module": module,
+            "task_type": "field_collected_twilio_observation",
+            "prompt": f"Observed WhatsApp message through deployed Twilio pipeline: {prompt}",
+            "completion": json.dumps(completion, ensure_ascii=False),
+            "language": language_name_for(row.get("language")),
+            "language_code": row.get("language") or "en",
+            "intent": intent,
+            "legal_domain": "criminal_justice" if module == "zamanatai" else "civic_document_access" if module == "civicdocs" else "legal_aid",
+            "service_type": intent if module == "civicdocs" else "not_applicable",
+            "document_type": "bail_application" if intent == "bail_enquiry" else "surety_bond" if intent == "surety_bond" else "legal_guidance",
+            "required_fields": "depends_on_intent",
+            "required_documents": "depends_on_intent",
+            "missing_information": "human review label and usefulness rating",
+            "correction_type": "field_feedback_pending_review",
+            "confidence_before": "0.60",
+            "confidence_after": "0.90" if prediction_correct == "yes" else "0.70",
+            "expected_json": json.dumps(completion, ensure_ascii=False),
+            "safety_boundary": "Field observation only; lawyer or authorised authority verification is required.",
+            "source": "Twilio WhatsApp field collection via deployed NyayaSetu webhook",
+        })
+    return rows
 
 
 def load_existing_rows():
@@ -256,9 +325,10 @@ def build_zamanat_rows(start_index, target_count=300):
 
 def main():
     base_rows = load_existing_rows()
-    zamanat_rows = build_zamanat_rows(len(base_rows) + 1, target_count=300)
-    civic_rows = build_civic_rows(len(base_rows) + len(zamanat_rows) + 1)
-    rows = base_rows + zamanat_rows + civic_rows
+    field_rows = load_field_collection_rows(len(base_rows) + 1)
+    zamanat_rows = build_zamanat_rows(len(base_rows) + len(field_rows) + 1, target_count=300)
+    civic_rows = build_civic_rows(len(base_rows) + len(field_rows) + len(zamanat_rows) + 1)
+    rows = base_rows + field_rows + zamanat_rows + civic_rows
     fields = list(rows[0].keys())
     with OUTPUT.open("w", newline="", encoding="utf-8") as handle:
         writer = csv.DictWriter(handle, fieldnames=fields)
@@ -275,6 +345,8 @@ def main():
         "module_distribution": dict(Counter(row["module"] for row in rows)),
         "task_distribution": dict(Counter(row["task_type"] for row in rows)),
         "split_distribution": dict(Counter(row["split"] for row in rows)),
+        "source_distribution": dict(Counter(row["source"] for row in rows)),
+        "field_collected_twilio_records": len(field_rows),
         "civic_services": list(SERVICE_DATA),
         "evaluation_targets": ["module accuracy", "intent accuracy", "structured JSON validity", "missing-document F1", "OCR correction accuracy", "safety-boundary compliance"],
         "official_document_boundary": "Dataset trains application preparation and routing, never certificate issuance.",

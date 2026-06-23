@@ -11,7 +11,9 @@ OUTPUT = ROOT / "data" / "field_collection_clean.csv"
 
 
 def normalise(text: str) -> str:
-    return re.sub(r"\s+", " ", text.strip().lower())
+    text = re.sub(r"\s+", " ", text.strip().lower())
+    text = re.sub(r"[\s.।]+$", "", text)
+    return text
 
 
 def redact(text: str) -> str:
@@ -41,9 +43,10 @@ def main():
     exported = load_export()
     export_by_message = {}
     for record in exported:
-        message = record.get("input_text") or record.get("body") or ""
-        if message:
-            export_by_message[normalise(message)] = record
+        for key in ("body", "input_text"):
+            message = record.get(key) or ""
+            if message:
+                export_by_message.setdefault(normalise(message), record)
 
     rows = []
     unmatched = []

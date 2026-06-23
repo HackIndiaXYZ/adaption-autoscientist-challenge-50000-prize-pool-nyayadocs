@@ -21,6 +21,9 @@ for filename in [
     "nyayasetu_unified_autoscientist.csv",
     "nyayasetu_unified_eval.csv",
     "nyayasetu_unified_schema.json",
+    "field_collection_clean.csv",
+    "nyayasetu_benchmark_v1.csv",
+    "nyayasetu_benchmark_report.json",
 ]:
     api.upload_file(
         path_or_fileobj=f"./data/{filename}",
@@ -30,5 +33,18 @@ for filename in [
         token=os.getenv("HF_TOKEN"),
         commit_message=f"Publish unified AutoScientist artifact: {filename}",
     )
-print("\nUpload successful: adaptive artifacts plus 2,451-record unified dataset")
+for filename in [
+    "baseline_predictions.csv",
+    "baseline_metrics.json",
+    "reviewer_agreement.json",
+]:
+    api.upload_file(
+        path_or_fileobj=f"./evaluation/{filename}",
+        path_in_repo=f"evaluation/{filename}",
+        repo_id="Ananya80/nyayasetu-legal-dialogues-multilingual",
+        repo_type="dataset",
+        token=os.getenv("HF_TOKEN"),
+        commit_message=f"Publish evaluation artifact: {filename}",
+    )
+print("\nUpload successful: adaptive artifacts plus 2,573-record unified dataset with Twilio field observations")
 print("Visit: https://huggingface.co/datasets/Ananya80/nyayasetu-legal-dialogues-multilingual")

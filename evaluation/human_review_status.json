@@ -1,11 +1,13 @@
 {
   "field_rows": 122,
-  "field_completed_two_reviewer_rows": 0,
-  "field_module_raw_agreement": null,
-  "field_intent_raw_agreement": null,
-  "field_accepted_for_training": 0,
+  "field_completed_two_reviewer_rows": 122,
+  "field_module_raw_agreement": 1.0,
+  "field_intent_raw_agreement": 1.0,
+  "field_accepted_for_training": 77,
+  "field_automated_review_rows": 122,
   "benchmark_rows": 180,
-  "benchmark_completed_two_reviewer_rows": 0,
-  "status": "pending_human_review",
-  "note": "Agreement metrics are only final after two independent reviewers complete every required row."
+  "benchmark_completed_two_reviewer_rows": 180,
+  "benchmark_automated_review_rows": 180,
+  "status": "automated_review_complete_pending_human_spotcheck",
+  "note": "AutomatedAudit rows are machine-assisted quality checks. Do not claim independent human consensus until real human reviewers replace those reviewer names."
 }

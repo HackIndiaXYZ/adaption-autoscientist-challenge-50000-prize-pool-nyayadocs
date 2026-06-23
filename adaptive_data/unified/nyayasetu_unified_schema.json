@@ -17,9 +17,9 @@
     "application_readiness": 180
   },
   "split_distribution": {
-    "validation": 365,
-    "train": 1969,
-    "test": 239
+    "validation": 296,
+    "train": 2031,
+    "test": 246
   },
   "source_distribution": {
     "NyayaSetu + ZamanatAI, credited to Adaption Labs Adaptive Data Track": 1251,

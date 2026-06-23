@@ -39,12 +39,15 @@ def apply_field_reviews() -> dict:
     accepted = 0
     module_agree = 0
     intent_agree = 0
+    automated_reviewers = 0
 
     for row in source_rows:
         review = review_rows.get(row["collection_id"], {})
         has_two_reviewers = bool(review.get("reviewer_1") and review.get("reviewer_2"))
         if has_two_reviewers:
             completed += 1
+            if str(review.get("reviewer_1", "")).startswith("AutomatedAudit") or str(review.get("reviewer_2", "")).startswith("AutomatedAudit"):
+                automated_reviewers += 1
             if review.get("reviewer_1_module") == review.get("reviewer_2_module"):
                 module_agree += 1
             if review.get("reviewer_1_intent") == review.get("reviewer_2_intent"):
@@ -69,15 +72,19 @@ def apply_field_reviews() -> dict:
         "field_module_raw_agreement": round(module_agree / completed, 4) if completed else None,
         "field_intent_raw_agreement": round(intent_agree / completed, 4) if completed else None,
         "field_accepted_for_training": accepted,
+        "field_automated_review_rows": automated_reviewers,
     }
 
 
 def apply_benchmark_reviews() -> dict:
     rows = []
     completed = 0
+    automated_reviewers = 0
     for review in read_csv(BENCHMARK_REVIEW):
         if review.get("reviewer_1") and review.get("reviewer_2"):
             completed += 1
+            if str(review.get("reviewer_1", "")).startswith("AutomatedAudit") or str(review.get("reviewer_2", "")).startswith("AutomatedAudit"):
+                automated_reviewers += 1
         rows.append({
             "benchmark_id": review.get("benchmark_id", ""),
             "reviewer_1": review.get("reviewer_1", ""),
@@ -99,6 +106,7 @@ def apply_benchmark_reviews() -> dict:
     return {
         "benchmark_rows": len(rows),
         "benchmark_completed_two_reviewer_rows": completed,
+        "benchmark_automated_review_rows": automated_reviewers,
     }
 
 
@@ -111,11 +119,12 @@ def main() -> None:
         and benchmark_report["benchmark_rows"] > 0
         and benchmark_report["benchmark_completed_two_reviewer_rows"] == benchmark_report["benchmark_rows"]
     )
+    has_automated_review = field_report["field_automated_review_rows"] or benchmark_report["benchmark_automated_review_rows"]
     report = {
         **field_report,
         **benchmark_report,
-        "status": "human_review_complete" if review_complete else "pending_human_review",
-        "note": "Agreement metrics are only final after two independent reviewers complete every required row.",
+        "status": "automated_review_complete_pending_human_spotcheck" if review_complete and has_automated_review else "human_review_complete" if review_complete else "pending_human_review",
+        "note": "AutomatedAudit rows are machine-assisted quality checks. Do not claim independent human consensus until real human reviewers replace those reviewer names.",
     }
     REPORT.parent.mkdir(exist_ok=True)
     REPORT.write_text(json.dumps(report, indent=2) + "\n", encoding="utf-8")

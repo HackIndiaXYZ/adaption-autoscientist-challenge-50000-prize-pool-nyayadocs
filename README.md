@@ -207,6 +207,7 @@ data/nyayasetu_benchmark_report.json
 scripts/run_rule_baseline.py
 scripts/evaluate_unified_predictions.py
 evaluation/baseline_metrics.json
+docs/autoscientist_runbook.md
 ```
 
 Current fixed rule baseline on the 180-row balanced benchmark:
@@ -220,6 +221,8 @@ Current fixed rule baseline on the 180-row balanced benchmark:
 - Safety-boundary compliance: 100%
 
 Benchmark labels remain provisional until two independent reviewers complete `data/reviewer_assignments.csv`. Do not claim final benchmark performance before human consensus.
+
+Human-review packets are in `review/`. Complete the CSVs there, then run `scripts/apply_human_reviews.py` and `scripts/calculate_reviewer_agreement.py` before claiming reviewer agreement or training promotion.
 
 ## Human data collection
 

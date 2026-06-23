@@ -1,0 +1,11 @@
+{
+  "field_rows": 122,
+  "field_completed_two_reviewer_rows": 0,
+  "field_module_raw_agreement": null,
+  "field_intent_raw_agreement": null,
+  "field_accepted_for_training": 0,
+  "benchmark_rows": 180,
+  "benchmark_completed_two_reviewer_rows": 0,
+  "status": "pending_human_review",
+  "note": "Agreement metrics are only final after two independent reviewers complete every required row."
+}

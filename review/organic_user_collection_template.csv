@@ -1,0 +1,2 @@
+record_id,consent,source,raw_message_redacted,language_code,module,intent,entities_redacted_json,reply_observed,user_feedback,reviewer,accept_for_training,notes
+REAL-0001,yes,whatsapp_or_web,,,,,{},,,,,

@@ -1,0 +1,29 @@
+{
+  "finetune_job_id": "8ec11627-6dd4-48ee-b4d9-0fe83c25bd8e",
+  "training_experiment_id": "f120ba55-a11a-4621-89a8-12e924e7766f",
+  "original_model_name": "meta-llama/Llama-4-Scout-17B-16E-Instruct",
+  "trained_model_name": "adaption_nyayasetu_legal_assist",
+  "training_method": "sft",
+  "training_type": "lora",
+  "data_format": "chat",
+  "hyperparams": {
+    "lora": true,
+    "lora_r": 32,
+    "n_evals": 5,
+    "n_epochs": 3,
+    "batch_size": "max",
+    "lora_alpha": 64,
+    "lora_dropout": 0.05,
+    "min_lr_ratio": 0.1,
+    "warmup_ratio": 0.03,
+    "weight_decay": 0.01,
+    "learning_rate": 0.00015,
+    "max_grad_norm": 1,
+    "base_model_size": "109B",
+    "train_on_inputs": false,
+    "training_method": "sft",
+    "lr_scheduler_type": "cosine",
+    "scheduler_num_cycles": 0.5,
+    "lora_trainable_modules": "all-linear"
+  }
+}

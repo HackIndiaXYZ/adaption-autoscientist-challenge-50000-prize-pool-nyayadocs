@@ -63,10 +63,46 @@ dataset should not be described as 22-language training data.
 
 ## Adaptive datasets
 Hugging Face:
-https://huggingface.co/datasets/Ananya80/adaption-nyayasetu-legal-aid-v2/blob/main/README.md
+https://huggingface.co/datasets/Ananya80/nyayasetu-legal-dialogues-multilingual
 
 Kaggle:
 https://www.kaggle.com/datasets/ananyadaitkar/adaption-nyay-177c8907-3193-49c1-b337-32d744f4b2e2
+
+## AutoScientist trained model
+
+Model card and training config:
+
+```text
+model/adaption_nyayasetu_legal_assist/README.md
+model/adaption_nyayasetu_legal_assist/training_config.json
+upload_model.py
+```
+
+AutoScientist run:
+
+- Base model: `meta-llama/Llama-4-Scout-17B-16E-Instruct`
+- Trained model: `adaption_nyayasetu_legal_assist`
+- Fine-tune job ID: `8ec11627-6dd4-48ee-b4d9-0fe83c25bd8e`
+- Training experiment ID: `f120ba55-a11a-4621-89a8-12e924e7766f`
+- Method: SFT LoRA
+
+Measured Adaption platform improvements:
+
+- Quality: `9.0 -> 9.4`
+- Grade: `B -> A`
+- Percentile: `41.4 -> 57.7`
+- Dataset win rate: `31 -> 69`
+- Legal-category win rate: `35 -> 66`
+
+Evidence screenshots:
+
+```text
+submission_evidence/adaption/quality_grade_percentile.png
+submission_evidence/adaption/autoscientist_winrates.png
+submission_evidence/adaption/train_eval_metrics.png
+```
+
+Model weights release status: the public model card/config are checked in. Exported LoRA adapter weights from Adaption must be placed in `model/adaption_nyayasetu_legal_assist/` and uploaded with `python3 upload_model.py` before claiming complete public model-weight release.
 
 ## Adaptive learning loop
 ```text
@@ -118,27 +154,26 @@ This script:
 - Produces descriptive dataset metrics; it is not a held-out accuracy benchmark
 
 Current adaptive release:
-- **2,184 production adaptive records** in `data/nyayasetu_legal_aid.csv`
-- 2,184 feedback events (100% coverage)
-- 767 correction events (35.1% correction rate)
-- 2 represented dataset languages: Hindi and English
-- 8 legal and civic justice intents
-- Adaptive learning system integrated into production (`adaptive_learning.py`)
-- Confidence improvement: 0.763 → 0.970 (+0.207)
-- Flat model-ready schema with expected responses, evidence checklist, missing-information labels, correction fields, confidence_before/confidence_after, and PII redaction flags
-- Original 9/10 Adaption scoring dataset (256 rows): `adaptive_data/adaption_expert_legal_qa_original.csv`
-- **Evaluation script**: Run `python scripts/evaluate.py` to regenerate metrics
+- **2,573 unified AutoScientist records** in `data/nyayasetu_unified_autoscientist.csv`
+- 122 live Twilio webhook observations from the deployed WhatsApp pipeline
+- 77 Twilio field observations promoted by automated audit for adaptive training
+- 3 modules: NyayaSetu Legal Aid, ZamanatAI, CivicDocs
+- 15+ legal/civic workflow intents across legal aid, bail/surety, and civic-document preparation
+- Missing-document labels, evidence checklists, safety boundaries, expected JSON, OCR correction tasks, and benchmark artifacts
+- Original expert Adaption scoring dataset: `adaptive_data/adaption_expert_legal_qa_original.csv`
+- **Evaluation script**: Run `python scripts/evaluate.py` to regenerate descriptive adaptive metrics
 
 ## Verification status
 
 | Evidence | Current status |
 |---|---|
-| Live deployment | Verified at the URL above on 12 June 2026 |
-| Automated tests | 8 pytest cases for intent/entity and multilingual rule-based behavior |
-| Dataset size | 2,184 rows, verified with pandas |
-| Dataset languages | Hindi and English |
-| Dataset intents | 8 |
-| Accuracy benchmark | Not yet available; confidence metrics are descriptive, not held-out accuracy |
+| Live deployment | Verified at the URL above |
+| Automated tests | 17 pytest cases |
+| Unified dataset size | 2,573 rows |
+| Live field data | 122 matched Twilio webhook observations |
+| AutoScientist training | Completed SFT LoRA run |
+| Adaption improvement | Win rate 31 -> 69; legal win rate 35 -> 66 |
+| Model release | Model card/config checked in; exported adapter weights still need public upload |
 
 Credit: Built for the Adaption Labs Adaptive Data Track.
 
